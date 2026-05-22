@@ -1,0 +1,74 @@
+/* 共通設定 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; transition: 0.5s; }
+footer { padding: 40px; text-align: center; }
+footer a { color: inherit; text-decoration: none; font-weight: bold; opacity: 0.6; }
+footer a:hover { opacity: 1; }
+
+/* --- 事務所トップ --- */
+.site-top {
+    background: #ffffff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.logo-area { text-align: center; margin-bottom: 50px; }
+.logo-area h1 { font-size: 3rem; letter-spacing: 10px; }
+
+.artist-links {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+.artist-links a {
+    flex: 1;
+    height: 300px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+/* 仮の背景色 */
+.link-v3 { background: #ff2e63 !important; }
+.link-god7ike { background: #1a1a1b !important; }
+
+/* --- <3 (V3) テーマ --- */
+.theme-v3 {
+    background: #000000;
+    color: #ff2e63;
+}
+.theme-v3 .content { padding: 50px; max-width: 800px; margin: auto; }
+.theme-v3 h1 { font-size: 4rem; text-align: center; padding: 100px 0; border-bottom: 2px solid #ff2e63; }
+.theme-v3 .card {
+    border: 1px solid #ff2e63;
+    padding: 20px;
+    margin: 10px 0;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* --- GØD7IKE テーマ --- */
+.theme-god7ike {
+    background: #000000;
+    color: #ffffff;
+    background-image: radial-gradient(circle, #333 1px, transparent 1px);
+    background-size: 50px 50px; /* 少しファンタジーな背景 */
+}
+.theme-god7ike .content { padding: 50px; text-align: center; }
+.theme-god7ike h1 {
+    font-size: 5rem;
+    padding: 100px 0;
+    letter-spacing: 20px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+.theme-god7ike h2 { border-bottom: 1px solid #fff; display: inline-block; margin-bottom: 20px; }

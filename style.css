@@ -1,5 +1,5 @@
-/* --- Google Fonts Import (Cinzelの700=Boldを確実に読み込み) --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
+/* --- Google Fonts Import (Montserratの800を強調して読み込み) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
 /* --- ページごとの変数設定 --- */
 :root {
@@ -39,13 +39,20 @@ body {
 
 .header .logo-area {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-decoration: none;
     color: var(--text-color);
     letter-spacing: 1px;
+    font-weight: 700; /* 基本ボールド */
 }
 
-/* GØD7IKEのヘッダーロゴを太く設定 */
+/* TOPページの事務所ロゴを「さらに太く」 */
+.theme-index .header .logo-area {
+    font-weight: 800; /* Extra Bold */
+    letter-spacing: 0px; /* 事務所名は詰め気味で力強く */
+}
+
+/* GØD7IKEのロゴも太く維持 */
 .theme-god .header .logo-area { 
     font-weight: 700; 
     letter-spacing: 5px; 
@@ -64,27 +71,36 @@ body {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* --- 共通フッター --- */
+/* --- 【修正！】共通フッター --- */
 .common-footer {
     background-color: #ffffff !important;
     color: #333333 !important;
-    padding: 600px 5% 60px; /* 余白を調整 */
+    padding: 60px 5%; /* 600pxから60pxに修正しました！ */
     text-align: center;
     border-top: 1px solid #eeeeee;
     margin-top: 100px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* 前回の指定と同様のため中略... */
-.f-logo { display: block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; color: #000 !important; text-decoration: none; }
-.f-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #999 !important; }
+.f-logo {
+    display: block;
+    font-weight: 800; /* フッターのロゴも太めに */
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #000 !important;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.f-copy {
+    font-size: 0.7rem;
+    color: #999 !important;
+}
 
 /* コンテンツ用 */
-.hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-family: var(--font-heading); font-size: 6vw; color: var(--accent-color); }
 .content-body { max-width: 900px; margin: 0 auto; padding: 0 5%; }
 .artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 0; }
 .artist-card { text-decoration: none; color: inherit; border-bottom: 1px solid var(--text-color); padding-bottom: 20px; }
-.img-placeholder { aspect-ratio: 3/4; background: #eee; margin-bottom: 20px; transition: 0.3s; }
+.img-placeholder { aspect-ratio: 3/4; background: #eee; margin-bottom: 20px; }

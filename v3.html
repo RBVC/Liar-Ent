@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-v3">
-    <!-- メニュー外タップで閉じる用のカバー -->
+    <!-- メニュー外タップで閉じる用 -->
     <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
 
     <header class="header">
@@ -25,14 +25,24 @@
         </ul>
     </nav>
 
+    <!-- ポップアップモーダル -->
+    <div class="modal" id="disco-modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal(force=true)">×</span>
+            <p id="modal-date" style="font-family:'Noto Sans JP'; font-size:0.85rem; color:#ccc;"></p>
+            <h3 id="modal-title" class="v3-main-font" style="font-size:2.5rem; margin-bottom:15px;"></h3>
+            <div id="modal-player" class="pcloud-embed"></div>
+        </div>
+    </div>
+
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
             <img src="images/v3/v3-cool.jpg" class="new-release-img">
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
-                <h1 class="v3-main-font">COOL</h1>
-                <p style="font-family: 'Noto Sans JP'; font-size: 1rem; color: #ccc;">2nd Mini Album / 2022.10.31</p>
+                <h1 class="v3-main-font" style="font-size:6rem;">COOL</h1>
+                <p style="font-family: 'Noto Sans JP'; font-size: 1.1rem; color: #ccc;">2nd Mini Album / 2022.10.31</p>
             </div>
         </section>
 
@@ -40,21 +50,27 @@
         <section id="news">
             <h2 class="v3-sub-heading">NEWS</h2>
             <div style="border-top: 1px solid #333;">
-                <a href="#disco-cool" class="news-item">
-                    <span class="news-date">2022.10.31</span>
-                    <span class="v3-tag">RELEASE</span>
+                <div class="news-item">
+                    <div class="news-meta">
+                        <span class="news-date">2022.10.31</span>
+                        <span class="v3-tag">RELEASE</span>
+                    </div>
                     <span class="news-title">2nd Mini Album 「COOL」</span>
-                </a>
-                <a href="#disco-venom" class="news-item">
-                    <span class="news-date">2022.04.10</span>
-                    <span class="v3-tag">RELEASE</span>
+                </div>
+                <div class="news-item">
+                    <div class="news-meta">
+                        <span class="news-date">2022.04.10</span>
+                        <span class="v3-tag">RELEASE</span>
+                    </div>
                     <span class="news-title">1st Mini Album 「VENOM」</span>
-                </a>
-                <a href="#disco-allout" class="news-item">
-                    <span class="news-date">2022.04.01</span>
-                    <span class="v3-tag">RELEASE</span>
+                </div>
+                <div class="news-item">
+                    <div class="news-meta">
+                        <span class="news-date">2022.04.01</span>
+                        <span class="v3-tag">RELEASE</span>
+                    </div>
                     <span class="news-title">Pre-Debut Cover EP 「ALL OUT」</span>
-                </a>
+                </div>
             </div>
         </section>
 
@@ -79,24 +95,24 @@
                     <img src="images/v3/v3-jia.jpg">
                     <div class="member-info">
                         <p class="member-name">JIA (지아)</p>
-                        <p style="font-weight: 800; color: #fff;">Leader</p>
-                        <p style="font-size: 0.85rem; opacity: 0.7;">Main Vocal / Sub Dancer / Sub Rapper</p>
+                        <p class="label-white-bold">Leader</p>
+                        <p style="font-size: 0.85rem; opacity: 0.7; font-family: 'Noto Sans JP';">Main Vocal / Sub Dancer / Sub Rapper</p>
                     </div>
                 </div>
                 <div class="member-card">
                     <img src="images/v3/v3-licca.jpg">
                     <div class="member-info">
                         <p class="member-name">LICCA (릿카)</p>
-                        <p style="font-weight: 800; color: #fff;">Center</p>
-                        <p style="font-size: 0.85rem; opacity: 0.7;">Main Rapper / Lead Vocal / Lead Dancer</p>
+                        <p class="label-white-bold">Center</p>
+                        <p style="font-size: 0.85rem; opacity: 0.7; font-family: 'Noto Sans JP';">Main Rapper / Lead Vocal / Lead Dancer</p>
                     </div>
                 </div>
                 <div class="member-card">
                     <img src="images/v3/v3-nayeon.jpg">
                     <div class="member-info">
                         <p class="member-name">NAYEON (나연)</p>
-                        <p style="font-weight: 800; color: #fff;">Maknae</p>
-                        <p style="font-size: 0.85rem; opacity: 0.7;">Main Dancer / Lead Rapper / Sub Vocal</p>
+                        <p class="label-white-bold">Maknae</p>
+                        <p style="font-size: 0.85rem; opacity: 0.7; font-family: 'Noto Sans JP';">Main Dancer / Lead Rapper / Sub Vocal</p>
                     </div>
                 </div>
             </div>
@@ -105,51 +121,10 @@
         <!-- 4. DISCOGRAPHY -->
         <section id="discography">
             <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
-            
-            <div id="disco-cool" class="disco-item">
-                <img src="images/v3/v3-cool.jpg" class="disco-img">
-                <div>
-                    <p style="font-family: 'Noto Sans JP'; font-size: 0.9rem;">2nd Mini Album / 2022.10.31</p>
-                    <h3 class="v3-main-font" style="font-size: 2.2rem;">COOL</h3>
-                    <ul class="track-list-v3">
-                        <li>01 BE!</li>
-                        <li>02 Cool</li>
-                        <li>03 Hocus Pocus</li>
-                        <li>04 Children</li>
-                        <li>05 Dramatic</li>
-                        <li>06 My Error</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="disco-venom" class="disco-item">
-                <img src="images/v3/v3-venom.jpg" class="disco-img">
-                <div>
-                    <p style="font-family: 'Noto Sans JP'; font-size: 0.9rem;">1st Mini Album / 2022.04.10</p>
-                    <h3 class="v3-main-font" style="font-size: 2.2rem;">VENOM</h3>
-                    <ul class="track-list-v3">
-                        <li>01 Re-Original</li>
-                        <li>02 VENOM</li>
-                        <li>03 JIGGY</li>
-                        <li>04 Come and Get It</li>
-                        <li>05 JUNGLE</li>
-                        <li>06 DON'T MESS WITH ME</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="disco-allout" class="disco-item">
-                <img src="images/v3/v3-allout.jpg" class="disco-img">
-                <div>
-                    <p style="font-family: 'Noto Sans JP'; font-size: 0.9rem;">Pre-Debut Cover EP / 2022.04.01</p>
-                    <h3 class="v3-main-font" style="font-size: 2.2rem;">ALL OUT</h3>
-                    <ul class="track-list-v3">
-                        <li>01 THE BADDEST</li>
-                        <li>02 I'LL SHOW YOU (Jia Solo)</li>
-                        <li>03 VILLAIN (Licca Solo)</li>
-                        <li>04 DRUM GO DUM (Nayeon Solo)</li>
-                    </ul>
-                </div>
+            <div class="disco-grid">
+                <img src="images/v3/v3-cool.jpg" class="disco-thumb" onclick="openModal('COOL', '2nd Mini Album / 2022.10.31', 'https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV')">
+                <img src="images/v3/v3-venom.jpg" class="disco-thumb" onclick="openModal('VENOM', '1st Mini Album / 2022.04.10', 'https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7')">
+                <img src="images/v3/v3-allout.jpg" class="disco-thumb" onclick="openModal('ALL OUT', 'Pre-Debut Cover EP / 2022.04.01', 'https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX')">
             </div>
         </section>
     </main>
@@ -164,6 +139,20 @@
             document.getElementById('menu-btn').classList.toggle('open');
             document.getElementById('nav-overlay').classList.toggle('open');
             document.getElementById('menu-closer').classList.toggle('open');
+        }
+
+        function openModal(title, date, pcloudUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-date').innerText = date;
+            document.getElementById('modal-player').innerHTML = `<iframe src="${pcloudUrl}" frameborder="0" width="100%" height="350" scrolling="no"></iframe>`;
+            document.getElementById('disco-modal').classList.add('active');
+        }
+
+        function closeModal(event, force = false) {
+            if(force || event.target.id === 'disco-modal') {
+                document.getElementById('disco-modal').classList.remove('active');
+                document.getElementById('modal-player').innerHTML = '';
+            }
         }
     </script>
 </body>

@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&lt;3 | Liar Entertainment</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,70 +10,127 @@
         <a href="v3.html" class="logo-area">&lt;3</a>
         <nav class="nav-area">
             <ul>
-                <!-- ここの文字がSquada One & マゼンダになります -->
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#member">MEMBER</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#profile">PROFILE</a></li>
                 <li><a href="#discography">DISCO</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about" class="v3-hero">
-            <img src="images/v3/v3-main.jpg" alt="V3 Main Visual">
-            <h1>VIVID VENOM</h1>
-            <div style="margin-top:30px; text-align:left; max-width:600px; font-size:0.9rem; line-height:1.8; opacity:0.8;">
-                <p>&lt;3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（＜）になっているのは英語のスラングである「横向きハートマーク」を表している。</p>
+        <!-- 1. NEW RELEASE -->
+        <section class="new-release">
+            <p class="v3-font" style="letter-spacing: 5px; margin-bottom:10px;">LATEST RELEASE</p>
+            <img src="images/v3/v3-cool.jpg">
+            <h1 class="v3-font" style="font-size: 5rem;">COOL</h1>
+            <p style="margin-top:10px;">2nd Mini Album / 2022.10.31</p>
+        </section>
+
+        <!-- 2. NEWS (リリース情報のみ) -->
+        <section id="news">
+            <h2 class="v3-sub-heading">NEWS</h2>
+            <div class="news-list">
+                <a href="#disco-cool" class="news-item">
+                    <span class="news-date">2022.10.31</span>
+                    <span class="news-title">2nd Mini Album 「COOL」 RELEASE</span>
+                </a>
+                <a href="#disco-venom" class="news-item">
+                    <span class="news-date">2022.04.10</span>
+                    <span class="news-title">1st Mini Album 「VENOM」 RELEASE</span>
+                </a>
+                <a href="#disco-allout" class="news-item">
+                    <span class="news-date">2022.04.01</span>
+                    <span class="news-title">Pre-Debut Cover EP 「ALL OUT」 RELEASE</span>
+                </a>
             </div>
         </section>
 
-        <section id="member">
-            <h2 class="section-title">MEMBER</h2>
+        <!-- 3. PROFILE (About + Member) -->
+        <section id="profile">
+            <h2 class="v3-sub-heading">PROFILE</h2>
+            <div class="group-intro">
+                <img src="images/v3/v3-main.jpg">
+                <div>
+                    <h3 class="v3-font" style="font-size:2rem; margin-bottom:10px;">&lt;3 (ViVid Venom)</h3>
+                    <p style="font-size:0.9rem;">2022年4月10日デビュー。グループ名は「ViVid Venom」の略称。Vが横向き（＜）になっているのは英語のスラングである「横向きハートマーク」を表している。公式ファンクラブ名はVyeol（ビョル）。</p>
+                </div>
+            </div>
+            
             <div class="member-grid">
                 <div class="member-card">
-                    <img src="images/v3/v3-jia.jpg" alt="Jia">
-                    <h3 style="font-family:'Montserrat'; font-size:1.2rem; color:#ff007a;">JIA (지아)</h3>
-                    <p style="font-size:0.8rem; opacity:0.7;">Leader / Main Vocal</p>
+                    <img src="images/v3/v3-jia.jpg">
+                    <div class="member-info">
+                        <p class="member-name v3-font">JIA (지아)</p>
+                        <p style="font-size:0.8rem; font-weight:bold;">Leader / Main Vocal</p>
+                        <p style="font-size:0.7rem; opacity:0.6;">Sub Dancer / Sub Rapper</p>
+                    </div>
                 </div>
                 <div class="member-card">
-                    <img src="images/v3/v3-licca.jpg" alt="Licca">
-                    <h3 style="font-family:'Montserrat'; font-size:1.2rem; color:#ff007a;">LICCA (릿카)</h3>
-                    <p style="font-size:0.8rem; opacity:0.7;">Center / Main Rapper</p>
+                    <img src="images/v3/v3-licca.jpg">
+                    <div class="member-info">
+                        <p class="member-name v3-font">LICCA (릿카)</p>
+                        <p style="font-size:0.8rem; font-weight:bold;">Center / Main Rapper</p>
+                        <p style="font-size:0.7rem; opacity:0.6;">Lead Vocal / Lead Dancer</p>
+                    </div>
                 </div>
                 <div class="member-card">
-                    <img src="images/v3/v3-nayeon.jpg" alt="Nayeon">
-                    <h3 style="font-family:'Montserrat'; font-size:1.2rem; color:#ff007a;">NAYEON (나연)</h3>
-                    <p style="font-size:0.8rem; opacity:0.7;">Maknae / Main Dancer</p>
+                    <img src="images/v3/v3-nayeon.jpg">
+                    <div class="member-info">
+                        <p class="member-name v3-font">NAYEON (나연)</p>
+                        <p style="font-size:0.8rem; font-weight:bold;">Maknae / Main Dancer</p>
+                        <p style="font-size:0.7rem; opacity:0.6;">Lead Rapper / Sub Vocal</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- 4. DISCOGRAPHY -->
         <section id="discography">
-            <h2 class="section-title">DISCOGRAPHY</h2>
-            <div class="disco-list">
-                <div class="disco-item">
-                    <img src="images/v3/v3-allout.jpg" alt="ALL OUT">
-                    <div class="disco-info">
-                        <p style="font-weight:bold; color:#ff007a; font-size:0.8rem;">Pre-Debut Cover EP</p>
-                        <h3 style="font-family:'Montserrat'; font-size:1.5rem; margin-bottom:10px;">ALL OUT</h3>
-                        <p style="font-size:0.8rem; opacity:0.6;">2022.04.01 RELEASE</p>
-                    </div>
+            <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
+            
+            <div id="disco-cool" class="disco-item">
+                <img src="images/v3/v3-cool.jpg">
+                <div>
+                    <p class="v3-font">2nd Mini Album</p>
+                    <h3 style="font-size:2rem;">COOL</h3>
+                    <ul class="track-title">
+                        <li><span>01</span> BE!</li>
+                        <li><span>02</span> Cool</li>
+                        <li><span>03</span> Hocus Pocus</li>
+                        <li><span>04</span> Children</li>
+                        <li><span>05</span> Dramatic</li>
+                        <li><span>06</span> My Error</li>
+                    </ul>
                 </div>
-                <div class="disco-item">
-                    <img src="images/v3/v3-venom.jpg" alt="VENOM">
-                    <div class="disco-info">
-                        <p style="font-weight:bold; color:#ff007a; font-size:0.8rem;">1st Mini Album</p>
-                        <h3 style="font-family:'Montserrat'; font-size:1.5rem; margin-bottom:10px;">VENOM</h3>
-                        <p style="font-size:0.8rem; opacity:0.6;">2022.04.10 RELEASE</p>
-                    </div>
+            </div>
+
+            <div id="disco-venom" class="disco-item">
+                <img src="images/v3/v3-venom.jpg">
+                <div>
+                    <p class="v3-font">1st Mini Album</p>
+                    <h3 style="font-size:2rem;">VENOM</h3>
+                    <ul class="track-title">
+                        <li><span>01</span> Re-Original</li>
+                        <li><span>02</span> VENOM</li>
+                        <li><span>03</span> JIGGY</li>
+                        <li><span>04</span> Come and Get It</li>
+                        <li><span>05</span> JUNGLE</li>
+                        <li><span>06</span> DON'T MESS WITH ME</li>
+                    </ul>
                 </div>
-                <div class="disco-item">
-                    <img src="images/v3/v3-cool.jpg" alt="COOL">
-                    <div class="disco-info">
-                        <p style="font-weight:bold; color:#ff007a; font-size:0.8rem;">2nd Mini Album</p>
-                        <h3 style="font-family:'Montserrat'; font-size:1.5rem; margin-bottom:10px;">COOL</h3>
-                        <p style="font-size:0.8rem; opacity:0.6;">2022.10.31 RELEASE</p>
-                    </div>
+            </div>
+
+            <div id="disco-allout" class="disco-item">
+                <img src="images/v3/v3-allout.jpg">
+                <div>
+                    <p class="v3-font">Pre-Debut EP</p>
+                    <h3 style="font-size:2rem;">ALL OUT</h3>
+                    <ul class="track-title">
+                        <li><span>01</span> THE BADDEST</li>
+                        <li><span>02</span> I'LL SHOW YOU (Jia Solo)</li>
+                        <li><span>03</span> VILLAIN (Licca Solo)</li>
+                        <li><span>04</span> DRUM GO DUM (Nayeon Solo)</li>
+                    </ul>
                 </div>
             </div>
         </section>

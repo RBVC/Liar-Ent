@@ -1,75 +1,87 @@
-/* --- Google Fonts (維持) --- */
+/* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
-/* --- 共通レイアウト (維持) --- */
+/* --- 全体共通 --- */
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { display: flex; flex-direction: column; min-height: 100vh; font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
+body { display: flex; flex-direction: column; min-height: 100vh; line-height: 1.6; }
 main { flex: 1; }
 
-/* 共通ヘッダー構造 */
+/* 共通ヘッダー */
 .header {
-    width: 100%; padding: 20px 5%;
+    width: 100%; padding: 15px 5%;
     display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 0; z-index: 1000;
 }
-.header .nav-area ul { display: flex; list-style: none; gap: 30px; }
+.header .logo-area { font-size: 1.8rem; text-decoration: none; }
+.header .nav-area ul { display: flex; list-style: none; gap: 25px; }
+.header .nav-area a { text-decoration: none; font-size: 0.9rem; font-weight: 700; }
 
-/* 共通フッター (維持) */
-.common-footer { background-color: #ffffff !important; color: #333333 !important; padding: 60px 5%; text-align: center; border-top: 1px solid #eeeeee; }
-.f-logo { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; color: #000 !important; text-decoration: none; }
-.f-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #999 !important; }
-
-/* --- <3 (V3) 専用：修正ポイント --- */
-.theme-v3 { background-color: #000; color: #fff; }
-
-/* 1. ヘッダーの文字色をマゼンダ、フォントをSquada Oneに */
-.theme-v3 .header { background-color: rgba(0,0,0,0.95); border-bottom: 2px solid #ff007a; }
-.theme-v3 .logo-area { font-family: 'Squada One', cursive; font-size: 2rem; text-decoration: none; color: #ff007a; }
-.theme-v3 .nav-area a { 
-    color: #ff007a; /* 文字色をマゼンダに */
-    font-family: 'Squada One', cursive; /* フォントをSquada Oneに */
-    text-decoration: none; 
-    font-size: 1.2rem; /* 少し大きくして読みやすく */
-    letter-spacing: 1px;
+/* 共通フッター (Montserrat) */
+.common-footer {
+    background-color: #ffffff !important; color: #333 !important;
+    padding: 50px 5%; text-align: center; border-top: 1px solid #eee;
+    font-family: 'Montserrat', sans-serif;
 }
+.f-logo { display: block; font-weight: 800; font-size: 1.2rem; color: #000 !important; text-decoration: none; margin-bottom: 10px; }
+.f-copy { font-size: 0.7rem; color: #999 !important; }
 
-/* 2. 画像サイズの適正化（大きすぎたのを修正） */
-section { padding: 60px 10%; max-width: 1000px; margin: auto; }
+/* --- ARTIST TOP (index) 専用 --- */
+.theme-index { font-family: 'Montserrat', 'Noto Sans JP', sans-serif; background: #fff; }
+.theme-index .header { background: #fff; border-bottom: 1px solid #eee; }
+.theme-index .header .logo-area { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #000; }
+.theme-index .header a { color: #000; }
 
-/* Hero画像 (VIVID VENOMの上) */
-.v3-hero { height: auto; padding-top: 100px; padding-bottom: 50px; flex-direction: column; display: flex; align-items: center; }
-.v3-hero img { 
-    width: 250px; /* 横幅を250pxに制限 */
-    height: 250px;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 1px solid #ff007a;
-    box-shadow: 0 0 20px rgba(255,0,122,0.3);
+.artist-grid { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+    max-width: 1000px; margin: 60px auto; padding: 0 20px; 
 }
-.v3-hero h1 { font-family: 'Squada One'; font-size: 6rem; color: #ff007a; line-height: 1; }
-
-.section-title { font-family: 'Squada One', cursive; font-size: 2.5rem; color: #ff007a; margin-bottom: 40px; border-bottom: 1px solid #ff007a; }
-
-/* メンバー画像 */
-.member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-.member-card img { 
-    width: 180px; /* メンバー写真もコンパクトに */
-    height: 180px;
-    margin: 0 auto 15px;
-    display: block;
-    border: 1px solid #333; 
+.artist-card { text-decoration: none; color: inherit; transition: 0.3s; }
+.artist-card:hover { opacity: 0.7; }
+.img-placeholder { 
+    width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; margin-bottom: 15px; 
 }
+.img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.artist-v3-font { font-family: 'Squada One', cursive; font-size: 2rem; color: #ff007a; }
+.artist-god-font { font-family: 'Cinzel', serif; font-size: 1.6rem; color: #000; }
 
-/* ディスコグラフィ画像 */
-.disco-item img { 
-    width: 180px; /* ジャケ写も180pxに統一 */
-    height: 180px;
-    border: 2px solid #ff007a; 
-}
-.disco-item { display: flex; gap: 30px; align-items: flex-start; margin-bottom: 50px; }
+/* --- <3 (v3) 専用 --- */
+.theme-v3 { background: #000; color: #fff; font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
+.theme-v3 .header { background: rgba(0,0,0,0.9); border-bottom: 2px solid #ff007a; }
+.theme-v3 .logo-area { font-family: 'Squada One'; color: #ff007a; }
+.theme-v3 .nav-area a { font-family: 'Squada One'; color: #ff007a; font-size: 1.2rem; }
+
+section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+.v3-sub-heading { font-family: 'Squada One'; color: #ff007a; font-size: 3rem; margin-bottom: 40px; border-bottom: 1px solid #ff007a; }
+
+/* New Release */
+.new-release { text-align: center; background: linear-gradient(to bottom, #111, #000); }
+.new-release img { width: 100%; max-width: 400px; margin-bottom: 20px; border: 1px solid #ff007a; }
+.v3-font { font-family: 'Squada One'; color: #ff007a; }
+
+/* News List */
+.news-list { list-style: none; }
+.news-item { border-bottom: 1px solid #333; padding: 20px 0; display: flex; gap: 20px; align-items: center; text-decoration: none; color: #fff; }
+.news-item:hover { background: #111; }
+.news-date { font-family: 'Squada One'; color: #ff007a; min-width: 100px; }
+
+/* Member Profile */
+.group-intro { display: flex; gap: 40px; align-items: center; margin-bottom: 60px; }
+.group-intro img { width: 40%; max-width: 350px; border: 1px solid #333; }
+.member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.member-card { width: 100%; max-width: 250px; margin: 0 auto; }
+.member-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 15px; border: 1px solid #333; }
+.member-info { text-align: left; } /* 画像の下で左揃え */
+.member-name { font-size: 1.3rem; margin-bottom: 5px; }
+
+/* Discography */
+.disco-item { display: flex; gap: 40px; margin-bottom: 80px; }
+.disco-item img { width: 220px; height: 220px; border: 1px solid #ff007a; }
+.track-title { font-family: 'Squada One'; color: #ff007a; font-size: 1.2rem; margin-top: 15px; list-style: none; }
+.track-title li span { margin-right: 10px; opacity: 0.6; }
 
 @media (max-width: 768px) {
-    .v3-hero h1 { font-size: 4rem; }
-    .disco-item { flex-direction: column; align-items: center; text-align: center; }
+    .artist-grid, .member-grid { grid-template-columns: 1fr; }
+    .group-intro, .disco-item { flex-direction: column; text-align: center; }
+    .group-intro img, .disco-item img { width: 80%; }
 }

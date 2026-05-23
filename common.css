@@ -18,7 +18,12 @@ img { max-width: 100%; height: auto; display: block; }
     display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 0; z-index: 8000;
 }
-.header .logo-area { text-decoration: none; line-height: 1; }
+.header .logo-area { 
+    text-decoration: none; 
+    line-height: 1; 
+    font-size: 1.6rem; /* PC版サイズ */
+    transition: 0.3s;
+}
 
 /* --- ハンバーガーメニュー基本 --- */
 .menu-btn { 
@@ -32,7 +37,7 @@ img { max-width: 100%; height: auto; display: block; }
 .menu-btn span:nth-child(2) { top: 10px; }
 .menu-btn span:nth-child(3) { top: 20px; }
 
-/* 開いた時の「×」への変形（色は各ページのCSSで指定） */
+/* ×ボタン変形 */
 .menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
 .menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
@@ -67,3 +72,8 @@ img { max-width: 100%; height: auto; display: block; }
     letter-spacing: 1px;
 }
 .f-copy { font-size: 0.7rem; color: #999999 !important; }
+
+/* スマホ対応の基本調整 */
+@media (max-width: 768px) {
+    .header .logo-area { font-size: 1.3rem; } /* スマホ版事務所名を小さく調整 */
+}

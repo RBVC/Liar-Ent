@@ -1,6 +1,6 @@
 /* --- Liar Entertainment トップ専用：style.css --- */
 
-/* テーマ：WHITE */
+/* テーマ：WHITE (事務所トップ用) */
 .theme-index { 
     background-color: #ffffff; 
     color: #000000; 
@@ -10,7 +10,7 @@
 /* ヘッダー個別設定 */
 .theme-index .header { background-color: #ffffff; border-bottom: 1px solid #eee; }
 .theme-index .logo-area { 
-    font-family: 'Montserrat'; font-weight: 800; font-size: 1.8rem; color: #000000 !important; 
+    font-family: 'Montserrat'; font-weight: 800; color: #000000 !important; 
 }
 .theme-index .menu-btn span { background: #000000; }
 .theme-index .menu-btn.open span { background: #000000 !important; }
@@ -19,7 +19,7 @@
 .theme-index .nav-overlay { background: #ffffff; border-left: 1px solid #eee; border-bottom: 1px solid #eee; }
 .theme-index .nav-overlay ul li a { color: #000000; font-family: 'Montserrat'; font-weight: 800; }
 
-/* --- アーティストグリッド (JYPスタイル) --- */
+/* --- アーティストグリッド (2列レイアウト) --- */
 .artist-grid { 
     display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
     max-width: 1000px; margin: 60px auto; padding: 0 20px; 
@@ -37,7 +37,7 @@
 }
 .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
-/* アーティスト名：専用フォント、黒、下線なし */
+/* グループ名：専用フォント、色は黒、下線なし */
 .artist-v3-font { 
     font-family: 'Squada One', cursive; font-size: 2.2rem; 
     color: #000000 !important; text-decoration: none !important; 
@@ -47,7 +47,9 @@
     color: #000000 !important; text-decoration: none !important; 
 }
 
-/* スマホ対応 */
+/* スマホ対応：1列に切り替え */
 @media (max-width: 768px) {
     .artist-grid { grid-template-columns: 1fr; gap: 40px; }
+    .artist-v3-font { font-size: 1.8rem; }
+    .artist-god-font { font-size: 1.4rem; }
 }

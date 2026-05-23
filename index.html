@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-index">
-    <!-- メニュー外をタップした時に閉じるための透明カバー -->
     <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
 
     <header class="header">
         <a href="index.html" class="logo-area">Liar Entertainment</a>
-        <!-- ハンバーガーメニューボタン -->
         <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -27,12 +25,10 @@
     </nav>
 
     <main>
-        <!-- タイトルエリア -->
         <h1 style="text-align:center; padding:80px 0; font-size:3.5rem; letter-spacing:10px; font-weight:800; font-family:'Montserrat';">ARTIST</h1>
         
-        <!-- アーティスト一覧 -->
         <div class="artist-grid">
-            <!-- <3 カード (v3フォルダへリンク) -->
+            <!-- <3 -->
             <a href="v3/" class="artist-card">
                 <div class="img-placeholder">
                     <img src="v3/images/v3-main.jpg" alt="<3">
@@ -40,7 +36,7 @@
                 <h2 class="artist-v3-font">&lt;3</h2>
             </a>
 
-            <!-- GØD7IKE カード (god7ikeフォルダへリンク) -->
+            <!-- GØD7IKE -->
             <a href="god7ike/" class="artist-card">
                 <div class="img-placeholder">
                     <div style="padding:40% 0; text-align:center; color:#ccc; font-family:'Montserrat'; font-weight:bold;">COMING SOON</div>
@@ -57,11 +53,8 @@
 
     <script>
         function toggleMenu() {
-            // 三本線を「×」に変形
             document.getElementById('menu-btn').classList.toggle('open');
-            // メニューを右からスライド
             document.getElementById('nav-overlay').classList.toggle('open');
-            // 背景の薄暗いカバーを表示
             document.getElementById('menu-closer').classList.toggle('open');
         }
     </script>

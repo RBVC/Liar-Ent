@@ -9,7 +9,8 @@
 <body class="theme-v3">
     <header class="header">
         <a href="v3.html" class="logo-area">&lt;3</a>
-        <div class="menu-btn" id="menu-btn">
+        <!-- メニューボタン（三 ↔ ×） -->
+        <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
     </header>
@@ -41,6 +42,14 @@
                     <span class="v3-main-font">2022.10.31</span>
                     <span>2nd Mini Album 「COOL」 RELEASE</span>
                 </a>
+                <a href="#disco-venom" class="news-item">
+                    <span class="v3-main-font">2022.04.10</span>
+                    <span>1st Mini Album 「VENOM」 RELEASE</span>
+                </a>
+                <a href="#disco-allout" class="news-item">
+                    <span class="v3-main-font">2022.04.01</span>
+                    <span>Pre-Debut Cover EP 「ALL OUT」 RELEASE</span>
+                </a>
             </div>
         </section>
 
@@ -49,13 +58,13 @@
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
                 <img src="images/v3/v3-main.jpg">
-                <div style="font-size:1rem; line-height:2;">
+                <div style="font-size:1rem; line-height:2.2;">
                     <h3 class="v3-main-font" style="font-size:2.2rem; margin-bottom:15px;">ABOUT &lt;3</h3>
                     <p>
                         &lt;3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。<br>
                         Liar Entertainment所属。<br>
                         グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。<br>
-                        Vが横向き（＜）になっているのは英語のスラングである「横向きハートマーク」を表している。
+                        Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。
                     </p>
                 </div>
             </div>
@@ -65,8 +74,8 @@
                 <div class="member-card">
                     <img src="images/v3/v3-jia.jpg">
                     <div class="member-info">
-                        <p class="v3-main-font" style="font-size:1.5rem;">JIA (지아)</p>
-                        <p style="color: #ff007a; font-weight: bold;">Leader</p>
+                        <p class="v3-main-font" style="font-size:1.5rem; margin-bottom:5px;">JIA (지아)</p>
+                        <p class="label-white-bold">Leader</p>
                         <p style="font-size:0.8rem; opacity:0.7;">Main Vocal / Sub Dancer / Sub Rapper</p>
                     </div>
                 </div>
@@ -74,8 +83,8 @@
                 <div class="member-card">
                     <img src="images/v3/v3-licca.jpg">
                     <div class="member-info">
-                        <p class="v3-main-font" style="font-size:1.5rem;">LICCA (릿카)</p>
-                        <p style="color: #ff007a; font-weight: bold;">Center</p>
+                        <p class="v3-main-font" style="font-size:1.5rem; margin-bottom:5px;">LICCA (릿카)</p>
+                        <p class="label-white-bold">Center</p>
                         <p style="font-size:0.8rem; opacity:0.7;">Main Rapper / Lead Vocal / Lead Dancer</p>
                     </div>
                 </div>
@@ -83,8 +92,8 @@
                 <div class="member-card">
                     <img src="images/v3/v3-nayeon.jpg">
                     <div class="member-info">
-                        <p class="v3-main-font" style="font-size:1.5rem;">NAYEON (나연)</p>
-                        <p style="color: #ff007a; font-weight: bold;">Maknae</p>
+                        <p class="v3-main-font" style="font-size:1.5rem; margin-bottom:5px;">NAYEON (나연)</p>
+                        <p class="label-white-bold">Maknae</p>
                         <p style="font-size:0.8rem; opacity:0.7;">Main Dancer / Lead Rapper / Sub Vocal</p>
                     </div>
                 </div>
@@ -128,12 +137,27 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- ALL OUT -->
+            <div id="disco-allout" class="disco-item">
+                <img src="images/v3/v3-allout.jpg" class="disco-img">
+                <div class="disco-text-box">
+                    <p style="font-size:0.9rem; color:#fff;">Pre-Debut Cover EP</p>
+                    <h3 class="v3-main-font" style="font-size:2.8rem; margin:2px 0;">ALL OUT</h3>
+                    <ul class="track-list-v3">
+                        <li>01 THE BADDEST</li>
+                        <li>02 I'LL SHOW YOU (Jia Solo)</li>
+                        <li>03 VILLAIN (Licca Solo)</li>
+                        <li>04 DRUM GO DUM (Nayeon Solo)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="common-footer">
         <a href="index.html" class="f-logo">Liar Entertainment</a>
-        <p class="f-copy">© Liar Entertainment Corp. All Rights Reserved.</p>
+        <p class="f-copy">© Liar Entertainment Corp.</p>
     </footer>
 
     <script>
@@ -143,7 +167,6 @@
             btn.classList.toggle('open');
             nav.classList.toggle('open');
         }
-        btn.addEventListener('click', toggleMenu);
     </script>
 </body>
 </html>

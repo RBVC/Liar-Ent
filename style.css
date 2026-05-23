@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
 /* --- 全体共通 --- */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background-color: #000; } /* スクロール時の背景を黒に */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body { 
     display: flex; 
     flex-direction: column; 
     min-height: 100vh; 
     line-height: 1.6; 
     overflow-x: hidden;
-    word-break: break-all;
+    background-color: #000; /* 基本は黒 */
 }
 main { flex: 1; }
-img { max-width: 100%; height: auto; display: block; }
 
 /* 共通ヘッダー (高さ80px固定) */
 .header {
@@ -22,28 +22,31 @@ img { max-width: 100%; height: auto; display: block; }
     position: sticky; top: 0; z-index: 2000;
 }
 
-/* ヘッダーロゴ：巨大化 */
+/* ヘッダーロゴ：ピンク固定 (訪問済みリンク対策) */
 .header .logo-area { 
-    font-size: 3.5rem; /* 最大限大きく */
+    font-size: 3.5rem; 
     text-decoration: none; 
     line-height: 1; 
     font-family: 'Squada One', cursive;
+    color: #ff007a !important; /* 何があってもピンク */
 }
+.header .logo-area:visited { color: #ff007a !important; }
 
 /* --- ハンバーガーメニュー --- */
 .menu-btn {
     width: 35px; height: 24px; position: relative; cursor: pointer; z-index: 3100;
 }
 .menu-btn span {
-    position: absolute; width: 100%; height: 3px; background: currentColor; transition: 0.3s;
+    position: absolute; width: 100%; height: 3px; background: #ff007a; transition: 0.3s;
 }
 .menu-btn span:nth-child(1) { top: 0; }
 .menu-btn span:nth-child(2) { top: 10px; }
 .menu-btn span:nth-child(3) { top: 20px; }
 
-.menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+/* 開いた時の「×」アニメーション */
+.menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); background: #ff007a; }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+.menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); background: #ff007a; }
 
 .nav-overlay {
     position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
@@ -54,27 +57,31 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-overlay ul { list-style: none; text-align: center; }
 .nav-overlay ul li { margin: 25px 0; }
 .nav-overlay ul li a { 
-    text-decoration: none; font-size: 2.5rem; font-family: 'Squada One', cursive; letter-spacing: 3px; 
+    text-decoration: none; font-size: 2.5rem; font-family: 'Squada One', cursive; color: #ff007a; letter-spacing: 3px; 
 }
 
-/* 共通フッター */
+/* 共通フッター (固定デザイン) */
 .common-footer {
-    background-color: #ffffff !important; color: #333 !important;
-    padding: 60px 5%; text-align: center; border-top: 1px solid #eee;
+    background-color: #ffffff !important; 
+    color: #333 !important;
+    padding: 60px 5%; 
+    text-align: center; 
+    border-top: 1px solid #eee;
     font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 10;
 }
 .f-logo { display: block; font-weight: 800; font-size: 1.2rem; color: #000 !important; text-decoration: none; margin-bottom: 10px; }
 .f-copy { font-size: 0.7rem; color: #999 !important; }
 
 /* --- <3 (v3) 専用スタイル --- */
-.theme-v3 { background: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
-.theme-v3 .header { background: #000; border-bottom: 2px solid #ff007a; color: #ff007a; }
-.theme-v3 .nav-overlay ul li a { color: #ff007a; }
+.theme-v3 { background-color: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
+.theme-v3 .header { background: #000; border-bottom: 2px solid #ff007a; }
 
 section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 100px 20px; }
 .v3-sub-heading { font-family: 'Squada One'; color: #ff007a; font-size: 3rem; margin-bottom: 50px; border-bottom: 1px solid #ff007a; text-transform: uppercase; }
 
-/* 1. New Release (PCで横並び) */
+/* 1. New Release */
 .new-release-flex { display: flex; gap: 50px; align-items: center; }
 .new-release-img { width: 400px; border: 1px solid #ff007a; flex-shrink: 0; }
 .v3-main-font { font-family: 'Squada One'; color: #ff007a; }
@@ -90,26 +97,23 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 100px 20px; }
 .group-intro { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 80px; }
 .group-intro img { width: 350px; border: 1px solid #333; flex-shrink: 0; }
 
-.member-grid { 
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; 
-}
+.member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .member-card { display: flex; flex-direction: column; align-items: center; }
 .member-card img { width: 100%; max-width: 250px; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 20px; border: 1px solid #333; }
-.member-info { width: 100%; max-width: 250px; text-align: left; } /* 画像と同じ幅で左揃え */
+.member-info { width: 100%; max-width: 250px; text-align: left; }
+.label-white-bold { color: #ffffff; font-weight: bold; margin-bottom: 5px; } /* リーダー等の白太字用 */
 
-/* 4. Discography (PCで画像内に情報を収める) */
+/* 4. Discography */
 .disco-item { display: flex; gap: 40px; margin-bottom: 120px; align-items: flex-start; }
 .disco-img { width: 280px; border: 1px solid #ff007a; flex-shrink: 0; }
-.disco-text-box { height: 280px; display: flex; flex-direction: column; justify-content: flex-start; }
-.track-list-v3 { list-style: none; font-size: 0.85rem; margin-top: 10px; color: #fff; overflow-y: auto; }
+.disco-text-box { display: flex; flex-direction: column; }
+.track-list-v3 { list-style: none; font-size: 0.85rem; margin-top: 15px; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
 
-/* スマホ対応 (768px以下) */
+/* スマホ対応 */
 @media (max-width: 768px) {
-    .header .logo-area { font-size: 2.8rem; }
-    .new-release-flex, .group-intro, .disco-item { flex-direction: column; text-align: center; gap: 30px; }
+    .new-release-flex, .group-intro, .disco-item { flex-direction: column; text-align: center; }
     .new-release-img, .group-intro img, .disco-img { width: 100%; max-width: 300px; }
     .member-grid { grid-template-columns: 1fr; gap: 60px; }
-    .member-info { text-align: center; padding-left: 0; } /* スマホでは中央が綺麗 */
-    .disco-text-box { height: auto; }
+    .member-info { text-align: center; }
     .v3-sub-heading { font-size: 2.2rem; }
 }

@@ -1,115 +1,85 @@
-/* --- 共通設定と色の定義 --- */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --accent-color: #999999;
-    --font-main: 'Montserrat', sans-serif;
-}
-
-/* 各ページのテーマカラー設定 */
-.theme-index {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --accent-color: #999999;
-    --font-main: 'Montserrat', sans-serif;
-}
-
-.theme-v3 {
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --accent-color: #ff007a; /* マゼンタ */
-    --font-main: 'Archivo Black', sans-serif;
-}
-
-.theme-god {
-    --bg-color: #050505;
-    --text-color: #ffffff;
-    --accent-color: #ffffff;
-    --font-main: 'Cinzel', serif;
-}
-
-/* --- 全体レイアウト --- */
+/* --- Base Setting --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    background-color: var(--bg-color); 
-    color: var(--text-color); 
-    font-family: var(--font-main);
-    transition: 0.5s;
-}
+body { line-height: 1.6; }
 
-/* --- 共通ヘッダー（JYPのシンプルさをベースに） --- */
-.common-header {
+/* --- 共通ヘッダー構造 (左右分割) --- */
+.header {
     width: 100%;
     padding: 20px 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 左右に分ける */
     align-items: center;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     position: sticky;
     top: 0;
-    background-color: var(--bg-color);
     z-index: 1000;
 }
 
-.site-logo {
+.header .logo-area {
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
     letter-spacing: 2px;
 }
 
-.main-nav ul {
+.header .nav-area ul {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.main-nav a {
+.header .nav-area a {
     text-decoration: none;
-    color: var(--accent-color);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.main-nav a:hover, .main-nav a.active {
-    color: var(--text-color);
-}
-
-/* --- 共通フッター --- */
-.common-footer {
-    padding: 60px 5%;
-    text-align: center;
-    border-top: 1px solid rgba(128, 128, 128, 0.2);
-    margin-top: 100px;
-}
-
-.footer-logo {
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.copyright {
-    font-size: 0.7rem;
-    color: var(--accent-color);
     letter-spacing: 1px;
 }
 
-/* --- 各ページ固有のコンテンツスタイル --- */
+/* --- 全ページ共通フッター (JYPスタイル：白背景) --- */
+.common-footer {
+    background-color: #ffffff !important; /* 常に白 */
+    color: #333333 !important;           /* 常に濃いグレー */
+    padding: 60px 5%;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 100px;
+}
 
-/* index: JYPスタイル */
-.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 60px 5%; max-width: 1200px; margin: auto; }
-.artist-card { text-decoration: none; color: var(--text-color); text-align: center; border-bottom: 1px solid var(--text-color); padding-bottom: 10px; }
-.img-box { aspect-ratio: 3/4; background: #eee; margin-bottom: 15px; overflow: hidden; }
+.common-footer .f-logo {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000 !important;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
 
-/* v3: BLACKPINKスタイル */
-.v3-hero { height: 80vh; display: flex; align-items: center; justify-content: center; }
-.v3-title { font-size: 10vw; color: var(--accent-color); text-shadow: 2px 2px #fff; }
+.common-footer .f-copy {
+    font-size: 0.7rem;
+    color: #999 !important;
+}
 
-/* god: Kep1erスタイル */
-.ticker-wrap { background: var(--text-color); color: var(--bg-color); padding: 10px 0; overflow: hidden; white-space: nowrap; }
-.ticker { display: inline-block; animation: scroll 20s linear infinite; font-size: 1.2rem; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* --- ページ別カラー・フォント設定 --- */
+
+/* 1. 事務所トップ */
+.theme-index { background: #fff; color: #000; font-family: 'Montserrat', sans-serif; }
+.theme-index .header { background: #fff; border-bottom: 1px solid #eee; }
+.theme-index .header a { color: #000; }
+
+/* 2. <3 (V3) */
+.theme-v3 { background: #000; color: #fff; font-family: 'Archivo Black', sans-serif; }
+.theme-v3 .header { background: #000; border-bottom: 2px solid #ff007a; }
+.theme-v3 .header .logo-area { color: #ff007a; }
+.theme-v3 .header a { color: #fff; }
+
+/* 3. GØD7IKE */
+.theme-god { background: #050505; color: #fff; font-family: 'Cinzel', serif; }
+.theme-god .header { background: #050505; border-bottom: 1px solid #333; }
+.theme-god .header .logo-area { color: #fff; letter-spacing: 5px; }
+.theme-god .header a { color: #fff; }
+
+/* --- コンテンツ用簡易スタイル --- */
+.main-visual { height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 40px 5%; }
+.card { border: 1px solid #ccc; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; }

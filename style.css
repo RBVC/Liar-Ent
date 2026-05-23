@@ -2,33 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
 /* --- 共通レイアウト --- */
-html { scroll-behavior: smooth; } /* スムーズスクロール */
+html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* フッターを下に固定するための設定 */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif;
 }
-main { flex: 1; } /* コンテンツエリアが伸びてフッターを押し下げる */
+main { flex: 1; }
 
-/* --- ヘッダー・フッターの基本 --- */
+/* 共通ヘッダー */
 .header {
-    width: 100%;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    width: 100%; padding: 20px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 1000;
 }
 .header .logo-area { font-size: 1.6rem; text-decoration: none; font-weight: 700; }
 .header .nav-area ul { display: flex; list-style: none; gap: 30px; }
 .header .nav-area a { text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
 
+/* 共通フッター (常に白背景) */
 .common-footer {
     background-color: #ffffff !important;
     color: #333333 !important;
@@ -39,39 +34,43 @@ main { flex: 1; } /* コンテンツエリアが伸びてフッターを押し�
 .f-logo { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; color: #000 !important; text-decoration: none; }
 .f-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #999 !important; }
 
-/* --- ページ別：黒の質感 --- */
-
-/* <3 : Glossy & Solid Black */
-.theme-v3 {
-    background-color: #000000;
-    color: #ffffff;
+/* --- セクション見出しの基本 --- */
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
 }
-.theme-v3 .header { background-color: #000000; border-bottom: 2px solid #ff007a; }
-.theme-v3 .logo-area { font-family: 'Squada One', cursive; color: #ff007a; }
-.theme-v3 .header a { color: #ffffff; }
 
-/* GØD7IKE : Matte & Foggy Black */
+/* --- ページ別：黒の質感とフォント --- */
+
+/* <3 : Glossy Black */
+.theme-v3 { background-color: #000; color: #fff; }
+.theme-v3 .header { background-color: #000; border-bottom: 2px solid #ff007a; }
+.theme-v3 .logo-area, 
+.theme-v3 .section-title { font-family: 'Squada One', cursive; color: #ff007a; } /* ロゴと見出しを統一 */
+.theme-v3 .header a { color: #fff; }
+
+/* GØD7IKE : Matte Black & Foggy */
 .theme-god {
-    background-color: #121212; /* チャコールブラック */
-    color: #ffffff;
-    /* 石のような質感を出すための放射状グラデーション */
+    background-color: #121212;
+    color: #fff;
     background-image: radial-gradient(circle at center, rgba(50,50,50,0.5) 0%, rgba(0,0,0,0.8) 100%);
     position: relative;
 }
-/* ノイズ（ざらつき）を擬似的に表現 */
 .theme-god::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    opacity: 0.03;
-    pointer-events: none;
-    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png"); /* 薄いテクスチャ */
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.03; pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
     z-index: 1;
 }
 .theme-god .header { background-color: #121212; border-bottom: 1px solid #333; }
-.theme-god .logo-area { font-family: 'Cinzel', serif; color: #ffffff; font-weight: 700; letter-spacing: 5px; }
-.theme-god .header a { color: #ffffff; }
+.theme-god .logo-area, 
+.theme-god .section-title { font-family: 'Cinzel', serif; font-weight: 700; } /* ロゴと見出しを統一 */
+.theme-god .header a { color: #fff; }
+.theme-god .logo-area { letter-spacing: 5px; }
 
-/* セクション共通 */
-section { padding: 100px 5%; min-height: 80vh; }
-.section-title { font-size: 3rem; margin-bottom: 40px; border-bottom: 1px solid; }
+/* コンテンツ装飾 */
+section { padding: 100px 5%; max-width: 1100px; margin: auto; }
+.hero { height: 70vh; display: flex; align-items: center; justify-content: center; }
+.hero-title { font-size: 8vw; }

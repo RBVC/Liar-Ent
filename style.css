@@ -1,29 +1,20 @@
-/* --- Google Fonts Import --- */
+/* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
-/* --- ページごとの設定 --- */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --accent-color: #999999;
-}
-
-.theme-index { --bg-color: #ffffff; --text-color: #000; --accent-color: #888; --font-heading: 'Montserrat', sans-serif; }
-.theme-v3    { --bg-color: #000000; --text-color: #fff; --accent-color: #ff007a; --font-heading: 'Squada One', cursive; }
-.theme-god   { --bg-color: #050505; --text-color: #fff; --accent-color: #ffffff; --font-heading: 'Cinzel', serif; }
-
-/* --- 全体レイアウト --- */
+/* --- 共通レイアウト --- */
+html { scroll-behavior: smooth; } /* スムーズスクロール */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    background-color: var(--bg-color); 
-    color: var(--text-color); 
+
+/* フッターを下に固定するための設定 */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif;
-    transition: 0.5s;
 }
+main { flex: 1; } /* コンテンツエリアが伸びてフッターを押し下げる */
 
-.font-montserrat { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
-
-/* --- 共通ヘッダー (左右分割) --- */
+/* --- ヘッダー・フッターの基本 --- */
 .header {
     width: 100%;
     padding: 20px 5%;
@@ -33,68 +24,54 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
+.header .logo-area { font-size: 1.6rem; text-decoration: none; font-weight: 700; }
+.header .nav-area ul { display: flex; list-style: none; gap: 30px; }
+.header .nav-area a { text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
 
-.header .logo-area {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
-}
-
-.theme-index .header .logo-area { font-weight: 800; letter-spacing: 0px; }
-.theme-god .header .logo-area { font-weight: 700; letter-spacing: 5px; }
-
-.header .nav-area ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.header .nav-area a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* --- 共通フッター (白背景) --- */
 .common-footer {
     background-color: #ffffff !important;
     color: #333333 !important;
     padding: 60px 5%;
     text-align: center;
     border-top: 1px solid #eeeeee;
-    margin-top: 100px;
-    font-family: 'Montserrat', sans-serif;
 }
+.f-logo { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; color: #000 !important; text-decoration: none; }
+.f-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #999 !important; }
 
-.f-logo {
-    display: block;
-    font-weight: 800;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #000 !important;
-    text-decoration: none;
-    letter-spacing: 1px;
+/* --- ページ別：黒の質感 --- */
+
+/* <3 : Glossy & Solid Black */
+.theme-v3 {
+    background-color: #000000;
+    color: #ffffff;
 }
+.theme-v3 .header { background-color: #000000; border-bottom: 2px solid #ff007a; }
+.theme-v3 .logo-area { font-family: 'Squada One', cursive; color: #ff007a; }
+.theme-v3 .header a { color: #ffffff; }
 
-.f-copy {
-    font-size: 0.7rem;
-    color: #999 !important;
+/* GØD7IKE : Matte & Foggy Black */
+.theme-god {
+    background-color: #121212; /* チャコールブラック */
+    color: #ffffff;
+    /* 石のような質感を出すための放射状グラデーション */
+    background-image: radial-gradient(circle at center, rgba(50,50,50,0.5) 0%, rgba(0,0,0,0.8) 100%);
+    position: relative;
 }
+/* ノイズ（ざらつき）を擬似的に表現 */
+.theme-god::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png"); /* 薄いテクスチャ */
+    z-index: 1;
+}
+.theme-god .header { background-color: #121212; border-bottom: 1px solid #333; }
+.theme-god .logo-area { font-family: 'Cinzel', serif; color: #ffffff; font-weight: 700; letter-spacing: 5px; }
+.theme-god .header a { color: #ffffff; }
 
-/* --- コンテンツスタイル --- */
-.content-body { max-width: 900px; margin: 0 auto; padding: 0 5%; }
-.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 0; }
-.artist-card { text-decoration: none; color: inherit; border-bottom: 1px solid var(--text-color); padding-bottom: 20px; }
-.img-placeholder { aspect-ratio: 3/4; background: #eee; margin-bottom: 20px; }
-
-/* TOPページの各アーティスト用フォント指定 */
-.artist-v3-font { font-family: 'Squada One', cursive; font-size: 2.2rem !important; }
-.artist-god-font { font-family: 'Cinzel', serif; font-size: 1.8rem !important; letter-spacing: 3px; }
+/* セクション共通 */
+section { padding: 100px 5%; min-height: 80vh; }
+.section-title { font-size: 3rem; margin-bottom: 40px; border-bottom: 1px solid; }

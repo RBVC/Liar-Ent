@@ -9,7 +9,6 @@
 <body class="theme-v3">
     <header class="header">
         <a href="v3.html" class="logo-area">&lt;3</a>
-        <!-- メニューボタン（三 ↔ ×） -->
         <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -70,7 +69,6 @@
             </div>
             
             <div class="member-grid">
-                <!-- JIA -->
                 <div class="member-card">
                     <img src="images/v3/v3-jia.jpg">
                     <div class="member-info">
@@ -79,7 +77,6 @@
                         <p style="font-size:0.8rem; opacity:0.7;">Main Vocal / Sub Dancer / Sub Rapper</p>
                     </div>
                 </div>
-                <!-- LICCA -->
                 <div class="member-card">
                     <img src="images/v3/v3-licca.jpg">
                     <div class="member-info">
@@ -88,7 +85,6 @@
                         <p style="font-size:0.8rem; opacity:0.7;">Main Rapper / Lead Vocal / Lead Dancer</p>
                     </div>
                 </div>
-                <!-- NAYEON -->
                 <div class="member-card">
                     <img src="images/v3/v3-nayeon.jpg">
                     <div class="member-info">
@@ -104,11 +100,10 @@
         <section id="discography">
             <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
             
-            <!-- COOL -->
             <div id="disco-cool" class="disco-item">
                 <img src="images/v3/v3-cool.jpg" class="disco-img">
-                <div class="disco-text-box">
-                    <p style="font-size:0.9rem; color:#fff;">2nd Mini Album</p>
+                <div>
+                    <p style="font-size:0.9rem;">2nd Mini Album</p>
                     <h3 class="v3-main-font" style="font-size:2.8rem; margin:2px 0;">COOL</h3>
                     <ul class="track-list-v3">
                         <li>01 BE!</li>
@@ -121,11 +116,10 @@
                 </div>
             </div>
 
-            <!-- VENOM -->
             <div id="disco-venom" class="disco-item">
                 <img src="images/v3/v3-venom.jpg" class="disco-img">
-                <div class="disco-text-box">
-                    <p style="font-size:0.9rem; color:#fff;">1st Mini Album</p>
+                <div>
+                    <p style="font-size:0.9rem;">1st Mini Album</p>
                     <h3 class="v3-main-font" style="font-size:2.8rem; margin:2px 0;">VENOM</h3>
                     <ul class="track-list-v3">
                         <li>01 Re-Original</li>
@@ -138,11 +132,10 @@
                 </div>
             </div>
 
-            <!-- ALL OUT -->
             <div id="disco-allout" class="disco-item">
                 <img src="images/v3/v3-allout.jpg" class="disco-img">
-                <div class="disco-text-box">
-                    <p style="font-size:0.9rem; color:#fff;">Pre-Debut Cover EP</p>
+                <div>
+                    <p style="font-size:0.9rem;">Pre-Debut Cover EP</p>
                     <h3 class="v3-main-font" style="font-size:2.8rem; margin:2px 0;">ALL OUT</h3>
                     <ul class="track-list-v3">
                         <li>01 THE BADDEST</li>
@@ -161,11 +154,9 @@
     </footer>
 
     <script>
-        const btn = document.getElementById('menu-btn');
-        const nav = document.getElementById('nav-overlay');
         function toggleMenu() {
-            btn.classList.toggle('open');
-            nav.classList.toggle('open');
+            document.getElementById('menu-btn').classList.toggle('open');
+            document.getElementById('nav-overlay').classList.toggle('open');
         }
     </script>
 </body>

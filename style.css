@@ -1,27 +1,29 @@
-/* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&display=swap');
+/* --- Google Fonts Import (Cinzelの700=Boldを確実に読み込み) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
-/* --- 全体設定 --- */
+/* --- ページごとの変数設定 --- */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
     --accent-color: #999999;
 }
 
-.theme-index { --bg-color: #ffffff; --text-color: #000; --accent-color: #888; --font-logo: 'Noto Sans JP', sans-serif; }
-.theme-v3    { --bg-color: #000000; --text-color: #fff; --accent-color: #ff007a; --font-logo: 'Squada One', cursive; }
-.theme-god   { --bg-color: #050505; --text-color: #fff; --accent-color: #ffffff; --font-logo: 'Cinzel', serif; }
+.theme-index { --bg-color: #ffffff; --text-color: #000; --accent-color: #888; --font-heading: 'Montserrat', sans-serif; }
+.theme-v3    { --bg-color: #000000; --text-color: #fff; --accent-color: #ff007a; --font-heading: 'Squada One', cursive; }
+.theme-god   { --bg-color: #050505; --text-color: #fff; --accent-color: #ffffff; --font-heading: 'Cinzel', serif; }
 
+/* --- 全体レイアウト --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
     background-color: var(--bg-color); 
     color: var(--text-color); 
-    font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; /* 基本はこれ */
+    font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif;
     transition: 0.5s;
-    line-height: 1.8;
 }
 
-/* --- ヘッダー (左ロゴ / 右ナビ) --- */
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+/* --- 共通ヘッダー --- */
 .header {
     width: 100%;
     padding: 20px 5%;
@@ -32,17 +34,22 @@ body {
     top: 0;
     z-index: 1000;
     background-color: var(--bg-color);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 
 .header .logo-area {
-    font-family: var(--font-logo);
+    font-family: var(--font-heading);
     font-size: 1.8rem;
     text-decoration: none;
     color: var(--text-color);
     letter-spacing: 1px;
 }
 
-.theme-god .header .logo-area { letter-spacing: 5px; } /* Cinzel用に調整 */
+/* GØD7IKEのヘッダーロゴを太く設定 */
+.theme-god .header .logo-area { 
+    font-weight: 700; 
+    letter-spacing: 5px; 
+}
 
 .header .nav-area ul {
     display: flex;
@@ -53,42 +60,31 @@ body {
 .header .nav-area a {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 0.85rem;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- フッター (全ページ共通：白ベース) --- */
+/* --- 共通フッター --- */
 .common-footer {
     background-color: #ffffff !important;
     color: #333333 !important;
-    padding: 60px 5%;
+    padding: 600px 5% 60px; /* 余白を調整 */
     text-align: center;
     border-top: 1px solid #eeeeee;
     margin-top: 100px;
 }
 
-.f-logo {
-    display: block;
-    font-family: 'Noto Sans JP', sans-serif; /* 事務所名は安定のNoto Sans */
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #000 !important;
-    text-decoration: none;
-}
+/* 前回の指定と同様のため中略... */
+.f-logo { display: block; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; color: #000 !important; text-decoration: none; }
+.f-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #999 !important; }
 
-.f-copy {
-    font-size: 0.7rem;
-    color: #999 !important;
-}
-
-/* --- コンテンツ用装飾 --- */
-.hero { height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-family: var(--font-logo); font-size: 5rem; color: var(--accent-color); }
-.desc { max-width: 800px; margin: 40px auto; padding: 0 5%; font-size: 1rem; color: var(--text-color); opacity: 0.9; }
-
-/* index用グリッド */
-.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 5%; max-width: 1200px; margin: auto; }
-.card { border-bottom: 1px solid var(--text-color); padding-bottom: 20px; text-decoration: none; color: inherit; }
-.img-box { aspect-ratio: 3/4; background: #eee; margin-bottom: 20px; }
+/* コンテンツ用 */
+.hero { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero h1 { font-family: var(--font-heading); font-size: 6vw; color: var(--accent-color); }
+.content-body { max-width: 900px; margin: 0 auto; padding: 0 5%; }
+.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 60px 0; }
+.artist-card { text-decoration: none; color: inherit; border-bottom: 1px solid var(--text-color); padding-bottom: 20px; }
+.img-placeholder { aspect-ratio: 3/4; background: #eee; margin-bottom: 20px; transition: 0.3s; }

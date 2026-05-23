@@ -68,3 +68,31 @@ section { padding: 80px 10%; max-width: 1200px; margin: auto; }
     .disco-item { flex-direction: column; align-items: center; text-align: center; }
     .v3-hero img { width: 70%; }
 }
+
+/* --- 前回のCSSの最後に追記、または上書きしてください --- */
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.artist-card {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.img-placeholder {
+    aspect-ratio: 1/1; /* 準備してくれた画像が正方形なので1/1に合わせます */
+    background: #eee;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.artist-card:hover {
+    opacity: 0.7;
+    transform: translateY(-5px); /* 少し浮き上がる演出 */
+}

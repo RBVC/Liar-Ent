@@ -1,19 +1,24 @@
 /* --- Liar Entertainment トップ専用：style.css --- */
 
-/* テーマ：WHITE (事務所トップ用) */
+/* テーマ：WHITE */
 .theme-index { 
     background-color: #ffffff; 
     color: #000000; 
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif; 
 }
 
-/* ヘッダー事務所名のフォントを「Montserrat 800」に強制固定 */
+/* --- ヘッダー背景と事務所名 (Montserrat 800) --- */
+.theme-index .header { 
+    background-color: #ffffff !important; /* スクロール時に透けないよう白を固定 */
+    border-bottom: 1px solid #eee; 
+}
+
 .theme-index .header .logo-area { 
     font-family: 'Montserrat', sans-serif !important; 
-    font-weight: 800 !important; /* 最も太い設定 */
+    font-weight: 800 !important; /* 最も太いウェイト */
     font-size: 1.8rem; 
     color: #000000 !important; 
-    letter-spacing: -0.5px; /* 事務所名は少し詰め気味で高級感を出す */
+    letter-spacing: -0.5px;
 }
 
 .theme-index .menu-btn span { background: #000000; }
@@ -23,13 +28,23 @@
 .theme-index .nav-overlay { background: #ffffff; border-left: 1px solid #eee; border-bottom: 1px solid #eee; }
 .theme-index .nav-overlay ul li a { color: #000000; font-family: 'Montserrat'; font-weight: 800; }
 
+/* --- ARTIST 大見出し --- */
+.page-main-title {
+    text-align: center; 
+    padding: 80px 0; 
+    font-size: 3.5rem; 
+    letter-spacing: 12px; 
+    font-weight: 800; 
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 /* --- アーティストグリッド --- */
 .artist-grid { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
     gap: 40px; 
     max-width: 1000px; 
-    margin: 60px auto; 
+    margin: 0 auto 100px; 
     padding: 0 20px; 
 }
 
@@ -37,9 +52,9 @@
     text-decoration: none !important; 
     color: #000000 !important; 
     transition: 0.3s; 
-    border: none !important;
     display: block;
 }
+.artist-card:hover { opacity: 0.7; }
 
 .img-placeholder { 
     width: 100%; 
@@ -47,39 +62,39 @@
     overflow: hidden; 
     background: #f0f0f0; 
     margin-bottom: 20px; 
-    border: 1px solid rgba(0,0,0,0.05); 
 }
 .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- グループ名の高さ・フォント調整 (画像の下の文字) --- */
+/* --- グループ名の高さ・フォント（黒・下線なし） --- */
 .artist-card h2 {
-    display: flex;
-    align-items: center; /* 上下の中心を合わせる */
-    height: 3rem;       /* 高さを固定して基準を作る */
     margin: 0;
     padding: 0;
-    text-decoration: none !important;
-    border: none !important;
+    display: flex;
+    align-items: center; /* 異なるフォントでも中心を揃える */
+    min-height: 3rem;
 }
 
 .artist-v3-font { 
     font-family: 'Squada One', cursive !important; 
-    font-size: 2.5rem !important; /* Squada Oneは細身なので少し大きく */
+    font-size: 2.8rem !important; 
     color: #000000 !important;
+    text-decoration: none !important;
     line-height: 1;
 }
 
 .artist-god-font { 
     font-family: 'Cinzel', serif !important; 
-    font-size: 1.8rem !important; /* Cinzelは横に広いので少し小さく */
+    font-size: 1.8rem !important; 
     letter-spacing: 2px;
+    font-weight: 700 !important;
     color: #000000 !important;
-    font-weight: 700;
+    text-decoration: none !important;
     line-height: 1;
 }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-    .artist-grid { grid-template-columns: 1fr; gap: 40px; }
-    .artist-card h2 { height: auto; justify-content: center; } /* スマホでは中央寄せ */
+    .page-main-title { font-size: 2.5rem; letter-spacing: 5px; padding: 50px 0; }
+    .artist-grid { grid-template-columns: 1fr; gap: 60px; }
+    .artist-card h2 { justify-content: center; }
 }

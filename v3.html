@@ -25,7 +25,7 @@
     <div class="modal" id="disco-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
-            <p id="modal-date" style="font-size:0.85rem; color:#ccc; margin-bottom:5px;"></p>
+            <p id="modal-date" style="font-size:0.85rem; color:#ccc; margin-bottom:5px; font-family:'Noto Sans JP';"></p>
             <h3 id="modal-title" class="v3-main-font" style="font-size:2.5rem; margin-bottom:15px;"></h3>
             <div id="modal-player"></div>
         </div>
@@ -33,11 +33,11 @@
 
     <main>
         <section class="new-release-flex">
-            <img src="images/v3/v3-cool.jpg" class="new-release-img">
+            <img src="images/v3-cool.jpg" class="new-release-img">
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">COOL</h1>
-                <p style="font-size:1.1rem; color:#ccc;">2nd Mini Album / 2022.10.31</p>
+                <p style="font-size:1.1rem; color:#ccc; font-family:'Noto Sans JP';">2nd Mini Album / 2022.10.31</p>
             </div>
         </section>
 
@@ -49,7 +49,7 @@
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
-                <img src="images/v3/v3-main.jpg">
+                <img src="images/v3-main.jpg">
                 <div>
                     <h3 class="v3-main-font" style="font-size: 2.2rem; margin-bottom: 15px;">ABOUT &lt;3</h3>
                     <p>&lt;3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。<br>Liar Entertainment所属。<br>グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。<br>Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。</p>
@@ -57,13 +57,13 @@
             </div>
             <div class="member-grid">
                 <div class="member-card">
-                    <img src="images/v3/v3-jia.jpg"><div class="member-info"><p class="member-name">JIA (지아)</p><p class="label-white-bold">Leader</p><p style="font-size:0.85rem; opacity:0.7;">Main Vocal / Sub Dancer / Sub Rapper</p></div>
+                    <img src="images/v3-jia.jpg"><div class="member-info"><p class="member-name">JIA (지아)</p><p class="label-white-bold">Leader</p><p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Vocal / Sub Dancer / Sub Rapper</p></div>
                 </div>
                 <div class="member-card">
-                    <img src="images/v3/v3-licca.jpg"><div class="member-info"><p class="member-name">LICCA (릿카)</p><p class="label-white-bold">Center</p><p style="font-size:0.85rem; opacity:0.7;">Main Rapper / Lead Vocal / Lead Dancer</p></div>
+                    <img src="images/v3-licca.jpg"><div class="member-info"><p class="member-name">LICCA (릿카)</p><p class="label-white-bold">Center</p><p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Rapper / Lead Vocal / Lead Dancer</p></div>
                 </div>
                 <div class="member-card">
-                    <img src="images/v3/v3-nayeon.jpg"><div class="member-info"><p class="member-name">NAYEON (나연)</p><p class="label-white-bold">Maknae</p><p style="font-size:0.85rem; opacity:0.7;">Main Dancer / Lead Rapper / Sub Vocal</p></div>
+                    <img src="images/v3-nayeon.jpg"><div class="member-info"><p class="member-name">NAYEON (나연)</p><p class="label-white-bold">Maknae</p><p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Dancer / Lead Rapper / Sub Vocal</p></div>
                 </div>
             </div>
         </section>
@@ -81,12 +81,10 @@
 
     <script src="data.js"></script>
     <script>
-        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
-        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach(a => {
             discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openModal('${a.title}', '${a.type}', '${a.pcloud}')">`;

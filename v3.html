@@ -24,7 +24,6 @@
         </ul>
     </nav>
 
-    <!-- 共通モーダル -->
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
@@ -36,7 +35,7 @@
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
-            <img src="images/v3/v3-cool.jpg" class="v3-main-img-std">
+            <img src="images/v3/v3-cool.jpg" class="v3-img-std">
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">COOL</h1>
@@ -54,9 +53,9 @@
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
-                <img src="images/v3/v3-main.jpg" class="v3-main-img-std">
+                <img src="images/v3/v3-main.jpg" class="v3-img-std">
                 <div>
-                    <h3 class="v3-main-font" style="font-size: 2.2rem; margin-bottom: 15px;">ABOUT &lt;3</h3>
+                    <h3 class="v3-sub-heading" style="font-size: 2.2rem; border:none; margin-bottom: 10px;">ABOUT &lt;3</h3>
                     <p style="font-family: 'Noto Sans JP';">
                         &lt;3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。<br>
                         Liar Entertainment所属。<br>
@@ -83,20 +82,21 @@
 
     <script src="data.js"></script>
     <script>
-        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
-        // メンバー生成
         const memberBox = document.getElementById('member-grid');
         V3_MEMBERS.forEach((m, i) => {
-            memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(${i})"><img src="${m.img}" style="width:320px; height:320px;"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`;
+            memberBox.innerHTML += `
+                <div class="member-card" onclick="openMemberModal(${i})">
+                    <img src="${m.img}" class="v3-img-std">
+                    <p class="member-name-top">${m.name.split(' ')[0]}</p>
+                </div>`;
         });
-        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach((a, i) => {
-            discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openAlbumModal(${i})">`;
+            discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb v3-img-std" onclick="openAlbumModal(${i})">`;
         });
     </script>
 </body>

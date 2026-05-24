@@ -1,20 +1,17 @@
 /* --- Liar Entertainment 全データ管理：data.js --- */
 
-// V3 ニュース
 const V3_NEWS = [
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#disco-0" },
     { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#disco-1" },
     { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#disco-2" }
 ];
 
-// V3 メンバー詳細
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
     { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (embedコードを直接記述する方式へ変更)
 const V3_ALBUMS = [
     { 
         title: "COOL", 
@@ -36,12 +33,13 @@ const V3_ALBUMS = [
     }
 ];
 
-// --- 共通機能 ---
-
 function toggleMenu() {
-    document.getElementById('menu-btn').classList.toggle('open');
-    document.getElementById('nav-overlay').classList.toggle('open');
-    document.getElementById('menu-closer').classList.toggle('open');
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-overlay');
+    const closer = document.getElementById('menu-closer');
+    if (btn) btn.classList.toggle('open');
+    if (nav) nav.classList.toggle('open');
+    if (closer) closer.classList.toggle('open');
 }
 
 function openAlbumModal(i) {
@@ -49,7 +47,7 @@ function openAlbumModal(i) {
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div class="player-container">${a.embed}</div>
+        <div>${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

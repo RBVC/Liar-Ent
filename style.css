@@ -1,100 +1,100 @@
-/* --- Liar Entertainment トップ専用：style.css --- */
+/* --- Google Fonts Import (Montserrat 800を確実に読み込み) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
-/* テーマ：WHITE */
-.theme-index { 
-    background-color: #ffffff; 
-    color: #000000; 
-    font-family: 'Montserrat', 'Noto Sans JP', sans-serif; 
+/* --- 全体共通 --- */
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { display: flex; flex-direction: column; min-height: 100vh; line-height: 1.5; overflow-x: hidden; }
+main { flex: 1; }
+
+/* 共通フッター (デザイン固定：白背景) */
+.common-footer {
+    background-color: #ffffff !important; color: #333333 !important;
+    padding: 60px 5%; text-align: center; border-top: 1px solid #eeeeee;
+    font-family: 'Montserrat', sans-serif; position: relative; z-index: 10;
 }
+.f-logo { display: block; font-weight: 800; font-size: 1.1rem; color: #000000 !important; text-decoration: none; margin-bottom: 10px; }
+.f-copy { font-size: 0.7rem; color: #999999 !important; }
 
-/* --- ヘッダー背景と事務所名 (Montserrat 800) --- */
-.theme-index .header { 
-    background-color: #ffffff !important; /* スクロール時に透けないよう白を固定 */
-    border-bottom: 1px solid #eee; 
-}
+/* --- 【テーマ1】事務所トップ (WHITE) --- */
+.theme-index { background-color: #ffffff; color: #000; font-family: 'Montserrat', sans-serif; }
+.page-main-title { text-align: center; padding: 80px 0; font-size: 3.5rem; letter-spacing: 12px; font-weight: 800; }
 
-.theme-index .header .logo-area { 
-    font-family: 'Montserrat', sans-serif !important; 
-    font-weight: 800 !important; /* 最も太いウェイト */
-    font-size: 1.8rem; 
-    color: #000000 !important; 
-    letter-spacing: -0.5px;
-}
-
-.theme-index .menu-btn span { background: #000000; }
-.theme-index .menu-btn.open span { background: #000000 !important; }
-
-/* メニュー画面 */
-.theme-index .nav-overlay { background: #ffffff; border-left: 1px solid #eee; border-bottom: 1px solid #eee; }
-.theme-index .nav-overlay ul li a { color: #000000; font-family: 'Montserrat'; font-weight: 800; }
-
-/* --- ARTIST 大見出し --- */
-.page-main-title {
-    text-align: center; 
-    padding: 80px 0; 
-    font-size: 3.5rem; 
-    letter-spacing: 12px; 
-    font-weight: 800; 
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-/* --- アーティストグリッド --- */
-.artist-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; 
-    max-width: 1000px; 
-    margin: 0 auto 100px; 
-    padding: 0 20px; 
-}
-
-.artist-card { 
-    text-decoration: none !important; 
-    color: #000000 !important; 
-    transition: 0.3s; 
-    display: block;
-}
-.artist-card:hover { opacity: 0.7; }
-
-.img-placeholder { 
-    width: 100%; 
-    aspect-ratio: 1/1; 
-    overflow: hidden; 
-    background: #f0f0f0; 
-    margin-bottom: 20px; 
-}
+.artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
+.artist-card { text-decoration: none !important; display: block; }
+.img-placeholder { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; }
 .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- グループ名の高さ・フォント（黒・下線なし） --- */
-.artist-card h2 {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center; /* 異なるフォントでも中心を揃える */
-    min-height: 3rem;
-}
+.artist-v3-font { font-family: 'Squada One', cursive !important; font-size: 2.8rem; color: #000 !important; text-decoration: none !important; }
+.artist-god-font { font-family: 'Cinzel', serif !important; font-size: 1.8rem; letter-spacing: 2px; font-weight: 700; color: #000 !important; text-decoration: none !important; }
 
-.artist-v3-font { 
-    font-family: 'Squada One', cursive !important; 
-    font-size: 2.8rem !important; 
-    color: #000000 !important;
-    text-decoration: none !important;
-    line-height: 1;
-}
+/* --- 【テーマ2】<3 ページ (BLACK & PINK) --- */
+.theme-v3 { background-color: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
+.theme-v3 .header { width: 100%; height: 80px; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 8000; background: #000; border-bottom: 2px solid #ff007a; }
+.theme-v3 .logo-area { font-family: 'Squada One'; font-size: 3.5rem; color: #ff007a !important; text-decoration: none; }
 
-.artist-god-font { 
-    font-family: 'Cinzel', serif !important; 
-    font-size: 1.8rem !important; 
-    letter-spacing: 2px;
-    font-weight: 700 !important;
-    color: #000000 !important;
-    text-decoration: none !important;
-    line-height: 1;
-}
+/* ハンバーガーメニュー (z-index 10000で×を死守) */
+.menu-btn { width: 35px; height: 24px; position: fixed; right: 5%; top: 28px; cursor: pointer; z-index: 10000; }
+.menu-btn span { position: absolute; width: 100%; height: 3px; background: #ff007a; transition: 0.3s; left: 0; }
+.menu-btn span:nth-child(1) { top: 0; }
+.menu-btn span:nth-child(2) { top: 10px; }
+.menu-btn span:nth-child(3) { top: 20px; }
+.menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.menu-btn.open span:nth-child(2) { opacity: 0; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+
+.nav-overlay { position: fixed; top: 80px; right: -280px; width: 280px; height: auto; transition: 0.4s; z-index: 9000; background: #111; border-left: 2px solid #ff007a; border-bottom: 2px solid #ff007a; padding: 30px; }
+.nav-overlay.open { right: 0; }
+.nav-overlay ul { list-style: none; }
+.nav-overlay ul li { margin: 20px 0; text-align: right; }
+.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-family: 'Squada One'; color: #ff007a; }
+.menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 8500; display: none; }
+.menu-closer.open { display: block; }
+
+/* V3 セクションパーツ */
+section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+.v3-sub-heading { font-family: 'Squada One'; color: #ff007a; font-size: 3rem; margin-bottom: 30px; border-bottom: 1px solid #ff007a; text-transform: uppercase; }
+.v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; padding: 2px 12px; font-size: 1.1rem; font-weight: bold; min-width: 90px; text-align: center; display: inline-block; }
+
+.new-release-flex { display: flex; gap: 40px; align-items: center; padding-top: 20px; }
+.new-release-img { width: 380px; border: 1px solid #ff007a; flex-shrink: 0; }
+.v3-main-font { font-family: 'Squada One'; color: #ff007a; }
+
+.news-item { display: flex; gap: 20px; padding: 20px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #333; }
+.news-meta { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.news-date { font-family: 'Squada One'; color: #ff007a; font-size: 1.3rem; min-width: 110px; }
+
+.group-intro { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
+.group-intro img { width: 320px; border: 1px solid #333; flex-shrink: 0; }
+.group-intro p { font-size: 0.95rem; line-height: 2; opacity: 0.9; }
+
+.member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.member-card { display: flex; flex-direction: column; align-items: center; }
+.member-info { width: 100%; max-width: 250px; text-align: left; }
+.member-name { font-family: 'Squada One'; font-size: 2.2rem; color: #ff007a; margin-bottom: 5px; }
+.label-white-bold { color: #ffffff; font-weight: 800; font-size: 1.1rem; margin-bottom: 3px; }
+
+.disco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; }
+.disco-thumb:hover { border-color: #ff007a; opacity: 0.8; }
+
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.9); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
+.modal.active { display: flex; }
+.modal-content { background: #111; width: 100%; max-width: 600px; padding: 30px; border: 2px solid #ff007a; position: relative; }
+.modal-close { position: absolute; top: 10px; right: 15px; color: #ff007a; font-family: 'Squada One'; font-size: 2.5rem; cursor: pointer; }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-    .page-main-title { font-size: 2.5rem; letter-spacing: 5px; padding: 50px 0; }
-    .artist-grid { grid-template-columns: 1fr; gap: 60px; }
-    .artist-card h2 { justify-content: center; }
+    section { padding: 40px 20px; }
+    .page-main-title { font-size: 2.5rem; letter-spacing: 5px; }
+    .artist-grid { grid-template-columns: 1fr; }
+    .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
+    .new-release-img, .group-intro img { width: 100%; max-width: 300px; margin: 0 auto; }
+    .new-release-info h1 { font-size: 4rem; }
+    .news-item { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .news-meta { min-width: auto; gap: 15px; }
+    .group-intro p { font-size: 0.85rem !important; text-align: left; }
+    .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 40px; }
+    .member-info { text-align: center; }
+    .disco-thumb { max-width: 250px; margin: 0 auto; }
 }

@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.15.0 --- */
+/* --- Liar Entertainment Master Style Ver.15.2 --- */
 
 /* Google Fonts 一括読み込み */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
@@ -44,7 +44,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-overlay ul li { margin: 15px 0; text-align: right; }
 .nav-overlay ul li a { text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
 
-/* --- 共通フッター --- */
+/* 共通フッター (絶対固定) */
 .common-footer {
     background-color: #ffffff !important; color: #333333 !important;
     padding: 60px 5%; text-align: center; border-top: 1px solid #eee;
@@ -107,7 +107,17 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .member-name-top { font-family: 'Squada One'; font-size: 2rem; color: #ff007a; text-align: center; margin-top: 10px; }
 
 .disco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; width: 320px; aspect-ratio: 1 / 1 !important; object-fit: cover !important; }
+
+/* ジャンプ時の見切れ防止 */
+.disco-thumb { 
+    cursor: pointer; 
+    border: 1px solid #333; 
+    transition: 0.3s; 
+    width: 320px; 
+    aspect-ratio: 1 / 1 !important; 
+    object-fit: cover !important; 
+    scroll-margin-top: 100px; 
+}
 .disco-thumb:hover { border-color: #ff007a; opacity: 0.8; }
 
 /* モーダル */
@@ -133,4 +143,5 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
     .news-meta { min-width: auto; gap: 15px; }
     .group-intro p { font-size: 0.85rem !important; text-align: left; }
     .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 50px; justify-items: center; }
+    .disco-thumb { scroll-margin-top: 90px; }
 }

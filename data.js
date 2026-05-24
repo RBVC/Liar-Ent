@@ -1,10 +1,10 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.15.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.15.2 --- */
 
-// V3 ニュース (リンクをアルバムIDに変更)
+// V3 ニュース (IDを ALL-OUT に変更)
 const V3_NEWS = [
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#COOL" },
     { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#VENOM" },
-    { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#ALL_OUT" }
+    { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#ALL-OUT" }
 ];
 
 // V3 メンバー詳細
@@ -14,7 +14,7 @@ const V3_MEMBERS = [
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (IDを追加)
+// V3 アルバム (IDを ALL-OUT に変更)
 const V3_ALBUMS = [
     { 
         id: "COOL",
@@ -31,7 +31,7 @@ const V3_ALBUMS = [
         embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     },
     { 
-        id: "ALL_OUT",
+        id: "ALL-OUT",
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
@@ -42,9 +42,12 @@ const V3_ALBUMS = [
 // --- 共通機能 ---
 
 function toggleMenu() {
-    document.getElementById('menu-btn').classList.toggle('open');
-    document.getElementById('nav-overlay').classList.toggle('open');
-    document.getElementById('menu-closer').classList.toggle('open');
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-overlay');
+    const closer = document.getElementById('menu-closer');
+    if (btn) btn.classList.toggle('open');
+    if (nav) nav.classList.toggle('open');
+    if (closer) closer.classList.toggle('open');
 }
 
 function openAlbumModal(i) {

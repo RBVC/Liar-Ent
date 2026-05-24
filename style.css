@@ -1,5 +1,6 @@
 /* --- Liar Entertainment Master Style Ver.11.0 --- */
 
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
 
 /* --- 全体共通 --- */
@@ -9,7 +10,7 @@ body { display: flex; flex-direction: column; min-height: 100vh; line-height: 1.
 main { flex: 1; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* 共通ヘッダー */
+/* 共通ヘッダー (高さ80px) */
 .header {
     width: 100%; height: 80px; padding: 0 5%;
     display: flex; justify-content: space-between; align-items: center;
@@ -17,21 +18,25 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .header .logo-area { text-decoration: none; line-height: 1; font-weight: bold; }
 
-/* ハンバーガーメニュー */
-.menu-btn { width: 35px; height: 24px; position: fixed; right: 5%; top: 28px; cursor: pointer; z-index: 10000; }
+/* --- ハンバーガーメニュー (絶対に消えない設定) --- */
+.menu-btn { 
+    width: 35px; height: 24px; position: fixed; right: 5%; top: 28px;
+    cursor: pointer; z-index: 10000; 
+}
 .menu-btn span { position: absolute; width: 100%; height: 3px; transition: 0.3s; left: 0; background: #ff007a; }
 .menu-btn span:nth-child(1) { top: 0; }
 .menu-btn span:nth-child(2) { top: 10px; }
 .menu-btn span:nth-child(3) { top: 20px; }
+
 .menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
 .menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-.menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.4); z-index: 8500; display: none; }
+.menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 8500; display: none; }
 .menu-closer.open { display: block; }
 
 .nav-overlay {
-    position: fixed; top: 80px; right: -100%; width: 250px; height: auto;
+    position: fixed; top: 80px; right: -280px; width: 250px; height: auto;
     transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1); z-index: 9000; padding: 20px;
 }
 .nav-overlay.open { right: 5%; }
@@ -39,7 +44,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-overlay ul li { margin: 15px 0; text-align: right; }
 .nav-overlay ul li a { text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
 
-/* 共通フッター */
+/* 共通フッター (絶対固定) */
 .common-footer {
     background-color: #ffffff !important; color: #333333 !important;
     padding: 60px 5%; text-align: center; border-top: 1px solid #eee;
@@ -58,18 +63,14 @@ img { max-width: 100%; height: auto; display: block; }
 .page-main-title { text-align: center; padding: 80px 0; font-size: 3.5rem; letter-spacing: 12px; font-weight: 800; font-family: 'Montserrat' !important; }
 .artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
 .artist-card { text-decoration: none !important; color: #000 !important; }
-
-/* トップ 1:1 死守 */
-.img-placeholder { 
-    width: 100%; aspect-ratio: 1 / 1 !important; 
-    overflow: hidden; background: #f0f0f0; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); 
-}
+.img-placeholder { width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; }
 .artist-v3-font, .artist-god-font { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; letter-spacing: 1px; }
 
 /* --- <3 (V3) テーマ --- */
 .theme-v3 { background-color: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
 .theme-v3 .header { border-bottom: 2px solid #ff007a; background-color: #000; }
 .theme-v3 .logo-area { font-family: 'Squada One'; font-size: 3.5rem; color: #ff007a !important; }
+.theme-v3 .logo-area:visited { color: #ff007a !important; }
 .theme-v3 .menu-btn span { background: #ff007a; }
 .theme-v3 .nav-overlay { background: #111; border: 2px solid #ff007a; }
 .theme-v3 .nav-overlay ul li a { color: #ff007a; font-family: 'Squada One'; }
@@ -77,17 +78,17 @@ img { max-width: 100%; height: auto; display: block; }
 section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .v3-sub-heading { font-family: 'Squada One' !important; color: #ff007a; font-size: 3.5rem; margin-bottom: 30px; border-bottom: 1px solid #ff007a; text-transform: uppercase; }
 
-/* 【重要】1:1 正方形死守クラス */
+/* 1:1 正方形死守クラス */
 .v3-img-std { 
     width: 320px !important; 
     height: 320px !important; 
-    aspect-ratio: 1 / 1 !important; /* 確実に正方形 */
+    aspect-ratio: 1 / 1 !important; 
     object-fit: cover !important; 
     border: 1px solid #ff007a; 
     flex-shrink: 0; 
 }
 
-.v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; padding: 2px 12px; font-size: 1.1rem; font-weight: bold; min-width: 95px; text-align: center; display: inline-block; }
+.v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; padding: 2px 12px; font-size: 1.1rem; font-weight: bold; min-width: 95px; text-align: center; display: inline-block; border: 1px solid #ff007a; }
 
 .new-release-flex { display: flex; gap: 50px; align-items: center; padding-top: 80px; }
 .v3-main-font { font-family: 'Squada One' !important; color: #ff007a !important; font-size: 5rem; line-height: 1; }
@@ -101,13 +102,13 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
 .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .member-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
-.member-name-top { font-family: 'Squada One'; font-size: 1.8rem; color: #ff007a; text-align: center; margin-top: 10px; }
+.member-name-top { font-family: 'Squada One'; font-size: 2rem; color: #ff007a; text-align: center; margin-top: 10px; }
 
 .disco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; }
+.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; width: 320px; aspect-ratio: 1/1 !important; object-fit: cover; }
 .disco-thumb:hover { border-color: #ff007a; opacity: 0.8; }
 
-/* --- モーダル (ポップアップ) --- */
+/* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { background: #111; width: 100%; max-width: 500px; padding: 40px 30px; border: 2px solid #ff007a; position: relative; text-align: center; }
@@ -119,7 +120,6 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .modal-label { font-family: 'Squada One'; color: #ff007a; font-size: 1.2rem; margin-bottom: 2px; }
 .modal-value { font-family: 'Noto Sans JP'; font-size: 1rem; color: #fff; line-height: 1.4; }
 
-/* ボタン用 */
 .v3-btn-listen { display: inline-block; background-color: #ff007a; color: #000; font-family: 'Squada One'; font-size: 1.5rem; text-decoration: none; padding: 10px 40px; margin-top: 20px; transition: 0.3s; }
 
 /* スマホ対応 */
@@ -127,7 +127,9 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
     section { padding: 40px 20px; }
     .header .logo-area { font-size: 2.8rem; }
     .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
-    .v3-img-std { width: 300px !important; height: 300px !important; margin: 0 auto; }
+    .v3-img-std { width: 300px !important; margin: 0 auto; }
+    .news-item { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .news-meta { min-width: auto; gap: 15px; }
     .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 50px; justify-items: center; }
-    .member-card img, .disco-thumb { width: 300px !important; height: 300px !important; }
+    .member-card img, .disco-thumb { width: 300px !important; }
 }

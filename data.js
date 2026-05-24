@@ -18,25 +18,25 @@ const V3_ALBUMS = [
         type: "2nd Mini Album / 2022.10.31", 
         img: "images/v3/v3-cool.jpg", 
         url: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV",
-        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list"
+        // 実験用埋め込みコード（TVT成功形式）
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>`
     },
     { 
         title: "VENOM", 
         type: "1st Mini Album / 2022.04.10", 
         img: "images/v3/v3-venom.jpg", 
         url: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7",
-        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list"
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>`
     },
     { 
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        url: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX",
-        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok&view=list" // 実験用成功リンク
+        url: "https://u.pcloud.link/publink/show?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok",
+        // TVTで成功した際の実際のリンク
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok&view=list" width="100%" height="500" frameborder="0"></iframe>`
     }
 ];
-
-// --- 共通機能 ---
 
 function toggleMenu() {
     document.getElementById('menu-btn').classList.toggle('open');
@@ -44,7 +44,7 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// 【本番：v3.html用】ボタン形式モーダル
+// 本番用（ボタン）
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -55,13 +55,13 @@ function openAlbumModal(i) {
     document.getElementById('master-modal').classList.add('active');
 }
 
-// 【実験：test.html用】埋め込み形式モーダル
+// 実験用（埋め込み）
 function openTestModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div style="background:#000;"><iframe src="${a.pcloud_embed}" frameborder="0" width="100%" height="380" scrolling="no"></iframe></div>
+        <div style="background:#000;">${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

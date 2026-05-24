@@ -24,7 +24,7 @@
     <main>
         <section>
             <h2 class="v3-sub-heading">EMBED EXPERIMENT</h2>
-            <p style="margin-bottom:30px;">ポップアップ内の埋め込みが成功するかテストします。</p>
+            <p style="margin-bottom:30px;">TVT Officialと同じ形式での埋め込みテストです。</p>
             <div id="disco-grid" class="disco-grid"></div>
         </section>
     </main>
@@ -35,7 +35,6 @@
     <script>
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach((a, i) => {
-            // ここだけ openTestModal を呼ぶように設定
             discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb v3-img-std" onclick="openTestModal(${i})">`;
         });
     </script>

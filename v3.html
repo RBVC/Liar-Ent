@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-v3">
-    <!-- メニュー外タップで閉じる用 -->
     <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
 
     <header class="header">
@@ -25,20 +24,19 @@
         </ul>
     </nav>
 
-    <!-- モーダルポップアップ -->
-    <div class="modal" id="disco-modal" onclick="closeModal(event)">
+    <!-- 共通モーダル -->
+    <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
-            <p id="modal-date" style="font-size:0.85rem; color:#ccc; margin-bottom:5px; font-family:'Noto Sans JP';"></p>
-            <h3 id="modal-title" class="v3-main-font" style="font-size:2.5rem; margin-bottom:15px;"></h3>
-            <div id="modal-player" style="width:100%; height:350px; background:#000;"></div>
+            <h3 id="modal-title" class="v3-main-font" style="font-size:2.5rem; margin-bottom:10px;"></h3>
+            <div id="modal-body"></div>
         </div>
     </div>
 
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
-            <img src="images/v3/v3-cool.jpg" class="new-release-img">
+            <img src="images/v3-cool.jpg" class="new-release-img">
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">COOL</h1>
@@ -56,7 +54,7 @@
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
-                <img src="images/v3/v3-main.jpg">
+                <img src="images/v3-main.jpg">
                 <div>
                     <h3 class="v3-main-font" style="font-size: 2.2rem; margin-bottom: 15px;">ABOUT &lt;3</h3>
                     <p style="font-family: 'Noto Sans JP';">
@@ -68,38 +66,17 @@
                 </div>
             </div>
             
-            <div class="member-grid">
-                <div class="member-card">
-                    <img src="images/v3/v3-jia.jpg">
-                    <div class="member-info">
-                        <p class="member-name">JIA (지아)</p>
-                        <p class="label-white-bold">Leader</p>
-                        <p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Vocal / Sub Dancer / Sub Rapper</p>
-                    </div>
-                </div>
-                <div class="member-card">
-                    <img src="images/v3/v3-licca.jpg">
-                    <div class="member-info">
-                        <p class="member-name">LICCA (릿카)</p>
-                        <p class="label-white-bold">Center</p>
-                        <p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Rapper / Lead Vocal / Lead Dancer</p>
-                    </div>
-                </div>
-                <div class="member-card">
-                    <img src="images/v3/v3-nayeon.jpg">
-                    <div class="member-info">
-                        <p class="member-name">NAYEON (나연)</p>
-                        <p class="label-white-bold">Maknae</p>
-                        <p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Dancer / Lead Rapper / Sub Vocal</p>
-                    </div>
-                </div>
+            <div id="member-grid" class="member-grid">
+                <!-- data.jsから生成 -->
             </div>
         </section>
 
         <!-- 4. DISCOGRAPHY -->
         <section id="discography">
             <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
-            <div id="disco-grid" class="disco-grid"></div>
+            <div id="disco-grid" class="disco-grid">
+                <!-- data.jsから生成 -->
+            </div>
         </section>
     </main>
 
@@ -110,13 +87,24 @@
 
     <script src="data.js"></script>
     <script>
+        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
+        // メンバー生成
+        const memberBox = document.getElementById('member-grid');
+        V3_MEMBERS.forEach((m, i) => {
+            memberBox.innerHTML += `
+                <div class="member-card" onclick="openMemberModal(${i})">
+                    <img src="${m.img}">
+                    <p class="member-name-top">${m.name.split(' ')[0]}</p>
+                </div>`;
+        });
+        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach((a, i) => {
-            discoBox.innerHTML += `<img src="${a.img}" id="disco-${i}" class="disco-thumb" onclick="openModal('${a.title}', '${a.type}', '${a.pcloud}')">`;
+            discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openAlbumModal(${i})">`;
         });
     </script>
 </body>

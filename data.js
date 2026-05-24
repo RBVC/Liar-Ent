@@ -1,18 +1,21 @@
 /* --- Liar Entertainment 全データ管理：data.js --- */
 
-const V3_NEWS = [
+// V3 ニュース
+const V3_NEWS =[
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#disco-0" },
     { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#disco-1" },
     { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#disco-2" }
 ];
 
-const V3_MEMBERS = [
+// V3 メンバー詳細
+const V3_MEMBERS =[
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
     { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-const V3_ALBUMS = [
+// V3 アルバム (ALL OUTをフォルダ埋め込み用リンクに修正)
+const V3_ALBUMS =[
     { 
         title: "COOL", 
         type: "2nd Mini Album / 2022.10.31", 
@@ -29,17 +32,17 @@ const V3_ALBUMS = [
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX" frameborder="0" width="100%" height="350" scrolling="no"></iframe>`
+        // フォルダ共有用リンクに修正
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=kZDCyI5Zw98fxIQn3ER0lvYjGUPWiXGiBohX" frameborder="0" width="100%" height="350" scrolling="no"></iframe>`
     }
 ];
 
+// --- 共通機能 ---
+
 function toggleMenu() {
-    const btn = document.getElementById('menu-btn');
-    const nav = document.getElementById('nav-overlay');
-    const closer = document.getElementById('menu-closer');
-    if (btn) btn.classList.toggle('open');
-    if (nav) nav.classList.toggle('open');
-    if (closer) closer.classList.toggle('open');
+    document.getElementById('menu-btn').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+    document.getElementById('menu-closer').classList.toggle('open');
 }
 
 function openAlbumModal(i) {
@@ -47,7 +50,7 @@ function openAlbumModal(i) {
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div>${a.embed}</div>
+        <div class="player-container">${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

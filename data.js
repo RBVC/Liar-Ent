@@ -32,7 +32,7 @@ const V3_MEMBERS = [
     }
 ];
 
-// V3 アルバム
+// V3 アルバム (URLを embed に変換済み)
 const V3_ALBUMS = [
     { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", pcloud: "https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV" },
     { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", pcloud: "https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7" },
@@ -47,6 +47,7 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
+// モーダル：アルバム用
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -57,15 +58,25 @@ function openAlbumModal(i) {
     document.getElementById('master-modal').classList.add('active');
 }
 
+// モーダル：メンバー用 (整列修正：画像２対応)
 function openMemberModal(i) {
     const m = V3_MEMBERS[i];
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
         <img src="${m.img}" class="modal-img">
-        <div class="modal-info-text">
-            <p><b>BIRTHDAY</b> ${m.birthday}</p>
-            <p><b>ROLE</b> ${m.role}</p>
-            <p><b>POSITION</b> ${m.position}</p>
+        <div class="modal-info-list">
+            <div class="modal-info-item">
+                <span class="modal-label">BIRTHDAY</span>
+                <span class="modal-value">${m.birthday}</span>
+            </div>
+            <div class="modal-info-item">
+                <span class="modal-label">ROLE</span>
+                <span class="modal-value">${m.role}</span>
+            </div>
+            <div class="modal-info-item">
+                <span class="modal-label">POSITION</span>
+                <span class="modal-value">${m.position}</span>
+            </div>
         </div>
     `;
     document.getElementById('master-modal').classList.add('active');

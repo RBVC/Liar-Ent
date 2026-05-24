@@ -24,6 +24,7 @@
         </ul>
     </nav>
 
+    <!-- 共通モーダル -->
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
@@ -82,10 +83,12 @@
 
     <script src="data.js"></script>
     <script>
+        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
+        // メンバー生成
         const memberBox = document.getElementById('member-grid');
         V3_MEMBERS.forEach((m, i) => {
             memberBox.innerHTML += `
@@ -94,6 +97,7 @@
                     <p class="member-name-top">${m.name.split(' ')[0]}</p>
                 </div>`;
         });
+        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach((a, i) => {
             discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb v3-img-std" onclick="openAlbumModal(${i})">`;

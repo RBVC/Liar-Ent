@@ -1,4 +1,4 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.10.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.11.0 --- */
 
 const V3_NEWS = [
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#disco-0" },
@@ -13,10 +13,30 @@ const V3_MEMBERS = [
 ];
 
 const V3_ALBUMS = [
-    { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", url: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV" },
-    { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", url: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7" },
-    { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", url: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX" }
+    { 
+        title: "COOL", 
+        type: "2nd Mini Album / 2022.10.31", 
+        img: "images/v3/v3-cool.jpg", 
+        url: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV",
+        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list"
+    },
+    { 
+        title: "VENOM", 
+        type: "1st Mini Album / 2022.04.10", 
+        img: "images/v3/v3-venom.jpg", 
+        url: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7",
+        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list"
+    },
+    { 
+        title: "ALL OUT", 
+        type: "Pre-Debut Cover EP / 2022.04.01", 
+        img: "images/v3/v3-allout.jpg", 
+        url: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX",
+        pcloud_embed: "https://u.pcloud.link/publink/embed?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok&view=list" // 実験用成功リンク
+    }
 ];
+
+// --- 共通機能 ---
 
 function toggleMenu() {
     document.getElementById('menu-btn').classList.toggle('open');
@@ -24,13 +44,24 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// アルバムモーダル（ボタン形式）
+// 【本番：v3.html用】ボタン形式モーダル
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:1rem; color:#ccc; margin-bottom:25px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
         <a href="${a.url}" target="_blank" class="v3-btn-listen">LISTEN ON pCloud</a>
+    `;
+    document.getElementById('master-modal').classList.add('active');
+}
+
+// 【実験：test.html用】埋め込み形式モーダル
+function openTestModal(i) {
+    const a = V3_ALBUMS[i];
+    document.getElementById('modal-title').innerText = a.title;
+    document.getElementById('modal-body').innerHTML = `
+        <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
+        <div style="background:#000;"><iframe src="${a.pcloud_embed}" frameborder="0" width="100%" height="380" scrolling="no"></iframe></div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

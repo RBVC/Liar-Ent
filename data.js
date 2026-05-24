@@ -1,4 +1,4 @@
-/* --- Liar Entertainment 全データ管理：data.js --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.12.0 --- */
 
 // V3 ニュース
 const V3_NEWS = [
@@ -14,7 +14,7 @@ const V3_MEMBERS = [
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (テストで成功した埋め込み形式を採用)
+// V3 アルバム (テストで成功したリンク形式を本番に反映)
 const V3_ALBUMS = [
     { 
         title: "COOL", 
@@ -44,12 +44,13 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
+// 本番用モーダル（埋め込み表示）
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div style="background:#000;">${a.embed}</div>
+        <div class="player-container">${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

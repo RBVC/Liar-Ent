@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-v3">
+    <!-- メニュー外タップで閉じる用 -->
     <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
+
     <header class="header">
         <a href="v3.html" class="logo-area">&lt;3</a>
         <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
     </header>
+
     <nav class="nav-overlay" id="nav-overlay">
         <ul>
             <li><a href="#news" onclick="toggleMenu()">NEWS</a></li>
@@ -22,12 +25,13 @@
         </ul>
     </nav>
 
+    <!-- モーダルポップアップ -->
     <div class="modal" id="disco-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
             <p id="modal-date" style="font-size:0.85rem; color:#ccc; margin-bottom:5px; font-family:'Noto Sans JP';"></p>
             <h3 id="modal-title" class="v3-main-font" style="font-size:2.5rem; margin-bottom:15px;"></h3>
-            <div id="modal-player"></div>
+            <div id="modal-player" style="width:100%; height:350px; background:#000;"></div>
         </div>
     </div>
 
@@ -65,7 +69,6 @@
             </div>
             
             <div class="member-grid">
-                <!-- JIA -->
                 <div class="member-card">
                     <img src="images/v3/v3-jia.jpg">
                     <div class="member-info">
@@ -74,7 +77,6 @@
                         <p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Vocal / Sub Dancer / Sub Rapper</p>
                     </div>
                 </div>
-                <!-- LICCA -->
                 <div class="member-card">
                     <img src="images/v3/v3-licca.jpg">
                     <div class="member-info">
@@ -83,7 +85,6 @@
                         <p style="font-size:0.85rem; opacity:0.7; font-family:'Noto Sans JP';">Main Rapper / Lead Vocal / Lead Dancer</p>
                     </div>
                 </div>
-                <!-- NAYEON -->
                 <div class="member-card">
                     <img src="images/v3/v3-nayeon.jpg">
                     <div class="member-info">
@@ -109,15 +110,13 @@
 
     <script src="data.js"></script>
     <script>
-        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
-        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
-        V3_ALBUMS.forEach(a => {
-            discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openModal('${a.title}', '${a.type}', '${a.pcloud}')">`;
+        V3_ALBUMS.forEach((a, i) => {
+            discoBox.innerHTML += `<img src="${a.img}" id="disco-${i}" class="disco-thumb" onclick="openModal('${a.title}', '${a.type}', '${a.pcloud}')">`;
         });
     </script>
 </body>

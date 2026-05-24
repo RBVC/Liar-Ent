@@ -1,4 +1,4 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.9.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.9.1 --- */
 
 // V3 ニュース
 const V3_NEWS = [
@@ -11,10 +11,10 @@ const V3_NEWS = [
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
     { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
-    { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
+    { name: "NAYEON (ナヨン)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (成功例の &view=list と embed を組み合わせた最強形式)
+// V3 アルバム
 const V3_ALBUMS = [
     { 
         title: "COOL", 
@@ -32,7 +32,8 @@ const V3_ALBUMS = [
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        pcloud: "https://u.pcloud.link/publink/embed?code=kZDCyI5Zw98fxIQn3ER0lvYjGUPWiXGiBohX&view=list"
+        // 【テスト】TVTで使用成功したリンクを埋め込み形式に変更
+        pcloud: "https://u.pcloud.link/publink/embed?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok&view=list"
     }
 ];
 
@@ -47,7 +48,6 @@ function toggleMenu() {
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
-    // ポップアップが開いた瞬間にiframeを生成して流し込む
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
         <div class="player-container">
@@ -74,6 +74,6 @@ function openMemberModal(i) {
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');
-        document.getElementById('modal-body').innerHTML = ''; // 閉じたら消去
+        document.getElementById('modal-body').innerHTML = '';
     }
 }

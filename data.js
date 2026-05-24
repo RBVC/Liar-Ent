@@ -1,10 +1,10 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.13.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.15.0 --- */
 
-// V3 ニュース
+// V3 ニュース (リンクをアルバムIDに変更)
 const V3_NEWS = [
-    { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#disco-0" },
-    { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#disco-1" },
-    { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#disco-2" }
+    { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#COOL" },
+    { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#VENOM" },
+    { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#ALL_OUT" }
 ];
 
 // V3 メンバー詳細
@@ -14,26 +14,28 @@ const V3_MEMBERS = [
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (TVT Official で成功していた記述方式を完全再現)
+// V3 アルバム (IDを追加)
 const V3_ALBUMS = [
     { 
+        id: "COOL",
         title: "COOL", 
         type: "2nd Mini Album / 2022.10.31", 
         img: "images/v3/v3-cool.jpg", 
-        // 成功した「show? + view=list」形式
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     },
     { 
+        id: "VENOM",
         title: "VENOM", 
         type: "1st Mini Album / 2022.04.10", 
         img: "images/v3/v3-venom.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     },
     { 
+        id: "ALL_OUT",
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     }
 ];
 
@@ -45,7 +47,6 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// ポップアップが開いた瞬間に中身を書き込む（TVTのartist.htmlの方式）
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -73,6 +74,6 @@ function openMemberModal(i) {
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');
-        document.getElementById('modal-body').innerHTML = ''; // クリアして停止
+        document.getElementById('modal-body').innerHTML = '';
     }
 }

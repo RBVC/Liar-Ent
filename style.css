@@ -18,37 +18,29 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .header .logo-area { text-decoration: none; line-height: 1; font-weight: bold; }
 
-/* --- ハンバーガーメニュー (ドロップダウン) --- */
-.menu-btn { 
-    width: 35px; height: 24px; position: fixed; right: 5%; top: 28px;
-    cursor: pointer; z-index: 10000; 
-}
+/* ハンバーガーメニュー */
+.menu-btn { width: 35px; height: 24px; position: fixed; right: 5%; top: 28px; cursor: pointer; z-index: 10000; }
 .menu-btn span { position: absolute; width: 100%; height: 3px; transition: 0.3s; left: 0; }
 .menu-btn span:nth-child(1) { top: 0; }
 .menu-btn span:nth-child(2) { top: 10px; }
 .menu-btn span:nth-child(3) { top: 20px; }
-
 .menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
 .menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-.menu-closer {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background: rgba(0,0,0,0.4); z-index: 8500; display: none;
-}
+.menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.4); z-index: 8500; display: none; }
 .menu-closer.open { display: block; }
 
 .nav-overlay {
     position: fixed; top: 80px; right: -100%; width: 250px; height: auto;
-    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 9000; padding: 20px;
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1); z-index: 9000; padding: 20px;
 }
 .nav-overlay.open { right: 5%; }
 .nav-overlay ul { list-style: none; }
 .nav-overlay ul li { margin: 15px 0; text-align: right; }
 .nav-overlay ul li a { text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
 
-/* --- 共通フッター --- */
+/* 共通フッター (絶対固定) */
 .common-footer {
     background-color: #ffffff !important; color: #333333 !important;
     padding: 60px 5%; text-align: center; border-top: 1px solid #eee;
@@ -72,10 +64,9 @@ img { max-width: 100%; height: auto; display: block; }
 .artist-card { text-decoration: none !important; color: #000 !important; display: block; }
 .img-placeholder { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; }
 
-/* アーティスト名は Montserrat 800 に統一 */
+/* トップのアーティスト名は Montserrat 800 に統一 */
 .artist-v3-font, .artist-god-font { 
-    font-family: 'Montserrat', sans-serif !important; 
-    font-weight: 800 !important; font-size: 1.8rem; letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; letter-spacing: 1px; text-align: left;
 }
 
 /* --- 【テーマ】<3 (BLACK & PINK) --- */
@@ -87,53 +78,59 @@ img { max-width: 100%; height: auto; display: block; }
 .theme-v3 .nav-overlay { background: #111; border: 2px solid #ff007a; }
 .theme-v3 .nav-overlay ul li a { color: #ff007a; font-family: 'Squada One'; }
 
-/* V3パーツ */
+/* V3パーツ調整 */
 section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .v3-sub-heading { font-family: 'Squada One'; color: #ff007a; font-size: 3.5rem; margin-bottom: 30px; border-bottom: 1px solid #ff007a; text-transform: uppercase; }
 
 .v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; padding: 2px 12px; font-size: 1.1rem; font-weight: bold; min-width: 95px; text-align: center; display: inline-block; }
 
-.new-release-flex { display: flex; gap: 40px; align-items: center; padding-top: 20px; }
-.new-release-img { width: 300px; border: 1px solid #ff007a; flex-shrink: 0; }
-.v3-main-font { font-family: 'Squada One'; color: #ff007a; font-size: 5rem; line-height: 1; }
+/* 1. New Release (ヘッダーとの距離を調整) */
+.new-release-flex { display: flex; gap: 50px; align-items: center; padding-top: 80px; } /* 余白を確保 */
+.v3-main-img-std { width: 320px !important; height: 320px !important; object-fit: cover; border: 1px solid #ff007a; flex-shrink: 0; }
+.new-release-info h1 { font-family: 'Squada One'; color: #ff007a; font-size: 5rem; line-height: 1; margin: 10px 0; }
 
+/* 2. News */
 .news-item { display: flex; gap: 30px; padding: 20px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #333; }
 .news-meta { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 .news-date { font-family: 'Squada One'; color: #ff007a; font-size: 1.3rem; min-width: 110px; }
 
+/* 3. Profile */
 .group-intro { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
-.group-intro img { width: 300px; border: 1px solid #333; flex-shrink: 0; }
 .group-intro p { font-size: 0.95rem; line-height: 2.2; opacity: 0.9; }
 
-/* メンバーグリッド（画像サイズを250px程度に制限） */
 .member-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.member-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: 0.3s; }
-.member-card:hover { opacity: 0.8; }
-.member-card img { width: 100%; max-width: 250px; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 15px; border: 1px solid #333; }
-.member-name-top { font-family: 'Squada One'; font-size: 1.8rem; color: #ff007a; text-align: center; }
+.member-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
+.member-name-top { font-family: 'Squada One'; font-size: 1.8rem; color: #ff007a; text-align: center; margin-top: 15px; }
 
-.disco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; width: 100%; max-width: 280px; }
+/* 4. Discography */
+.disco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; width: 320px; height: 320px; object-fit: cover; }
 .disco-thumb:hover { border-color: #ff007a; opacity: 0.8; }
 
-/* ポップアップ（モーダル）共通 */
+/* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.9); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { background: #111; width: 100%; max-width: 500px; padding: 40px 30px; border: 2px solid #ff007a; position: relative; text-align: center; }
 .modal-close { position: absolute; top: 10px; right: 15px; color: #ff007a; font-family: 'Squada One'; font-size: 2.5rem; cursor: pointer; }
-
-/* モーダル内の各要素 */
-.modal-img { width: 220px; height: 220px; object-fit: cover; margin: 0 auto 20px; border: 1px solid #ff007a; }
-.modal-info-text { font-family: 'Noto Sans JP'; font-size: 1rem; color: #fff; line-height: 1.8; margin-top: 15px; }
+.modal-img { width: 280px; height: 280px; object-fit: cover; margin: 0 auto 20px; border: 1px solid #ff007a; }
+.modal-info-text { font-family: 'Noto Sans JP'; font-size: 1rem; color: #fff; line-height: 1.8; margin-top: 15px; text-align: left; }
 .modal-info-text b { color: #ff007a; font-family: 'Squada One'; font-size: 1.1rem; margin-right: 10px; }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
     section { padding: 40px 20px; }
-    .header .logo-area { font-size: 2.5rem; }
-    .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
-    .new-release-info h1 { font-size: 4rem; }
-    .news-item { flex-direction: column; align-items: flex-start; gap: 5px; }
-    .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 50px; }
-    .member-card img, .disco-thumb { max-width: 250px; }
+    .page-main-title { font-size: 2.5rem; letter-spacing: 5px; }
+    .artist-grid { grid-template-columns: 1fr; }
+    
+    .new-release-flex, .group-intro { flex-direction: column; text-align: center; padding-top: 40px; }
+    .v3-main-img-std { margin: 0 auto; width: 300px !important; height: 300px !important; }
+    .new-release-info h1 { font-size: 4.5rem; }
+    
+    .news-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .news-meta { min-width: auto; gap: 15px; }
+    
+    .group-intro p { font-size: 0.85rem !important; text-align: left; }
+    
+    .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 40px; justify-items: center; }
+    .member-card img, .disco-thumb { width: 300px !important; height: 300px !important; margin: 0 auto; }
 }

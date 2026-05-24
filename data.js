@@ -7,7 +7,7 @@ const V3_NEWS = [
     { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#disco-2" }
 ];
 
-// V3 メンバー詳細（画像パスを images/v3/ に修正）
+// V3 メンバー詳細
 const V3_MEMBERS = [
     {
         name: "JIA (지아)",
@@ -32,7 +32,7 @@ const V3_MEMBERS = [
     }
 ];
 
-// V3 アルバム（画像パスを images/v3/ に修正）
+// V3 アルバム
 const V3_ALBUMS = [
     { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", pcloud: "https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV" },
     { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", pcloud: "https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7" },
@@ -41,17 +41,12 @@ const V3_ALBUMS = [
 
 // --- 共通機能 ---
 
-// ハンバーガーメニュー
 function toggleMenu() {
-    const btn = document.getElementById('menu-btn');
-    const nav = document.getElementById('nav-overlay');
-    const closer = document.getElementById('menu-closer');
-    if (btn) btn.classList.toggle('open');
-    if (nav) nav.classList.toggle('open');
-    if (closer) closer.classList.toggle('open');
+    document.getElementById('menu-btn').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+    document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// モーダル：アルバム用
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -62,7 +57,6 @@ function openAlbumModal(i) {
     document.getElementById('master-modal').classList.add('active');
 }
 
-// モーダル：メンバー用
 function openMemberModal(i) {
     const m = V3_MEMBERS[i];
     document.getElementById('modal-title').innerText = m.name;
@@ -77,7 +71,6 @@ function openMemberModal(i) {
     document.getElementById('master-modal').classList.add('active');
 }
 
-// モーダル閉じる
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');

@@ -1,42 +1,42 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.11.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js --- */
 
+// V3 ニュース
 const V3_NEWS = [
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#disco-0" },
     { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#disco-1" },
     { date: "2022.04.01", tag: "RELEASE", title: "Pre-Debut Cover EP 「ALL OUT」", link: "#disco-2" }
 ];
 
+// V3 メンバー詳細
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
     { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
+// V3 アルバム (テストで成功した埋め込み形式を採用)
 const V3_ALBUMS = [
     { 
         title: "COOL", 
         type: "2nd Mini Album / 2022.10.31", 
         img: "images/v3/v3-cool.jpg", 
-        url: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV",
-        // 実験用埋め込みコード（TVT成功形式）
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
     },
     { 
         title: "VENOM", 
         type: "1st Mini Album / 2022.04.10", 
         img: "images/v3/v3-venom.jpg", 
-        url: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7",
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
     },
     { 
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        url: "https://u.pcloud.link/publink/show?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok",
-        // TVTで成功した際の実際のリンク
-        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZpJiU5ZTiglKk3h3KXhuoUPRUSWTL7UJ5Ok&view=list" width="100%" height="500" frameborder="0"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
     }
 ];
+
+// --- 共通機能 ---
 
 function toggleMenu() {
     document.getElementById('menu-btn').classList.toggle('open');
@@ -44,19 +44,7 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// 本番用（ボタン）
 function openAlbumModal(i) {
-    const a = V3_ALBUMS[i];
-    document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `
-        <p style="font-size:1rem; color:#ccc; margin-bottom:25px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <a href="${a.url}" target="_blank" class="v3-btn-listen">LISTEN ON pCloud</a>
-    `;
-    document.getElementById('master-modal').classList.add('active');
-}
-
-// 実験用（埋め込み）
-function openTestModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `

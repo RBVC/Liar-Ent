@@ -8,14 +8,12 @@
 </head>
 <body class="theme-v3">
     <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
-
     <header class="header">
         <a href="v3.html" class="logo-area">&lt;3</a>
         <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
     </header>
-
     <nav class="nav-overlay" id="nav-overlay">
         <ul>
             <li><a href="#news" onclick="toggleMenu()">NEWS</a></li>
@@ -36,7 +34,7 @@
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
-            <img src="images/v3-cool.jpg" class="new-release-img">
+            <img src="images/v3/v3-cool.jpg" class="new-release-img">
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">COOL</h1>
@@ -54,7 +52,7 @@
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
-                <img src="images/v3-main.jpg">
+                <img src="images/v3/v3-main.jpg">
                 <div>
                     <h3 class="v3-main-font" style="font-size: 2.2rem; margin-bottom: 15px;">ABOUT &lt;3</h3>
                     <p style="font-family: 'Noto Sans JP';">
@@ -65,18 +63,13 @@
                     </p>
                 </div>
             </div>
-            
-            <div id="member-grid" class="member-grid">
-                <!-- data.jsから生成 -->
-            </div>
+            <div id="member-grid" class="member-grid"></div>
         </section>
 
         <!-- 4. DISCOGRAPHY -->
         <section id="discography">
             <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
-            <div id="disco-grid" class="disco-grid">
-                <!-- data.jsから生成 -->
-            </div>
+            <div id="disco-grid" class="disco-grid"></div>
         </section>
     </main>
 
@@ -87,21 +80,14 @@
 
     <script src="data.js"></script>
     <script>
-        // ニュース生成
         const newsBox = document.getElementById('news-list');
         V3_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
-        // メンバー生成
         const memberBox = document.getElementById('member-grid');
         V3_MEMBERS.forEach((m, i) => {
-            memberBox.innerHTML += `
-                <div class="member-card" onclick="openMemberModal(${i})">
-                    <img src="${m.img}">
-                    <p class="member-name-top">${m.name.split(' ')[0]}</p>
-                </div>`;
+            memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(${i})"><img src="${m.img}"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`;
         });
-        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         V3_ALBUMS.forEach((a, i) => {
             discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openAlbumModal(${i})">`;

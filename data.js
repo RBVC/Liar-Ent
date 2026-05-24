@@ -12,14 +12,14 @@ const V3_ALBUMS = [
     { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", pcloud: "https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX" }
 ];
 
-// ハンバーガーメニュー
+// ハンバーガーメニュー制御
 function toggleMenu() {
     document.getElementById('menu-btn').classList.toggle('open');
     document.getElementById('nav-overlay').classList.toggle('open');
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// モーダル
+// モーダル制御
 function openModal(title, date, pcloudUrl) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-date').innerText = date;

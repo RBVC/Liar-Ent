@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.12.0 --- */
+/* --- Liar Entertainment Master Style --- */
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@700&display=swap');
@@ -10,7 +10,7 @@ body { display: flex; flex-direction: column; min-height: 100vh; line-height: 1.
 main { flex: 1; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* 共通ヘッダー (高さ80px) */
+/* 共通ヘッダー */
 .header {
     width: 100%; height: 80px; padding: 0 5%;
     display: flex; justify-content: space-between; align-items: center;
@@ -18,7 +18,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .header .logo-area { text-decoration: none; line-height: 1; font-weight: bold; }
 
-/* --- ハンバーガーメニュー (絶対に消えない設定) --- */
+/* --- ハンバーガーメニュー --- */
 .menu-btn { 
     width: 35px; height: 24px; position: fixed; right: 5%; top: 28px;
     cursor: pointer; z-index: 10000; 
@@ -27,7 +27,6 @@ img { max-width: 100%; height: auto; display: block; }
 .menu-btn span:nth-child(1) { top: 0; }
 .menu-btn span:nth-child(2) { top: 10px; }
 .menu-btn span:nth-child(3) { top: 20px; }
-
 .menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
 .menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
@@ -37,14 +36,14 @@ img { max-width: 100%; height: auto; display: block; }
 
 .nav-overlay {
     position: fixed; top: 80px; right: -280px; width: 250px; height: auto;
-    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1); z-index: 9000; padding: 20px;
+    transition: 0.4s; z-index: 9000; padding: 20px;
 }
 .nav-overlay.open { right: 5%; }
 .nav-overlay ul { list-style: none; }
 .nav-overlay ul li { margin: 15px 0; text-align: right; }
 .nav-overlay ul li a { text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
 
-/* 共通フッター */
+/* 共通フッター (絶対固定) */
 .common-footer {
     background-color: #ffffff !important; color: #333333 !important;
     padding: 60px 5%; text-align: center; border-top: 1px solid #eee;
@@ -55,22 +54,22 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- <3 (V3) テーマ設定 --- */
 .theme-v3 { background-color: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
-.theme-v3 .header { border-bottom: 2px solid #ff007a; background-color: #000; }
+.theme-v3 .header { background-color: #000 !important; border-bottom: 2px solid #ff007a; }
 .theme-v3 .logo-area { font-family: 'Squada One'; font-size: 3.5rem; color: #ff007a !important; }
 .theme-v3 .logo-area:visited { color: #ff007a !important; }
 .theme-v3 .menu-btn span { background: #ff007a; }
 .theme-v3 .nav-overlay { background: #111; border: 2px solid #ff007a; }
 .theme-v3 .nav-overlay ul li a { color: #ff007a; font-family: 'Squada One'; }
 
-/* セクション設定 */
+/* V3 セクション設定 */
 section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .v3-sub-heading { font-family: 'Squada One' !important; color: #ff007a; font-size: 3.5rem; margin-bottom: 30px; border-bottom: 1px solid #ff007a; text-transform: uppercase; }
 
-/* --- 【重要】全ての画像サイズを 320px 正方形に固定 --- */
+/* --- 【重要】全画像サイズ 320px 正方形死守 --- */
 .v3-img-std { 
     width: 320px !important; 
     height: 320px !important; 
-    aspect-ratio: 1 / 1 !important; /* 確実に正方形 */
+    aspect-ratio: 1 / 1 !important; 
     object-fit: cover !important; 
     border: 1px solid #ff007a; 
     flex-shrink: 0; 
@@ -96,13 +95,13 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 .disco-thumb { cursor: pointer; border: 1px solid #333; transition: 0.3s; width: 320px; aspect-ratio: 1/1 !important; object-fit: cover; }
 .disco-thumb:hover { border-color: #ff007a; opacity: 0.8; }
 
-/* モーダル */
+/* --- モーダル (ポップアップ) --- */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
-.modal-content { background: #111; width: 100%; max-width: 500px; padding: 40px 30px; border: 2px solid #ff007a; position: relative; text-align: center; }
+.modal-content { background: #111; width: 100%; max-width: 600px; padding: 40px 30px; border: 2px solid #ff007a; position: relative; text-align: center; }
 .modal-close { position: absolute; top: 10px; right: 15px; color: #ff007a; font-family: 'Squada One'; font-size: 2.5rem; cursor: pointer; }
-.modal-img { width: 280px; aspect-ratio: 1/1 !important; object-fit: cover; margin: 0 auto 20px; border: 1px solid #ff007a; }
 
+.modal-img { width: 280px; aspect-ratio: 1/1 !important; object-fit: cover; margin: 0 auto 20px; border: 1px solid #ff007a; }
 .modal-info-list { text-align: left; max-width: 320px; margin: 20px auto 0; }
 .modal-info-item { margin-bottom: 15px; display: flex; flex-direction: column; }
 .modal-label { font-family: 'Squada One'; color: #ff007a; font-size: 1.2rem; margin-bottom: 2px; }
@@ -115,7 +114,7 @@ section { width: 100%; max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
     .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
     .v3-img-std { width: 300px !important; height: 300px !important; margin: 0 auto; }
     .new-release-info h1 { font-size: 4rem; }
-    .news-item { flex-direction: column; align-items: flex-start; gap: 5px; }
+    .news-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .news-meta { min-width: auto; gap: 15px; }
     .group-intro p { font-size: 0.85rem !important; text-align: left; }
     .member-grid, .disco-grid { grid-template-columns: 1fr; gap: 50px; justify-items: center; }

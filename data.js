@@ -1,4 +1,4 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.12.0 --- */
+/* --- Liar Entertainment 全データ管理：data.js Ver.13.0 --- */
 
 // V3 ニュース
 const V3_NEWS = [
@@ -14,25 +14,26 @@ const V3_MEMBERS = [
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 
-// V3 アルバム (テストで成功したリンク形式を本番に反映)
+// V3 アルバム (TVT Official で成功していた記述方式を完全再現)
 const V3_ALBUMS = [
     { 
         title: "COOL", 
         type: "2nd Mini Album / 2022.10.31", 
         img: "images/v3/v3-cool.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
+        // 成功した「show? + view=list」形式
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     },
     { 
         title: "VENOM", 
         type: "1st Mini Album / 2022.04.10", 
         img: "images/v3/v3-venom.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     },
     { 
         title: "ALL OUT", 
         type: "Pre-Debut Cover EP / 2022.04.01", 
         img: "images/v3/v3-allout.jpg", 
-        embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="380" frameborder="0" scrolling="no"></iframe>`
+        embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>`
     }
 ];
 
@@ -44,7 +45,7 @@ function toggleMenu() {
     document.getElementById('menu-closer').classList.toggle('open');
 }
 
-// 本番用モーダル（埋め込み表示）
+// ポップアップが開いた瞬間に中身を書き込む（TVTのartist.htmlの方式）
 function openAlbumModal(i) {
     const a = V3_ALBUMS[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -72,6 +73,6 @@ function openMemberModal(i) {
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');
-        document.getElementById('modal-body').innerHTML = '';
+        document.getElementById('modal-body').innerHTML = ''; // クリアして停止
     }
 }

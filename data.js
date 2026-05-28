@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Management Ver.21.0 --- */
+/* --- Liar Entertainment Data Management Ver.22.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -8,7 +8,7 @@ const V3_NEWS = [
 ];
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
-    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
+    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Vocal / Main Rapper / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" }
 ];
 const V3_ALBUMS = [
@@ -37,7 +37,7 @@ const GOD_MEMBERS = [
     { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
     { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
     { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
-    { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
+    { name: "ROY (로이)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
 const GOD_ALBUMS = [
     { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
@@ -58,7 +58,6 @@ function toggleMenu() {
     if (nav) nav.classList.toggle('open');
     if (closer) closer.classList.toggle('open');
 }
-
 function openAlbumModal(data, i) {
     const a = data[i];
     document.getElementById('modal-title').innerText = a.title;
@@ -68,7 +67,6 @@ function openAlbumModal(data, i) {
     `;
     document.getElementById('master-modal').classList.add('active');
 }
-
 function openMemberModal(data, i) {
     const m = data[i];
     const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
@@ -82,7 +80,6 @@ function openMemberModal(data, i) {
     `;
     document.getElementById('master-modal').classList.add('active');
 }
-
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');

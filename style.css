@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.22.0 --- */
+/* --- Liar Entertainment Master Style Ver.23.0 --- */
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@400;700&display=swap');
@@ -38,25 +38,27 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* --- 【テーマ：事務所トップ】 --- */
 .theme-index { background-color: #ffffff; color: #000; }
-.theme-index .header { background-color: #ffffff; border-bottom: 1px solid #eee; }
+.theme-index .header { background-color: #ffffff !important; border-bottom: 1px solid #eee; }
 .theme-index .logo-area { font-family: 'Montserrat' !important; font-weight: 800 !important; font-size: 1.8rem; color: #000 !important; }
 .theme-index .menu-btn span { background: #000; }
 .theme-index .menu-btn.open span { background: #000 !important; }
 .theme-index .nav-overlay { background: #ffffff; border: 1px solid #eee; }
 .theme-index .nav-overlay ul li a { color: #000; font-family: 'Montserrat'; font-weight: 800; }
 .theme-index .page-main-title { text-align: center; padding: 80px 0; font-size: 3.5rem; letter-spacing: 12px; font-weight: 800; font-family: 'Montserrat' !important; }
-.theme-index .artist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
-.theme-index .artist-card { text-decoration: none !important; color: #000 !important; border: none !important; }
+.theme-index .artist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
+.theme-index .artist-card { text-decoration: none !important; color: #000 !important; }
 .theme-index .img-placeholder { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
 .theme-index .img-placeholder img { width: 100%; height: 100%; object-fit: cover !important; }
-.theme-index .artist-v3-font, .theme-index .artist-god-font { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; letter-spacing: 1px; color: #000 !important; text-decoration: none !important; }
+.theme-index .artist-v3-font, .theme-index .artist-god-font { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; letter-spacing: 1px; color: #000 !important; }
 
 /* --- 【テーマ：<3 (V3)】 --- */
 .theme-v3 { background-color: #000; color: #fff; font-family: 'Noto Sans JP', sans-serif; }
 .theme-v3 .header { border-bottom: 2px solid #ff007a; background-color: #000 !important; }
 .theme-v3 .logo-area { font-family: 'Squada One'; font-size: 3.5rem; color: #ff007a !important; }
 .theme-v3 .menu-btn span { background: #ff007a; }
+.theme-v3 .menu-btn.open span { background: #ff007a !important; }
 .theme-v3 .nav-overlay { background: #111; border: 2px solid #ff007a; }
+.theme-v3 .nav-overlay ul li a { color: #ff007a; font-family: 'Squada One'; }
 .theme-v3 .v3-sub-heading { font-family: 'Squada One' !important; color: #ff007a; border-bottom: 1px solid #ff007a; letter-spacing: 1px; }
 .theme-v3 .v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; }
 .theme-v3 .v3-main-font { font-family: 'Squada One' !important; color: #ff007a !important; }
@@ -67,15 +69,14 @@ img { max-width: 100%; height: auto; display: block; }
 .theme-god .logo-area { font-family: 'Cinzel', serif; font-size: 1.8rem; color: #ffffff !important; letter-spacing: 4px; }
 .theme-god .menu-btn span { background: #ffffff; }
 .theme-god .nav-overlay { background: #222; border: 1px solid #ffffff; }
+.theme-god .nav-overlay ul li a { color: #ffffff; font-family: 'Cinzel', serif; }
 .theme-god .v3-sub-heading { font-family: 'Cinzel' !important; color: #ffffff; border-bottom: 1px solid #ffffff; letter-spacing: 2px; font-weight: 700; }
 .theme-god .v3-tag { background-color: #ffffff; color: #000; font-family: 'Cinzel'; font-weight: bold; }
 .theme-god .v3-main-font { font-family: 'Cinzel' !important; color: #ffffff !important; letter-spacing: 3px; }
 .theme-god .member-name-top { font-family: 'Cinzel'; color: #ffffff; letter-spacing: 1px; }
 
-/* --- レイアウト共通：Ver.22 調整 --- */
+/* --- レイアウト共通 --- */
 section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-
-/* 【修正】見出しサイズをPC 2.5remに縮小し字間を詰め */
 .v3-sub-heading { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
 
 .v3-img-std { width: 320px !important; height: 320px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid rgba(255,255,255,0.2); flex-shrink: 0; }
@@ -90,10 +91,23 @@ section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .member-card { display: flex; flex-direction: column; align-items: center; }
 .member-name-top { font-size: 1.4rem; text-align: center; margin-top: 10px; }
 
+/* ニュースリスト表示制限用 */
 .news-item { display: flex; gap: 30px; padding: 20px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #333; align-items: center; }
+.news-item.hidden { display: none; } /* 初期状態で隠すクラス */
 .news-meta { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 .news-date { font-family: 'Squada One'; font-size: 1.3rem; min-width: 110px; }
 .theme-god .news-date { font-family: 'Cinzel', serif; font-size: 1.1rem; }
+
+/* VIEW MORE ボタン */
+.view-more-btn {
+    display: block; width: 200px; margin: 30px auto 0; padding: 10px;
+    background: transparent; border: 1px solid #fff; color: #fff;
+    font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 800;
+    cursor: pointer; transition: 0.3s; text-align: center;
+}
+.theme-v3 .view-more-btn { border-color: #ff007a; color: #ff007a; }
+.view-more-btn:hover { background: #fff; color: #000; }
+.theme-v3 .view-more-btn:hover { background: #ff007a; color: #000; }
 
 /* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
@@ -108,13 +122,12 @@ section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
 @media (max-width: 768px) {
     section { padding: 40px 20px; }
-    /* 【修正】スマホ見出しサイズを 1.8rem に縮小 */
     .v3-sub-heading { font-size: 1.8rem; }
     .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
     .v3-img-std, .new-release-img { width: 280px !important; height: 280px !important; margin: 0 auto !important; }
     .news-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .news-meta { min-width: auto; gap: 15px; }
     .group-intro p { font-size: 0.85rem !important; text-align: left; }
-    .member-grid, .disco-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .member-grid, .disco-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; justify-items: center; }
     .member-name-top { font-size: 1.1rem; }
 }

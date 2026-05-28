@@ -40,6 +40,8 @@
         <section id="news">
             <h2 class="v3-sub-heading">NEWS</h2>
             <div id="news-list" style="border-top: 1px solid #ffffff;"></div>
+            <!-- VIEW MORE ボタン -->
+            <button id="view-more-btn" class="view-more-btn" onclick="showAllNews()">VIEW MORE</button>
         </section>
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
@@ -64,7 +66,11 @@
     <script src="data.js"></script>
     <script>
         const newsBox = document.getElementById('news-list');
-        GOD_NEWS.forEach(n => { newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`; });
+        GOD_NEWS.forEach((n, i) => { 
+            // 3件目以降(i >= 3)は初期状態で非表示にするクラスを追加
+            const hiddenClass = i >= 3 ? 'hidden' : '';
+            newsBox.innerHTML += `<a href="${n.link}" class="news-item ${hiddenClass}"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`; 
+        });
         const memberBox = document.getElementById('member-grid');
         GOD_MEMBERS.forEach((m, i) => { memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(GOD_MEMBERS, ${i})"><img src="${m.img}"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`; });
         const discoBox = document.getElementById('disco-grid');

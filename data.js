@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Management Ver.22.0 --- */
+/* --- Liar Entertainment Data Management Ver.23.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -30,23 +30,25 @@ const GOD_NEWS = [
     { date: "2023.11.14", tag: "RELEASE", title: "2nd Mini Album 「ISSUE MAKER」", link: "#ISSUE_MAKER" },
     { date: "2023.05.21", tag: "RELEASE", title: "1st Mini Album 「OOMM」", link: "#OOMM" }
 ];
+
 const GOD_MEMBERS = [
     { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
     { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" },
     { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
-    { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
     { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
-    { name: "ROY (로이)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
+    { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
+
 const GOD_ALBUMS = [
-    { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
-    { id: "ISSUE_MAKER", title: "ISSUE MAKER", type: "2nd Mini Album", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
-    { id: "LCR", title: "PURRFECT", type: "LCR 1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
-    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `<ul style="text-align:left; color:#fff; font-family:'Noto Sans JP'; padding:20px; list-style:none;"><li style="margin-bottom:10px;">• I'm Ready (Jia Solo)</li><li style="margin-bottom:10px;">• TEA (4uatre)</li><li style="margin-bottom:10px;">• FACT$ (4uatre)</li><li>• FREE&SHINE (feat. Licca)</li></ul>` },
-    { id: "REBORN", title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "Wings", title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
-    { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` }
+    { id: "REBORN", title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `<ul style="text-align:left; color:#fff; font-family:'Noto Sans JP'; padding:20px; list-style:none;"><li style="margin-bottom:10px;">• I'm Ready (Jia Solo)</li><li style="margin-bottom:10px;">• TEA (4uatre)</li><li style="margin-bottom:10px;">• FACT$ (4uatre)</li><li>• FREE&SHINE (feat. Licca)</li></ul>` },
+    { id: "LCR", title: "PURRFECT", type: "LCR 1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "ISSUE_MAKER", title: "ISSUE MAKER", type: "2nd Mini Album", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` }
 ];
 
 // --- 共通機能 ---
@@ -58,31 +60,32 @@ function toggleMenu() {
     if (nav) nav.classList.toggle('open');
     if (closer) closer.classList.toggle('open');
 }
+
 function openAlbumModal(data, i) {
     const a = data[i];
     document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `
-        <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div class="player-container" style="background:#000;">${a.embed}</div>
-    `;
+    document.getElementById('modal-body').innerHTML = `<p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p><div class="player-container" style="background:#000;">${a.embed}</div>`;
     document.getElementById('master-modal').classList.add('active');
 }
+
 function openMemberModal(data, i) {
     const m = data[i];
     const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
     document.getElementById('modal-title').innerText = m.name;
-    document.getElementById('modal-body').innerHTML = `
-        <img src="${m.img}" class="modal-img">
-        <div class="modal-info-list">
-            <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday}</span></div>
-            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${combinedPosition}</span></div>
-        </div>
-    `;
+    document.getElementById('modal-body').innerHTML = `<img src="${m.img}" class="modal-img"><div class="modal-info-list"><div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday}</span></div><div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${combinedPosition}</span></div></div>`;
     document.getElementById('master-modal').classList.add('active');
 }
+
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');
         document.getElementById('modal-body').innerHTML = '';
     }
+}
+
+// 【NEW】ニュース表示切り替え機能
+function showAllNews() {
+    const hiddenItems = document.querySelectorAll('.news-item.hidden');
+    hiddenItems.forEach(item => item.classList.remove('hidden'));
+    document.getElementById('view-more-btn').style.display = 'none';
 }

@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.35.0 --- */
+/* --- Liar Entertainment Master Style Ver.38.0 --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
@@ -8,20 +8,21 @@ html { scroll-behavior: smooth; }
 body { 
     background-color: #ffffff; color: #000000; 
     font-family: 'Noto Sans JP', sans-serif; 
-    margin: 0; line-height: 1.6; overflow-x: hidden;
+    margin: 0; line-height: 1.5; overflow-x: hidden;
     display: flex; flex-direction: column; min-height: 100vh;
 }
-/* 【修正】フッターとの距離を確保 */
-main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px 100px; }
+main { flex: 1; width: 100%; }
 
+/* --- 共通ヘッダー：スリム化 --- */
 header {
-    width: 100%; height: 80px; padding: 0 5%;
+    width: 100%; height: 70px; padding: 0 5%;
     display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 0; z-index: 9000;
     background: #ffffff; border-bottom: 1px solid #f0f0f0;
 }
-header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
+header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
+/* ハンバーガーボタン */
 .menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
@@ -32,42 +33,55 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 .menu-trigger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .nav-overlay {
-    position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
+    position: fixed; top: 70px; left: 0; width: 100%; height: calc(100vh - 70px);
     background: rgba(255, 255, 255, 0.98); transition: 0.5s;
     z-index: 8500; display: flex; flex-direction: column; align-items: center; justify-content: center;
     visibility: hidden; opacity: 0;
 }
 .nav-overlay.open { visibility: visible; opacity: 1; }
 .nav-overlay ul { list-style: none; text-align: center; }
-.nav-overlay ul li { margin: 20px 0; }
-.nav-overlay ul li a { text-decoration: none; font-size: 2rem; font-weight: 900; color: #000; }
+.nav-overlay ul li { margin: 15px 0; }
+.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; }
 
-.main-visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; margin-top: 20px; }
-.artist-box { position: relative; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; display: block; }
-.artist-box img { width: 100%; height: 100%; object-fit: cover !important; }
-.artist-hover { position: absolute; inset: 0; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; z-index: 10; }
-.artist-box:hover .artist-hover { opacity: 1; }
-.hover-name { color: #fff; font-weight: 900; font-size: 1.5rem; }
+/* --- 【修正】事務所トップ：画面いっぱいの4つの正方形枠 --- */
+.index-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* PC版：横に4つ */
+    width: 100%; 
+}
+.index-artist-box { 
+    position: relative; width: 100%; aspect-ratio: 1 / 1 !important; 
+    overflow: hidden; display: block; text-decoration: none; 
+}
+.index-artist-box img { width: 100%; height: 100%; object-fit: cover !important; transition: 0.6s; }
+.index-artist-box:hover img { transform: scale(1.05); }
+.index-artist-hover { 
+    position: absolute; inset: 0; background-color: rgba(0,0,0,0.7); 
+    display: flex; align-items: center; justify-content: center; 
+    opacity: 0; transition: 0.4s; z-index: 10; 
+}
+.index-artist-box:hover .index-artist-hover { opacity: 1; }
+.index-hover-name { color: #fff; font-weight: 900; font-size: 1.3rem; letter-spacing: 0.1em; }
 
-.hero-header { text-align: center; padding: 40px 0 20px; }
-.artist-main-title { font-weight: 900; font-size: 4rem; text-align: center; margin: 10px 0 30px; text-transform: uppercase; }
+/* --- アーティストページ用レイアウト --- */
+.hero-header { text-align: center; padding: 40px 20px 20px; }
+.artist-main-title { font-weight: 900; font-size: 3.5rem; margin: 10px 0 20px; text-transform: uppercase; }
 
 .tab-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
 .tab-btn { font-size: 13px; font-weight: 900; color: #ccc; border: none; background: none; padding-bottom: 10px; cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
 .tab-btn.active { color: #000; border-bottom-color: #000; }
 
-.content-section { display: none; }
+.content-section { display: none; padding: 0 5% 80px; width: 100%; max-width: 1200px; margin: 0 auto; }
 .content-section.active { display: block; }
 
-.about-box { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 80px; }
+.about-box { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 60px; }
 .about-box img { width: 320px; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid #f0f0f0; flex-shrink: 0; }
-.about-box h3 { font-weight: 900; font-size: 1.8rem; margin-bottom: 20px; border-left: 8px solid #000; padding-left: 20px; }
-.about-box p { font-size: 0.95rem; line-height: 2.2; color: #333; }
+.about-box h3 { font-weight: 900; font-size: 1.6rem; margin-bottom: 15px; border-left: 6px solid #000; padding-left: 15px; }
+.about-box p { font-size: 0.95rem; line-height: 2; color: #333; }
 
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
 .card { cursor: pointer; text-align: left; }
-.card.no-click { cursor: default; }
-.img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
+.img-wrap { width: 100%; aspect-ratio: 1/1 !important; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
 .img-wrap img { width: 100%; height: 100%; object-fit: cover !important; }
 .card-name { font-weight: 900; font-size: 1.1rem; }
 
@@ -75,23 +89,27 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
-.modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; font-weight: 400; }
+.modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; }
 .modal-img { width: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid #f0f0f0; }
-
-/* 【修正】モーダル情報の左揃え */
 .modal-info-list { text-align: left; max-width: 280px; margin: 0 auto; }
-.modal-info-item { margin-bottom: 15px; }
-.modal-label { font-size: 10px; font-weight: 900; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 2px; }
+.modal-info-item { margin-bottom: 12px; }
+.modal-label { font-size: 9px; font-weight: 900; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 2px; }
 .modal-value { font-size: 1rem; color: #000; font-weight: 700; line-height: 1.4; }
 
-footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
+/* --- フッター：スリム化 --- */
+footer { padding: 30px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
 .f-logo-link { text-decoration: none; display: inline-block; margin-bottom: 5px; }
-.f-logo { font-size: 1.2rem; color: #000; font-weight: 900; }
+.f-logo { font-size: 1.1rem; color: #000; font-weight: 900; }
 .f-copy { font-size: 9px; color: #ccc; letter-spacing: 0.1em; }
 
+/* --- スマホ対応 (768px以下) --- */
 @media (max-width: 768px) {
-    .main-visual-grid, .info-grid { grid-template-columns: repeat(2, 1fr); }
-    .artist-main-title { font-size: 2.2rem; }
-    .about-box { flex-direction: column; gap: 30px; }
+    header { height: 60px; }
+    header .logo { font-size: 1.0rem; }
+    .nav-overlay { top: 60px; height: calc(100vh - 60px); }
+    .index-grid { grid-template-columns: repeat(2, 1fr); } /* スマホは2x2 */
+    .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .about-box { flex-direction: column; gap: 20px; }
     .about-box img { width: 100%; }
+    .artist-main-title { font-size: 2.2rem; }
 }

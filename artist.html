@@ -27,7 +27,7 @@
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
-            <h3 id="modal-title" style="font-weight:900; font-size:1.8rem; margin-bottom:15px; text-transform:uppercase;"></h3>
+            <h3 id="modal-title" style="font-weight:900; font-size:1.6rem; margin-bottom:15px; text-transform:uppercase;"></h3>
             <div id="modal-body"></div>
         </div>
     </div>
@@ -79,12 +79,9 @@
             document.title = `${data.name} | Liar Entertainment`;
             document.getElementById('group-name').innerText = data.name;
             document.getElementById('group-banner').src = data.banner;
-            
-            // 句点「。」ごとに改行
             const aboutText = data.about.split('。').join('。<br>');
             document.getElementById('group-about').innerHTML = aboutText;
 
-            // メンバーセクションの表示制御
             if (data.hasMemberSection === false) {
                 document.getElementById('member-section-container').style.display = 'none';
             }

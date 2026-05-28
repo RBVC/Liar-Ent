@@ -30,7 +30,7 @@
     </div>
     <main>
         <section class="new-release-flex">
-            <a href="#CHOSEN_KARMA"><img src="images/god7ike/god7ike-chosen-karma.jpg" class="v3-img-std new-release-img"></a>
+            <a href="#CHOSEN_KARMA"><img src="images/god7ike/god7ike-chosen-karma.jpg" class="v3-img-std"></a>
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">CHOSEN KARMA</h1>
@@ -47,7 +47,7 @@
             <div class="group-intro">
                 <img src="images/god7ike/god7ike-main.jpg" class="v3-img-std">
                 <div>
-                    <h3 class="v3-sub-heading" style="font-size: 2.2rem; border:none; margin-bottom: 10px;">ABOUT GØD7IKE</h3>
+                    <h3 class="v3-sub-heading v3-inner-heading" style="border:none;">ABOUT GØD7IKE</h3>
                     <p>GODLIKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。</p>
                 </div>
             </div>
@@ -66,7 +66,6 @@
     <script>
         const newsBox = document.getElementById('news-list');
         GOD_NEWS.forEach((n, i) => { 
-            // 3件目以降は hidden-news クラスを付与し、JSから制御できるようにする
             const hideClass = i >= 3 ? 'hidden-news' : '';
             const hideStyle = i >= 3 ? 'style="display:none;"' : '';
             newsBox.innerHTML += `<a href="${n.link}" class="news-item ${hideClass}" ${hideStyle}><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`; 

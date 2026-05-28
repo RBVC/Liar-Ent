@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.38.0 --- */
+/* --- Liar Entertainment Unified Data Ver.39.0 --- */
 
 const allGroups = {
     "v3": {
@@ -7,7 +7,7 @@ const allGroups = {
         about: "<3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。",
         members: [
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
-            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Vocal / Main Rapper / Lead Dancer", img: "images/v3/v3-licca.jpg" },
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer", img: "images/v3/v3-licca.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
@@ -25,8 +25,8 @@ const allGroups = {
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
             { name: "MIMI (미미)", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-            { name: "LAY (レイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
-            { name: "HAYUL (ハユル)", birthday: "2003.02.07", role: "", position: "Main Vocal / Visual", img: "images/god7ike/god7ike-hayul.jpg" },
+            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+            { name: "HAYUL (하율)", birthday: "2003.02.07", role: "", position: "Main Vocal / Visual", img: "images/god7ike/god7ike-hayul.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
             { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
@@ -45,9 +45,9 @@ const allGroups = {
         banner: "images/lcr/lcr-main.jpg",
         about: "LCR（エルシーアール）は、リッカ、レイ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
         members: [
-            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
-            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
-            { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
+            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" }, // 【修正】Lの順に
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" }, // 【修正】Cの順に
+            { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }  // 【修正】Rの順に
         ],
         discography: [
             { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
@@ -67,6 +67,7 @@ const allGroups = {
     }
 };
 
+// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -74,37 +75,26 @@ function toggleMenu() {
     if (nav) nav.classList.toggle('open');
     document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : 'auto';
 }
-
 function switchTab(tabName) {
     document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(tabName).classList.add('active');
     document.getElementById('btn-' + tabName).classList.add('active');
 }
-
 function openMemberModal(groupId, index) {
     const m = allGroups[groupId].members[index];
     const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
     const posHtml = combinedPosition.split(' / ').join('<br>');
     document.getElementById('modal-title').innerText = m.name;
-    document.getElementById('modal-body').innerHTML = `
-        <img src="${m.img}" class="modal-img">
-        <div class="modal-info-list">
-            <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday || '---'}</span></div>
-            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${posHtml}</span></div>
-        </div>`;
+    document.getElementById('modal-body').innerHTML = `<img src="${m.img}" class="modal-img"><div class="modal-info-list"><div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday || '---'}</span></div><div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${posHtml}</span></div></div>`;
     document.getElementById('master-modal').classList.add('active');
 }
-
 function openAlbumModal(groupId, index) {
     const a = allGroups[groupId].discography[index];
     document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `
-        <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p>
-        <div style="background:#f9f9f9; border-radius:10px; overflow:hidden; min-height:200px;">${a.embed}</div>`;
+    document.getElementById('modal-body').innerHTML = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p><div style="background:#f9f9f9; border-radius:10px; overflow:hidden; min-height:200px;">${a.embed}</div>`;
     document.getElementById('master-modal').classList.add('active');
 }
-
 function closeModal(e, force = false) {
     if (force || e.target.id === 'master-modal') {
         document.getElementById('master-modal').classList.remove('active');

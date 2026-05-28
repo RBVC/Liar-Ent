@@ -1,6 +1,6 @@
-/* --- Liar Entertainment Unified System Ver.27.0 --- */
+/* --- Liar Entertainment Master Style Ver.28.0 --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 /* --- 全体共通 --- */
 html { scroll-behavior: smooth; }
@@ -13,19 +13,12 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+main { flex: 1; }
 
-/* Montserrat 800：ロゴ・見出し用 */
-.logo-font { 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 800; 
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-/* ヘッダー */
+/* ヘッダー：サイズ調整版 */
 header {
     width: 100%; 
-    padding: 20px 5%;
+    padding: 15px 5%;
     display: flex; 
     justify-content: space-between; 
     align-items: center;
@@ -33,72 +26,99 @@ header {
     top: 0; 
     background: rgba(255,255,255,0.95); 
     backdrop-filter: blur(10px); 
-    z-index: 4000;
+    z-index: 8000;
     border-bottom: 1px solid #f0f0f0;
 }
 header .logo { 
-    font-size: 1.5rem; 
+    font-size: 1.3rem; /* PCサイズを少し下げ */
     text-decoration: none; 
     color: #000; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 800;
+    font-weight: 900;
+    letter-spacing: -0.02em;
 }
 
 /* ハンバーガーメニュー */
-.menu-trigger { position: relative; width: 30px; height: 20px; cursor: pointer; z-index: 5000; }
+.menu-trigger { position: relative; width: 25px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
-.menu-trigger span:nth-child(2) { top: 9px; }
+.menu-trigger span:nth-child(2) { top: 7px; }
 .menu-trigger span:nth-child(3) { bottom: 0; }
-.menu-trigger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-trigger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-trigger.active span:nth-child(2) { opacity: 0; }
-.menu-trigger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.menu-trigger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .nav-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #fff; z-index: 3000;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #fff; z-index: 9000;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     visibility: hidden; opacity: 0; transition: 0.5s;
 }
 .nav-overlay.open { visibility: visible; opacity: 1; }
-.nav-overlay a { font-size: 3rem; font-weight: 800; font-family: 'Montserrat'; text-decoration: none; color: #000; margin: 15px 0; }
+.nav-overlay a { font-size: 2rem; font-weight: 900; text-decoration: none; color: #000; margin: 15px 0; }
 
-/* 事務所トップ：ビジュアルグリッド */
-.main-visual-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; width: 100%; background-color: #fff; margin-top: 80px; }
-.artist-box { position: relative; width: 100%; aspect-ratio: 3 / 1; overflow: hidden; background-color: #f9f9f9; }
-.artist-box img { width: 100%; height: 100%; object-fit: contain; transition: 1.2s cubic-bezier(0.2, 1, 0.3, 1); }
-.artist-box:hover img { transform: scale(1.05); }
-.artist-hover { position: absolute; inset: 0; background-color: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.5s; z-index: 10; }
-.artist-box:hover .artist-hover { opacity: 1; }
-
-/* アーティストページ共通 */
-.tab-btn { font-size: 14px; font-weight: 800; font-family: 'Montserrat'; color: #ccc; letter-spacing: 0.1em; transition: 0.3s; border-bottom: 2px solid transparent; padding-bottom: 10px; cursor: pointer; background: none; }
-.tab-btn.active { color: #000; border-bottom: 2px solid #000; }
-.content-section { display: none; padding: 40px 0; }
-.content-section.block { display: block; }
-
-/* メンバー・アルバムグリッド (PC 4列) */
-.member-flex-container, .disco-grid-container { 
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; width: 100%; 
+/* --- 【修正】事務所トップ：1:1正方形 4枠グリッド --- */
+.main-visual-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); /* PC版：横4列 */
+    width: 100%; 
+    margin-top: 60px; /* ヘッダー分 */
+    background-color: #fff; 
 }
-.member-card, .disco-card { text-align: left; cursor: pointer; }
-.img-wrap { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: #f9f9f9; border: 1px solid #f0f0f0; mb-6: 1.5rem; }
-.img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.img-wrap:hover img { transform: scale(1.05); }
+.artist-box { 
+    position: relative; 
+    width: 100%; 
+    aspect-ratio: 1 / 1 !important; /* 確実に正方形 */
+    overflow: hidden; 
+}
+.artist-box img { 
+    width: 100%; height: 100%; 
+    object-fit: cover !important; /* 画像を枠いっぱいに拡大 */
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); 
+}
+.artist-box:hover img { transform: scale(1.08); }
+.artist-hover { 
+    position: absolute; inset: 0; 
+    background-color: rgba(0,0,0,0.6); 
+    display: flex; align-items: center; justify-content: center; 
+    opacity: 0; transition: 0.4s; z-index: 10; 
+}
+.artist-box:hover .artist-hover { opacity: 1; }
+.hover-name { color: #fff; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.1em; }
 
-/* モーダル (ポップアップ) */
+/* アーティストページ共通パーツ */
+.artist-main-title { font-weight: 900; font-size: 3.5rem; text-align: center; margin: 40px 0; }
+.tab-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
+.tab-btn { font-size: 13px; font-weight: 900; color: #ccc; border: none; background: none; padding-bottom: 10px; cursor: pointer; border-bottom: 2px solid transparent; }
+.tab-btn.active { color: #000; border-bottom-color: #000; }
+.content-section { display: none; }
+.content-section.active { display: block; }
+
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
+.card { cursor: pointer; text-align: left; }
+.img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
+.img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+.card-name { font-weight: 900; font-size: 1.1rem; }
+
+/* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
-.modal-content { width: 100%; max-width: 600px; text-align: center; position: relative; }
-.modal-close { position: absolute; top: -50px; right: 0; font-size: 2.5rem; cursor: pointer; }
+.modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
+.modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; }
 
-/* フッター */
-footer { padding: 80px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; margin-top: 100px; }
-.f-logo { font-size: 2.5rem; margin-bottom: 10px; color: #000; font-family: 'Montserrat'; font-weight: 800; }
-footer p { font-size: 10px; color: #ccc; letter-spacing: 0.3em; }
+/* フッター：サイズ縮小版 */
+footer { 
+    padding: 40px 0; 
+    border-top: 1px solid #f0f0f0; 
+    text-align: center; 
+    background: #fff; 
+}
+footer .f-logo { font-size: 1.5rem; margin-bottom: 5px; color: #000; font-weight: 900; }
+footer p { font-size: 9px; color: #ccc; letter-spacing: 0.1em; }
 
+/* スマホ対応 */
 @media (max-width: 768px) {
-    header { padding: 15px 20px; }
-    .main-visual-grid { grid-template-columns: 1fr; }
-    .member-flex-container, .disco-grid-container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .artist-main-title { font-size: 3.5rem !important; }
+    header .logo { font-size: 1.1rem; } /* スマホ事務所名を小さく */
+    .main-visual-grid { grid-template-columns: repeat(2, 2fr); } /* スマホは2x2 */
+    .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .artist-main-title { font-size: 2.2rem; }
+    .hover-name { font-size: 1.1rem; }
 }

@@ -6,7 +6,7 @@
     <title>Liar Entertainment | Official</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="theme-index">
+<body>
     <header>
         <a href="index.html" class="logo">Liar Entertainment</a>
         <div class="menu-trigger" id="menu-btn" onclick="toggleMenu()">
@@ -15,17 +15,18 @@
     </header>
 
     <div class="nav-overlay" id="nav-menu">
-        <a href="index.html" class="logo-font">ARTISTS</a>
-        <a href="#" class="logo-font">NEWS</a>
+        <a href="index.html">ARTISTS</a>
     </div>
 
     <main>
+        <!-- アーティストグリッド：4つの正方形枠 -->
         <section id="artists" class="main-visual-grid">
+            
             <!-- <3 -->
             <a href="artist.html?id=v3" class="artist-box">
                 <img src="images/v3/v3-main.jpg" alt="<3">
                 <div class="artist-hover">
-                    <span class="logo-font text-white" style="color:#fff; font-size:3rem;">&lt;3</span>
+                    <span class="hover-name">&lt;3</span>
                 </div>
             </a>
 
@@ -33,20 +34,32 @@
             <a href="artist.html?id=god7ike" class="artist-box">
                 <img src="images/god7ike/god7ike-main.jpg" alt="GØD7IKE">
                 <div class="artist-hover">
-                    <span class="logo-font text-white" style="color:#fff; font-size:3rem;">GØD7IKE</span>
+                    <span class="hover-name">GØD7IKE</span>
                 </div>
             </a>
-        </section>
 
-        <section style="max-width:1200px; margin: 80px auto; text-align:center;">
-            <h2 class="logo-font" style="font-size:3rem;">Latest News</h2>
-            <p style="color:#ccc; margin-top:20px;">Coming Soon</p>
+            <!-- LCR (COMING SOON) -->
+            <div class="artist-box">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f9f9f9; color:#ddd; font-weight:900;">LCR</div>
+                <div class="artist-hover">
+                    <span class="hover-name">LCR (COMING SOON)</span>
+                </div>
+            </div>
+
+            <!-- HAYUL (COMING SOON) -->
+            <div class="artist-box">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#f9f9f9; color:#ddd; font-weight:900;">HAYUL</div>
+                <div class="artist-hover">
+                    <span class="hover-name">HAYUL (COMING SOON)</span>
+                </div>
+            </div>
+
         </section>
     </main>
 
-    <footer class="common-footer">
+    <footer>
         <div class="f-logo">Liar Entertainment</div>
-        <p class="f-copy">&copy; Liar Entertainment All Rights Reserved.</p>
+        <p>&copy; Liar Entertainment All Rights Reserved.</p>
     </footer>
 
     <script src="data.js"></script>

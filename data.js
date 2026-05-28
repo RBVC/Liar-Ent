@@ -1,10 +1,10 @@
-/* --- Liar Entertainment Data Ver.27.0 --- */
+/* --- Liar Entertainment Data Ver.28.0 --- */
 
 const allGroups = {
     "v3": {
         name: "<3",
         banner: "images/v3/v3-main.jpg",
-        about: "<3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（<）になっているのは英語のスラングである「横向きハートマーク」を表している。",
+        about: "<3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。",
         members: [
             { name: "JIA (지아)", birthday: "2001.10.09", pos: "Leader / Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Center / Main Vocal / Main Rapper / Lead Dancer", img: "images/v3/v3-licca.jpg" },
@@ -44,9 +44,9 @@ function toggleMenu() {
 }
 
 function switchTab(tabName) {
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('block'));
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active', 'block'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(tabName).classList.add('block');
+    document.getElementById(tabName).classList.add('active', 'block');
     document.getElementById('btn-' + tabName).classList.add('active');
 }
 

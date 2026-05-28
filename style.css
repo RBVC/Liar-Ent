@@ -1,55 +1,29 @@
-/* --- Liar Entertainment Unified Master Style Ver.25.0 --- */
+/* --- Liar Entertainment Unified YG-Style Ver.26.0 --- */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Squada+One&family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
 
-/* --- 【設計図】各テーマの個性をここで定義 --- */
+/* --- 設計図 --- */
 :root {
-    /* デフォルト：事務所トップ用 */
-    --accent-color: #000000;
+    --accent-color: #000;
     --heading-font: 'Montserrat', sans-serif;
     --body-bg: #ffffff;
-    --text-color: #000000;
+    --text-color: #000;
 }
-
-.theme-v3 {
-    --accent-color: #ff007a;
-    --heading-font: 'Squada One', cursive;
-    --body-bg: #000000;
-    --text-color: #ffffff;
-}
-
-.theme-god {
-    --accent-color: #ffffff;
-    --heading-font: 'Cinzel', serif;
-    --body-bg: #1a1a1a;
-    --text-color: #ffffff;
-}
+.theme-v3 { --accent-color: #ff007a; --body-bg: #000; --text-color: #fff; }
+.theme-god { --accent-color: #ffffff; --body-bg: #1a1a1a; --text-color: #fff; }
 
 /* --- 全体共通 --- */
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    display: flex; flex-direction: column; min-height: 100vh; 
-    background-color: var(--body-bg); 
-    color: var(--text-color);
-    font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.5; overflow-x: hidden; 
-}
+body { display: flex; flex-direction: column; min-height: 100vh; background-color: var(--body-bg); color: var(--text-color); font-family: 'Noto Sans JP', sans-serif; line-height: 1.5; overflow-x: hidden; }
 main { flex: 1; }
 
-/* 共通ヘッダー・フッター */
+/* 共通ヘッダー */
 .header { width: 100%; height: 80px; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 8000; background-color: var(--body-bg); border-bottom: 1px solid var(--accent-color); }
-.header .logo-area { font-family: var(--heading-font); color: var(--accent-color) !important; font-size: 2.5rem; text-decoration: none; line-height: 1; font-weight: bold; }
-.theme-god .header .logo-area { font-size: 1.8rem; letter-spacing: 4px; }
-.theme-index .header .logo-area { font-family: 'Montserrat'; font-weight: 800; font-size: 1.8rem; border:none; }
+.header .logo-area { font-family: 'Montserrat'; font-weight: 800; color: var(--accent-color) !important; font-size: 1.8rem; text-decoration: none; }
 .theme-index .header { border-bottom: 1px solid #eee; }
 
-.common-footer { background-color: #ffffff !important; color: #333333 !important; padding: 60px 5%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat', sans-serif; position: relative; z-index: 10; }
-.f-logo { display: block; font-weight: 800; font-size: 1.1rem; color: #000 !important; text-decoration: none; margin-bottom: 10px; }
-.f-copy { font-size: 0.7rem; color: #999 !important; }
-
-/* メニューボタン */
+/* ハンバーガーメニュー */
 .menu-btn { width: 35px; height: 24px; position: fixed; right: 5%; top: 28px; cursor: pointer; z-index: 10000; }
 .menu-btn span { position: absolute; width: 100%; height: 3px; background: var(--accent-color); transition: 0.3s; left: 0; }
 .menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
@@ -60,59 +34,59 @@ main { flex: 1; }
 .nav-overlay.open { right: 5%; }
 .nav-overlay ul { list-style: none; }
 .nav-overlay ul li { margin: 15px 0; text-align: right; }
-.nav-overlay ul li a { text-decoration: none; font-size: 1.5rem; font-family: var(--heading-font); color: var(--accent-color); }
-.theme-index .nav-overlay ul li a { font-family: 'Montserrat'; font-weight: 800; color: #000; }
+.nav-overlay ul li a { text-decoration: none; font-size: 1.2rem; font-family: 'Montserrat'; font-weight: 800; color: var(--accent-color); }
 .menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 8500; display: none; }
 .menu-closer.open { display: block; }
 
-/* セクション構造 */
-section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-.v3-sub-heading { font-family: var(--heading-font) !important; color: var(--accent-color); font-size: 2.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--accent-color); text-transform: uppercase; }
-.v3-inner-heading { font-family: var(--heading-font); color: var(--accent-color); font-size: 1.6rem; margin-bottom: 15px; font-weight: bold; text-transform: uppercase; }
+/* 共通フッター */
+.common-footer { background-color: #ffffff !important; color: #333333 !important; padding: 60px 5%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat', sans-serif; position: relative; z-index: 10; }
+.f-logo { display: block; font-weight: 800; font-size: 1.1rem; color: #000 !important; text-decoration: none; margin-bottom: 10px; }
+.f-copy { font-size: 0.7rem; color: #999 !important; }
 
-/* 画像・グリッド */
-.v3-img-std, .member-card img, .disco-thumb { 
-    width: 100% !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important; 
-    border: 1px solid rgba(255,255,255,0.2); transition: 0.3s;
-}
-.group-intro img, .new-release-img { max-width: 320px; flex-shrink: 0; }
-.member-grid, .disco-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+/* --- アーティストページ：YGスタイル要素 --- */
+.hero-banner { width: 100%; padding-top: 40px; text-align: center; }
+.artist-main-title { font-family: 'Montserrat'; font-weight: 800; font-size: 4rem; text-transform: uppercase; margin: 20px 0; letter-spacing: 5px; color: var(--accent-color); }
 
-/* ニュース */
-.v3-tag { background-color: var(--accent-color); color: #000; padding: 4px 15px; font-size: 1.1rem; font-weight: bold; min-width: 110px; text-align: center; display: inline-block; font-family: var(--heading-font); }
-.news-item { display: flex; gap: 30px; padding: 20px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #333; align-items: center; }
-.news-item.hidden-news { display: none; }
-.news-date { font-family: var(--heading-font); color: var(--accent-color); font-size: 1.2rem; min-width: 110px; }
+/* タブ切り替えボタン */
+.tab-container { display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
+.tab-btn { background: none; border: none; padding: 15px 0; color: #666; font-family: 'Montserrat'; font-weight: 800; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; border-bottom: 3px solid transparent; transition: 0.3s; }
+.tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
 
-/* コンテンツ装飾 */
-.new-release-flex, .group-intro { display: flex; gap: 50px; align-items: center; padding-top: 80px; }
-.v3-main-font { font-family: var(--heading-font) !important; color: var(--accent-color) !important; font-size: 4.5rem; line-height: 1.1; margin: 5px 0; }
-.member-card { display: flex; flex-direction: column; align-items: center; cursor: pointer; }
-.member-name-top { font-family: var(--heading-font); color: var(--accent-color); font-size: 1.4rem; text-align: center; margin-top: 10px; }
-.view-more-btn { display: block; width: 220px; margin: 40px auto 0; padding: 12px; background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); font-family: var(--heading-font); font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: 0.3s; text-align: center; }
-.view-more-btn:hover { background: var(--accent-color); color: #000; }
+/* コンテンツエリア */
+.content-section { display: none; padding: 20px 0 100px; }
+.content-section.active { display: block; }
+
+/* グリッド（PC 4列） */
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.card { display: flex; flex-direction: column; align-items: center; cursor: pointer; text-align: center; }
+.card img { width: 100%; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 15px; }
+.card-name { font-family: 'Montserrat'; font-weight: 800; font-size: 1.2rem; color: var(--accent-color); }
+
+/* ABOUT */
+.about-box { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
+.about-box img { width: 320px; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid var(--accent-color); }
+.about-box p { font-size: 0.95rem; line-height: 2.2; opacity: 0.9; }
+
+/* 事務所トップ用 */
+.theme-index .page-main-title { text-align: center; padding: 80px 0; font-size: 3.5rem; letter-spacing: 12px; font-weight: 800; font-family: 'Montserrat' !important; }
+.theme-index .artist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
+.theme-index .artist-card { text-decoration: none !important; color: #000 !important; }
+.theme-index .img-placeholder { width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
+.theme-index .img-placeholder img { width: 100%; height: 100%; object-fit: cover !important; }
 
 /* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { background: #111; width: 100%; max-width: 500px; padding: 40px 30px; position: relative; text-align: center; border: 1px solid var(--accent-color); }
-.modal-close { position: absolute; top: 10px; right: 15px; font-size: 2.5rem; cursor: pointer; color: var(--accent-color); font-family: var(--heading-font); }
-.modal-img { width: 280px !important; height: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid var(--accent-color); }
-.modal-label { font-family: var(--heading-font); color: var(--accent-color); font-size: 1.1rem; margin-bottom: 2px; font-weight: bold; }
+.modal-close { position: absolute; top: 10px; right: 15px; font-size: 2.5rem; cursor: pointer; color: var(--accent-color); font-family: 'Montserrat'; }
+.modal-img { width: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid var(--accent-color); }
+.modal-label { font-family: 'Montserrat'; color: var(--accent-color); font-size: 1.1rem; margin-bottom: 2px; font-weight: 800; }
 
-/* 事務所トップのアーティストカード調整 */
-.theme-index .artist-v3-font, .theme-index .artist-god-font { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; color: #000 !important; }
-
-/* スマホ対応：全ページ共通 */
+/* スマホ対応 */
 @media (max-width: 768px) {
-    section { padding: 40px 20px; }
-    .v3-sub-heading { font-size: 1.8rem; }
-    .v3-inner-heading { font-size: 1.4rem; }
-    .new-release-flex, .group-intro { flex-direction: column; text-align: center; padding-top: 40px; }
-    .new-release-img, .group-intro img { width: 280px !important; height: 280px !important; margin: 0 auto !important; }
-    .v3-main-font { font-size: 3.5rem; }
-    .news-item { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .member-grid, .disco-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .member-card img, .disco-thumb { width: 100% !important; }
-    .member-name-top { font-size: 1.1rem; }
+    .artist-main-title { font-size: 2.5rem; }
+    .about-box { flex-direction: column; align-items: center; text-align: left; }
+    .about-box img { width: 280px; }
+    .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .theme-index .artist-grid { grid-template-columns: 1fr; }
 }

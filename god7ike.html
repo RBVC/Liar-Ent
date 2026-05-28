@@ -24,7 +24,6 @@
         </ul>
     </nav>
 
-    <!-- 共通モーダル -->
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
@@ -36,11 +35,11 @@
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
-            <a href="#OOMM"><img src="https://placehold.jp/320x320.png?text=OOMM" class="v3-img-std"></a>
+            <a href="#CHOSEN_KARMA"><img src="https://placehold.jp/320x320.png?text=KARMA" class="v3-img-std"></a>
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
-                <h1 class="v3-main-font">OOMM</h1>
-                <p style="font-size:1.1rem; color:#ccc; font-family:'Noto Sans JP';">1st Mini Album / 2023.05.21</p>
+                <h1 class="v3-main-font">CHOSEN KARMA</h1>
+                <p style="font-size:1.1rem; color:#ccc; font-family:'Noto Sans JP';">4th Mini Album / 2026.XX.XX</p>
             </div>
         </section>
 
@@ -62,7 +61,6 @@
                     </p>
                 </div>
             </div>
-            
             <div id="member-grid" class="member-grid"></div>
         </section>
 
@@ -80,20 +78,17 @@
 
     <script src="data.js"></script>
     <script>
-        // ニュース生成
         const newsBox = document.getElementById('news-list');
         GOD_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
-        // メンバー生成
         const memberBox = document.getElementById('member-grid');
         GOD_MEMBERS.forEach((m, i) => {
             memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(GOD_MEMBERS, ${i})"><img src="${m.img}" class="v3-img-std"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`;
         });
-        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         GOD_ALBUMS.forEach((a, i) => {
-            discoBox.innerHTML += `<img src="${a.img}" id="${a.id}" class="disco-thumb v3-img-std" onclick="openAlbumModal(GOD_ALBUMS, ${i})">`;
+            discoBox.innerHTML += `<img src="${a.img}" id="${a.id}" class="disco-thumb" onclick="openAlbumModal(GOD_ALBUMS, ${i})">`;
         });
     </script>
 </body>

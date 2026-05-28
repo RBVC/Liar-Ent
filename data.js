@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.33.1 --- */
+/* --- Liar Entertainment Unified Data Ver.34.0 --- */
 
 const allGroups = {
     "v3": {
@@ -6,14 +6,14 @@ const allGroups = {
         banner: "images/v3/v3-main.jpg",
         about: "<3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。",
         members: [
-            { name: "JIA (지아)", birthday: "2001.10.09", pos: "Leader / Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
-            { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Center / Main Vocal / Main Rapper / Lead Dancer", img: "images/v3/v3-licca.jpg" },
-            { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
+            { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer", img: "images/v3/v3-licca.jpg" },
+            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
         ],
         hasMemberSection: true,
         clickableMembers: true
@@ -23,13 +23,13 @@ const allGroups = {
         banner: "images/god7ike/god7ike-main.jpg",
         about: "GODLIKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。",
         members: [
-            { name: "JIA (지아)", birthday: "2001.10.09", pos: "Leader / Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
-            { name: "MIMI (미미)", birthday: "2009.11.03", pos: "Maknae / Lead Dancer / Sub Vocal", img: "images/god7ike/god7ike-mimi.jpg" },
-            { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-            { name: "LAY (レイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
-            { name: "HAYUL (ハユル)", birthday: "2003.02.07", pos: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
-            { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Center / Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
-            { name: "ROY (ロイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
+            { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
+            { name: "MIMI (미미)", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
+            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
+            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+            { name: "HAYUL (하율)", birthday: "2003.02.07", role: "Visual", position: "Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
+            { name: "ROY (로이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
         discography: [
             { title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p>Coming Soon</p>` },
@@ -44,9 +44,9 @@ const allGroups = {
         banner: "images/lcr/lcr-main.jpg",
         about: "LCR（エルシーアール）は、リッカ、レイ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
         members: [
-            { name: "LICCA (릿카)", pos: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
-            { name: "LAY (レイ)", pos: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
-            { name: "ROY (ロイ)", pos: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
+            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
+            { name: "ROY (로이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
         ],
         discography: [
             { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p>Coming Soon</p>` }
@@ -72,6 +72,7 @@ function toggleMenu() {
     const nav = document.getElementById('nav-menu');
     if (btn) btn.classList.toggle('active');
     if (nav) nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : 'auto';
 }
 
 function switchTab(tabName) {
@@ -81,28 +82,28 @@ function switchTab(tabName) {
     document.getElementById('btn-' + tabName).classList.add('active');
 }
 
-// 修正：引数をIDとタイプに変更
-function openMemberModal(groupId, index) {
-    const m = allGroups[groupId].members[index];
-    const formattedPos = m.pos.split(' / ').join('<br>');
-    
+function openAlbumModal(groupId, i) {
+    const data = allGroups[groupId];
+    const a = data.discography[i];
+    document.getElementById('modal-title').innerText = a.title;
+    document.getElementById('modal-body').innerHTML = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900;">${a.type}</p><div>${a.embed}</div>`;
+    document.getElementById('master-modal').classList.add('active');
+}
+
+function openMemberModal(groupId, i) {
+    const data = allGroups[groupId];
+    const m = data.members[i];
+    // ROLEとPOSITIONを統合
+    const combinedPosition = m.role ? `${m.role} / ${m.pos}` : m.pos;
+    const posHtml = combinedPosition.split(' / ').join('<br>'); // スラッシュで改行
+
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
         <img src="${m.img}" class="modal-img">
         <div class="modal-info-list">
             <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday || '---'}</span></div>
-            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${formattedPos}</span></div>
+            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${posHtml}</span></div>
         </div>
-    `;
-    document.getElementById('master-modal').classList.add('active');
-}
-
-function openAlbumModal(groupId, index) {
-    const a = allGroups[groupId].discography[index];
-    document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `
-        <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:800; letter-spacing:2px; text-align:center;">${a.type}</p>
-        <div style="background:#f9f9f9; border-radius:10px; overflow:hidden;">${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <main>
+    <main style="max-width:1200px; margin:0 auto; padding:40px 20px;">
         <div class="hero-header">
             <a href="index.html" style="font-size:10px; color:#ccc; text-decoration:none; font-weight:900; letter-spacing:2px;">← ALL ARTISTS</a>
             <h1 id="group-name" class="artist-main-title">Artist</h1>
@@ -80,6 +80,7 @@
             document.getElementById('group-name').innerText = data.name;
             document.getElementById('group-banner').src = data.banner;
             document.getElementById('group-about').innerHTML = data.about;
+            document.getElementById('about-title').innerText = `ABOUT ${data.name}`;
 
             if (data.hasMemberSection === false) {
                 document.getElementById('member-section-container').style.display = 'none';

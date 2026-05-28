@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Management Ver.20.0 --- */
+/* --- Liar Entertainment Data Management Ver.21.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -8,7 +8,7 @@ const V3_NEWS = [
 ];
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
-    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Vocal / Main Rapper / Lead Dancer" },
+    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" }
 ];
 const V3_ALBUMS = [
@@ -30,7 +30,6 @@ const GOD_NEWS = [
     { date: "2023.11.14", tag: "RELEASE", title: "2nd Mini Album 「ISSUE MAKER」", link: "#ISSUE_MAKER" },
     { date: "2023.05.21", tag: "RELEASE", title: "1st Mini Album 「OOMM」", link: "#OOMM" }
 ];
-
 const GOD_MEMBERS = [
     { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
@@ -38,20 +37,13 @@ const GOD_MEMBERS = [
     { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
     { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
     { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
-    { name: "ROY (로이)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
+    { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
-
 const GOD_ALBUMS = [
     { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "ISSUE_MAKER", title: "ISSUE MAKER", type: "2nd Mini Album", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "LCR", title: "PURRFECT", type: "LCR 1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
-    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `
-        <ul style="text-align:left; color:#fff; font-family:'Noto Sans JP'; padding:20px; list-style:none;">
-            <li style="margin-bottom:10px;">• I'm Ready (Jia Solo)</li>
-            <li style="margin-bottom:10px;">• TEA (4uatre)</li>
-            <li style="margin-bottom:10px;">• FACT$ (4uatre)</li>
-            <li>• FREE&SHINE (feat. Licca)</li>
-        </ul>` },
+    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `<ul style="text-align:left; color:#fff; font-family:'Noto Sans JP'; padding:20px; list-style:none;"><li style="margin-bottom:10px;">• I'm Ready (Jia Solo)</li><li style="margin-bottom:10px;">• TEA (4uatre)</li><li style="margin-bottom:10px;">• FACT$ (4uatre)</li><li>• FREE&SHINE (feat. Licca)</li></ul>` },
     { id: "REBORN", title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "Wings", title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` }
@@ -80,7 +72,6 @@ function openAlbumModal(data, i) {
 function openMemberModal(data, i) {
     const m = data[i];
     const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
-    
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
         <img src="${m.img}" class="modal-img">

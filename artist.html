@@ -14,9 +14,16 @@
         </div>
     </header>
 
-    <div class="nav-overlay" id="nav-menu">
-        <a href="index.html">ARTISTS</a>
-    </div>
+    <nav class="nav-overlay" id="nav-menu">
+        <span class="menu-sub-ttl">OFFICIAL SITE</span>
+        <a href="index.html" onclick="toggleMenu()">TOP / ARTISTS</a>
+        
+        <span class="menu-sub-ttl">ARTIST LIST</span>
+        <ul>
+            <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
+            <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
+        </ul>
+    </nav>
 
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
@@ -26,7 +33,7 @@
         </div>
     </div>
 
-    <main style="max-width:1200px; margin:0 auto; padding:100px 20px;">
+    <main style="max-width:1200px; margin:0 auto; padding:40px 20px;">
         <div style="text-align:center; margin-bottom:40px;">
             <a href="index.html" style="font-size:10px; color:#ccc; text-decoration:none; font-weight:900; letter-spacing:2px;">← ALL ARTISTS</a>
             <h1 id="group-name" class="artist-main-title">Artist</h1>
@@ -37,30 +44,28 @@
             <button onclick="switchTab('disco')" id="btn-disco" class="tab-btn">Discography</button>
         </div>
 
-        <div id="profile" class="content-section active block">
-            <section style="padding:0;">
-                <div class="about-box">
-                    <img id="group-banner" src="">
-                    <div>
-                        <h3 id="about-title" style="font-weight:900;">ABOUT</h3>
-                        <p id="group-about" style="color:#666;"></p>
-                    </div>
+        <div id="profile" class="content-section active">
+            <div class="about-box">
+                <img id="group-banner" src="">
+                <div>
+                    <h3 id="about-title" style="font-weight:900;">ABOUT</h3>
+                    <p id="group-about" style="color:#666;"></p>
                 </div>
-                <h2 style="font-weight:900; font-size:1.8rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">MEMBER</h2>
-                <div id="member-grid" class="info-grid"></div>
-            </section>
+            </div>
+            <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">MEMBER</h2>
+            <div id="member-grid" class="info-grid"></div>
         </div>
 
         <div id="disco" class="content-section">
-            <section style="padding:0;">
-                <h2 style="font-weight:900; font-size:1.8rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">DISCOGRAPHY</h2>
-                <div id="disco-grid" class="info-grid"></div>
-            </section>
+            <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">DISCOGRAPHY</h2>
+            <div id="disco-grid" class="info-grid"></div>
         </div>
     </main>
 
     <footer>
-        <div class="f-logo">Liar Entertainment</div>
+        <a href="index.html" class="f-logo-link">
+            <div class="f-logo">Liar Entertainment</div>
+        </a>
         <p>&copy; Liar Entertainment All Rights Reserved.</p>
     </footer>
 

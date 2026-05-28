@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Ver.28.0 --- */
+/* --- Liar Entertainment Data Ver.29.0 --- */
 
 const allGroups = {
     "v3": {
@@ -11,9 +11,9 @@ const allGroups = {
             { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
         ]
     },
     "god7ike": {
@@ -24,7 +24,7 @@ const allGroups = {
             { name: "JIA (지아)", birthday: "2001.10.09", pos: "Leader / Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
             { name: "MIMI (미미)", birthday: "2009.11.03", pos: "Maknae / Lead Dancer / Sub Vocal", img: "images/god7ike/god7ike-mimi.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-            { name: "LAY (レイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+            { name: "LAY (레이)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
             { name: "HAYUL (ハユル)", birthday: "2003.02.07", pos: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Center / Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
             { name: "ROY (ロイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
@@ -39,8 +39,12 @@ const allGroups = {
 
 // 共通機能
 function toggleMenu() {
-    document.getElementById('menu-btn').classList.toggle('active');
-    document.getElementById('nav-menu').classList.toggle('open');
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-menu');
+    if (btn) btn.classList.toggle('active');
+    if (nav) nav.classList.toggle('open');
+    // メニューが開いているときはスクロール禁止
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : 'auto';
 }
 
 function switchTab(tabName) {

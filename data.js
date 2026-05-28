@@ -1,4 +1,4 @@
-/* --- Liar Entertainment 全データ管理：data.js Ver.16.0 --- */
+/* --- Liar Entertainment Data Management Ver.17.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -12,12 +12,12 @@ const V3_MEMBERS = [
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal" }
 ];
 const V3_ALBUMS = [
-    { id: "COOL", title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-    { id: "VENOM", title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-    { id: "ALL-OUT", title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
+    { id: "COOL", title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+    { id: "VENOM", title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+    { id: "ALL-OUT", title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
 ];
 
-// --- GØD7IKE DATA ---
+// --- GØD7IKE DATA (New Paths Reflecting images/god7ike/) ---
 const GOD_NEWS = [
     { date: "2026.XX.XX", tag: "RELEASE", title: "4th Mini Album 「CHOSEN KARMA」", link: "#CHOSEN_KARMA" },
     { date: "2025.10.07", tag: "RELEASE", title: "1st Full Album 「Wings」", link: "#Wings" },
@@ -32,36 +32,39 @@ const GOD_NEWS = [
 ];
 
 const GOD_MEMBERS = [
-    { name: "JIA (지아)", img: "https://placehold.jp/320x320.png?text=JIA", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
-    { name: "MIMI (미미)", img: "https://placehold.jp/320x320.png?text=MIMI", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
-    { name: "NAYEON (나연)", img: "https://placehold.jp/320x320.png?text=NAYEON", birthday: "2006.06.20", role: "Main Dancer", position: "Sub Vocal" },
-    { name: "LAY (レイ)", img: "https://placehold.jp/320x320.png?text=LAY", birthday: "2007.01.06", role: "Main Rapper", position: "Main Rapper" },
-    { name: "HAYUL (ハユル)", img: "https://placehold.jp/320x320.png?text=HAYUL", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
-    { name: "LICCA (リッカ)", img: "https://placehold.jp/320x320.png?text=LICCA", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
-    { name: "ROY (ロイ)", img: "https://placehold.jp/320x320.png?text=ROY", birthday: "2007.01.06", role: "Main Rapper", position: "Main Rapper" }
+    { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
+    { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
+    { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "Main Dancer", position: "Sub Vocal" },
+    { name: "LAY (レイ)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "Main Rapper", position: "Main Rapper" },
+    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "LICCA (リッカ)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
+    { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "Main Rapper", position: "Main Rapper" }
 ];
 
 const GOD_ALBUMS = [
-    { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "https://placehold.jp/320x320.png?text=OOMM", embed: `PLAYER COMING SOON` },
-    { id: "ISSUE_MAKER", title: "ISSUE MAKER", type: "2nd Mini Album", img: "https://placehold.jp/320x320.png?text=ISSUE_MAKER", embed: `PLAYER COMING SOON` },
-    { id: "LCR", title: "PURRFECT", type: "LCR 1st EP", img: "https://placehold.jp/320x320.png?text=LCR", embed: `PLAYER COMING SOON` },
-    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "https://placehold.jp/320x320.png?text=JIA+PROJECT", embed: `
-        <ul style="text-align:left; color:#fff; font-family:'Noto Sans JP';">
-            <li>• I'm Ready (Jia Solo)</li>
-            <li>• TEA (4uatre)</li>
-            <li>• FACT$ (4uatre)</li>
+    { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "ISSUE_MAKER", title: "ISSUE MAKER", type: "2nd Mini Album", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "LCR", title: "PURRFECT", type: "LCR 1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "JIA_PROJECT", title: "JIA RESURRECTION", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `
+        <ul style="text-align:left; color:#fff; font-family:'Noto Sans JP'; padding:20px; list-style:none;">
+            <li style="margin-bottom:10px;">• I'm Ready (Jia Solo)</li>
+            <li style="margin-bottom:10px;">• TEA (4uatre)</li>
+            <li style="margin-bottom:10px;">• FACT$ (4uatre)</li>
             <li>• FREE&SHINE (feat. Licca)</li>
         </ul>` },
-    { id: "REBORN", title: "REBORN", type: "3rd Mini Album", img: "https://placehold.jp/320x320.png?text=REBORN", embed: `PLAYER COMING SOON` },
-    { id: "Wings", title: "Wings", type: "1st Full Album", img: "https://placehold.jp/320x320.png?text=Wings", embed: `PLAYER COMING SOON` },
-    { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "https://placehold.jp/320x320.png?text=KARMA", embed: `PLAYER COMING SOON` }
+    { id: "REBORN", title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "Wings", title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
+    { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` }
 ];
 
 // --- 共通機能 ---
 function toggleMenu() {
-    document.getElementById('menu-btn').classList.toggle('open');
-    document.getElementById('nav-overlay').classList.toggle('open');
-    document.getElementById('menu-closer').classList.toggle('open');
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav-overlay');
+    const closer = document.getElementById('menu-closer');
+    if (btn) btn.classList.toggle('open');
+    if (nav) nav.classList.toggle('open');
+    if (closer) closer.classList.toggle('open');
 }
 
 function openAlbumModal(data, i) {
@@ -69,7 +72,7 @@ function openAlbumModal(data, i) {
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px; font-family:'Noto Sans JP'; text-align:center;">${a.type}</p>
-        <div class="player-container">${a.embed}</div>
+        <div class="player-container" style="background:#000;">${a.embed}</div>
     `;
     document.getElementById('master-modal').classList.add('active');
 }

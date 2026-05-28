@@ -24,6 +24,7 @@
         </ul>
     </nav>
 
+    <!-- 共通モーダル -->
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
@@ -35,7 +36,7 @@
     <main>
         <!-- 1. NEW RELEASE -->
         <section class="new-release-flex">
-            <a href="#CHOSEN_KARMA"><img src="https://placehold.jp/320x320.png?text=KARMA" class="v3-img-std"></a>
+            <a href="#CHOSEN_KARMA"><img src="images/god7ike/god7ike-chosen-karma.jpg" class="v3-img-std"></a>
             <div class="new-release-info">
                 <span class="v3-tag">LATEST RELEASE</span>
                 <h1 class="v3-main-font">CHOSEN KARMA</h1>
@@ -53,7 +54,7 @@
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
             <div class="group-intro">
-                <img src="https://placehold.jp/320x320.png?text=GROUP+IMAGE" class="v3-img-std">
+                <img src="images/god7ike/god7ike-main.jpg" class="v3-img-std">
                 <div>
                     <h3 class="v3-sub-heading" style="font-size: 2.2rem; border:none; margin-bottom: 10px;">ABOUT GØD7IKE</h3>
                     <p style="font-family: 'Noto Sans JP';">
@@ -61,6 +62,7 @@
                     </p>
                 </div>
             </div>
+            
             <div id="member-grid" class="member-grid"></div>
         </section>
 
@@ -78,17 +80,24 @@
 
     <script src="data.js"></script>
     <script>
+        // ニュース生成
         const newsBox = document.getElementById('news-list');
         GOD_NEWS.forEach(n => {
             newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`;
         });
+        // メンバー生成
         const memberBox = document.getElementById('member-grid');
         GOD_MEMBERS.forEach((m, i) => {
-            memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(GOD_MEMBERS, ${i})"><img src="${m.img}" class="v3-img-std"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`;
+            memberBox.innerHTML += `
+                <div class="member-card" onclick="openMemberModal(GOD_MEMBERS, ${i})">
+                    <img src="${m.img}" class="v3-img-std">
+                    <p class="member-name-top">${m.name.split(' ')[0]}</p>
+                </div>`;
         });
+        // ディスコ生成
         const discoBox = document.getElementById('disco-grid');
         GOD_ALBUMS.forEach((a, i) => {
-            discoBox.innerHTML += `<img src="${a.img}" id="${a.id}" class="disco-thumb" onclick="openAlbumModal(GOD_ALBUMS, ${i})">`;
+            discoBox.innerHTML += `<img src="${a.img}" id="${a.id}" class="disco-thumb v3-img-std" onclick="openAlbumModal(GOD_ALBUMS, ${i})">`;
         });
     </script>
 </body>

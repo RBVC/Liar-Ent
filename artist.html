@@ -17,10 +17,10 @@
     <nav class="nav-overlay" id="nav-menu">
         <span style="font-size:10px; color:#ccc; letter-spacing:5px; font-weight:900; margin-bottom:10px; display:block;">ARTIST LIST</span>
         <ul>
-            <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
             <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
             <li><a href="artist.html?id=lcr" onclick="toggleMenu()">LCR</a></li>
             <li><a href="artist.html?id=hayul" onclick="toggleMenu()">HAYUL</a></li>
+            <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
         </ul>
     </nav>
 
@@ -71,7 +71,7 @@
     <script src="data.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const groupId = params.get('id') || 'v3';
+        const groupId = params.get('id') || 'god7ike'; // デフォルトをレジェンド順に変更
         const data = allGroups[groupId];
 
         if (data) {

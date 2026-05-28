@@ -62,6 +62,7 @@ img { max-width: 100%; height: auto; display: block; }
 .theme-v3 .v3-sub-heading { font-family: 'Squada One' !important; color: #ff007a; border-bottom: 1px solid #ff007a; letter-spacing: 1px; }
 .theme-v3 .v3-tag { background-color: #ff007a; color: #000; font-family: 'Squada One'; }
 .theme-v3 .v3-main-font { font-family: 'Squada One' !important; color: #ff007a !important; }
+.theme-v3 .view-more-btn { font-family: 'Squada One', cursive !important; border-color: #ff007a; color: #ff007a; }
 
 /* --- 【テーマ：GØD7IKE】 --- */
 .theme-god { background-color: #1a1a1a; color: #ffffff; font-family: 'Noto Sans JP', sans-serif; }
@@ -72,40 +73,51 @@ img { max-width: 100%; height: auto; display: block; }
 .theme-god .nav-overlay ul li a { color: #ffffff; font-family: 'Cinzel', serif; }
 .theme-god .v3-sub-heading { font-family: 'Cinzel' !important; color: #ffffff; border-bottom: 1px solid #ffffff; letter-spacing: 2px; font-weight: 700; }
 .theme-god .v3-tag { background-color: #ffffff; color: #000; font-family: 'Cinzel'; font-weight: bold; }
-.theme-god .v3-main-font { font-family: 'Cinzel' !important; color: #ffffff !important; letter-spacing: 3px; }
+.theme-god .v3-main-font { font-family: 'Cinzel' !important; color: #ffffff !important; letter-spacing: 5px; }
 .theme-god .member-name-top { font-family: 'Cinzel'; color: #ffffff; letter-spacing: 1px; }
+.theme-god .view-more-btn { font-family: 'Cinzel', serif !important; border-color: #ffffff; color: #ffffff; letter-spacing: 2px; }
 
 /* --- レイアウト共通 --- */
 section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 .v3-sub-heading { font-size: 2.5rem; margin-bottom: 30px; text-transform: uppercase; }
 
+/* 【修正】タグの幅を広く、余白を増量 */
+.v3-tag { 
+    background-color: #ff007a; color: #000; padding: 4px 15px; font-size: 1.1rem; 
+    font-weight: bold; min-width: 110px; text-align: center; display: inline-block; 
+}
+
+/* 画像サイズ固定 */
 .v3-img-std { width: 320px !important; height: 320px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid rgba(255,255,255,0.2); flex-shrink: 0; }
+
 .new-release-flex { display: flex; gap: 50px; align-items: center; padding-top: 80px; }
 .new-release-img { width: 320px !important; }
+
+/* 【修正】最新リリースの文字を大きく */
+.v3-main-font { font-size: 6rem; line-height: 1; margin: 10px 0; }
+
 .group-intro { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
 .group-intro p { font-size: 0.95rem; line-height: 2.2; opacity: 0.9; }
 
-/* グリッド：PC 4列 / スマホ 2列 */
+/* グリッド */
 .member-grid, .disco-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .member-card img, .disco-thumb { width: 100% !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: 0.3s; }
 .member-card { display: flex; flex-direction: column; align-items: center; }
 .member-name-top { font-size: 1.4rem; text-align: center; margin-top: 10px; }
 
-/* ニュースリスト表示制限用 */
+/* ニュースリスト */
 .news-item { display: flex; gap: 30px; padding: 20px 0; color: #fff; text-decoration: none; border-bottom: 1px solid #333; align-items: center; }
-.news-item.hidden { display: none; } /* 初期状態で隠すクラス */
+.news-item.hidden { display: none; }
 .news-meta { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
 .news-date { font-family: 'Squada One'; font-size: 1.3rem; min-width: 110px; }
 .theme-god .news-date { font-family: 'Cinzel', serif; font-size: 1.1rem; }
 
-/* VIEW MORE ボタン */
+/* VIEW MORE / CLOSE ボタン */
 .view-more-btn {
-    display: block; width: 200px; margin: 30px auto 0; padding: 10px;
+    display: block; width: 220px; margin: 40px auto 0; padding: 12px;
     background: transparent; border: 1px solid #fff; color: #fff;
-    font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 800;
-    cursor: pointer; transition: 0.3s; text-align: center;
+    font-size: 0.9rem; font-weight: 800; cursor: pointer; transition: 0.3s; text-align: center;
 }
-.theme-v3 .view-more-btn { border-color: #ff007a; color: #ff007a; }
 .view-more-btn:hover { background: #fff; color: #000; }
 .theme-v3 .view-more-btn:hover { background: #ff007a; color: #000; }
 
@@ -125,6 +137,7 @@ section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
     .v3-sub-heading { font-size: 1.8rem; }
     .new-release-flex, .group-intro { flex-direction: column; text-align: center; }
     .v3-img-std, .new-release-img { width: 280px !important; height: 280px !important; margin: 0 auto !important; }
+    .v3-main-font { font-size: 4rem; }
     .news-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .news-meta { min-width: auto; gap: 15px; }
     .group-intro p { font-size: 0.85rem !important; text-align: left; }

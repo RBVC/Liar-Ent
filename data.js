@@ -30,17 +30,15 @@ const GOD_NEWS = [
     { date: "2023.11.14", tag: "RELEASE", title: "2nd Mini Album 「ISSUE MAKER」", link: "#ISSUE_MAKER" },
     { date: "2023.05.21", tag: "RELEASE", title: "1st Mini Album 「OOMM」", link: "#OOMM" }
 ];
-
 const GOD_MEMBERS = [
     { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
     { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" },
     { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
-    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
     { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
     { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
-
 const GOD_ALBUMS = [
     { id: "CHOSEN_KARMA", title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
     { id: "Wings", title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` },
@@ -83,9 +81,15 @@ function closeModal(e, force = false) {
     }
 }
 
-// 【NEW】ニュース表示切り替え機能
-function showAllNews() {
-    const hiddenItems = document.querySelectorAll('.news-item.hidden');
-    hiddenItems.forEach(item => item.classList.remove('hidden'));
-    document.getElementById('view-more-btn').style.display = 'none';
+// 【修正】ニュースの開閉トグル
+function toggleNews() {
+    const hiddenItems = document.querySelectorAll('.news-item.hidden-news');
+    const btn = document.getElementById('view-more-btn');
+    const isExpanding = btn.innerText === 'VIEW MORE';
+
+    hiddenItems.forEach(item => {
+        item.style.display = isExpanding ? 'flex' : 'none';
+    });
+
+    btn.innerText = isExpanding ? 'CLOSE' : 'VIEW MORE';
 }

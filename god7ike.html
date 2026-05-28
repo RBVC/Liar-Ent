@@ -7,30 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-god">
-    <div class="menu-closer" id="menu-closer" onclick="toggleMenu()"></div>
     <header class="header">
-        <a href="index.html" class="logo-area">GØD7IKE</a>
+        <a href="index.html" class="logo-area">Liar Entertainment</a>
         <div class="menu-btn" id="menu-btn" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
     </header>
-
-    <nav class="nav-overlay" id="nav-overlay">
+    <nav class="nav-overlay" id="nav-menu">
         <ul>
-            <li><a href="index.html">ARTIST LIST</a></li>
+            <li><a href="index.html" onclick="toggleMenu()">ARTISTS</a></li>
         </ul>
     </nav>
 
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal(null, true)">×</span>
-            <h3 id="modal-title" style="font-family:'Montserrat'; font-weight:800; font-size:2rem; margin-bottom:10px;"></h3>
+            <h3 id="modal-title" style="font-family:'Montserrat'; font-weight:800; font-size:2rem; margin-bottom:15px; text-transform:uppercase;"></h3>
             <div id="modal-body"></div>
         </div>
     </div>
 
     <main>
-        <div class="hero-banner">
+        <div class="hero-header">
+            <a href="index.html" class="back-link">← ALL ARTISTS</a>
             <h1 class="artist-main-title">GØD7IKE</h1>
         </div>
 
@@ -39,13 +38,12 @@
             <button onclick="switchTab('disco')" id="btn-disco" class="tab-btn">Discography</button>
         </div>
 
-        <!-- PROFILE SECTION -->
         <div id="profile" class="content-section active">
             <section>
                 <div class="about-box">
                     <img src="images/god7ike/god7ike-main.jpg">
                     <div>
-                        <h3 class="v3-inner-heading">ABOUT GØD7IKE</h3>
+                        <h3>ABOUT GØD7IKE</h3>
                         <p>GODLIKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。</p>
                     </div>
                 </div>
@@ -53,7 +51,6 @@
             </section>
         </div>
 
-        <!-- DISCOGRAPHY SECTION -->
         <div id="disco" class="content-section">
             <section>
                 <div id="disco-grid" class="info-grid"></div>
@@ -63,18 +60,18 @@
 
     <footer class="common-footer">
         <a href="index.html" class="f-logo">Liar Entertainment</a>
-        <p class="f-copy">© Liar Entertainment Corp.</p>
+        <p class="f-copy">&copy; Liar Entertainment Corp. All Rights Reserved.</p>
     </footer>
 
     <script src="data.js"></script>
     <script>
-        const memberBox = document.getElementById('member-grid');
-        GOD_MEMBERS.forEach((m, i) => {
-            memberBox.innerHTML += `<div class="card" onclick="openMemberModal(GOD_MEMBERS, ${i})"><img src="${m.img}"><p class="card-name">${m.name.split(' ')[0]}</p></div>`;
+        const mBox = document.getElementById('member-grid');
+        GOD_DATA.members.forEach((m, i) => {
+            mBox.innerHTML += `<div class="card" onclick="openMemberModal('god', ${i})"><img src="${m.img}"><p class="card-name">${m.name.split(' ')[0]}</p></div>`;
         });
-        const discoBox = document.getElementById('disco-grid');
-        GOD_ALBUMS.forEach((a, i) => {
-            discoBox.innerHTML += `<img src="${a.img}" class="disco-thumb" onclick="openAlbumModal(GOD_ALBUMS, ${i})">`;
+        const dBox = document.getElementById('disco-grid');
+        GOD_DATA.albums.forEach((a, i) => {
+            dBox.innerHTML += `<div class="card" onclick="openAlbumModal('god', ${i})"><img src="${a.img}"><p class="card-name">${a.title}</p></div>`;
         });
     </script>
 </body>

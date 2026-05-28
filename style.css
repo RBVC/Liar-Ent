@@ -1,92 +1,114 @@
-/* --- Liar Entertainment Unified YG-Style Ver.26.0 --- */
+/* --- Liar Entertainment Unified TVT-Style Ver.26.0 --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap');
 
-/* --- 設計図 --- */
-:root {
-    --accent-color: #000;
-    --heading-font: 'Montserrat', sans-serif;
-    --body-bg: #ffffff;
-    --text-color: #000;
-}
-.theme-v3 { --accent-color: #ff007a; --body-bg: #000; --text-color: #fff; }
-.theme-god { --accent-color: #ffffff; --body-bg: #1a1a1a; --text-color: #fff; }
-
-/* --- 全体共通 --- */
+/* --- 全体共通設定 (WHITE & BLACK) --- */
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { display: flex; flex-direction: column; min-height: 100vh; background-color: var(--body-bg); color: var(--text-color); font-family: 'Noto Sans JP', sans-serif; line-height: 1.5; overflow-x: hidden; }
+body { 
+    background-color: #ffffff; 
+    color: #000000; 
+    font-family: 'Noto Sans JP', sans-serif; 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
 main { flex: 1; }
 
 /* 共通ヘッダー */
-.header { width: 100%; height: 80px; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 8000; background-color: var(--body-bg); border-bottom: 1px solid var(--accent-color); }
-.header .logo-area { font-family: 'Montserrat'; font-weight: 800; color: var(--accent-color) !important; font-size: 1.8rem; text-decoration: none; }
-.theme-index .header { border-bottom: 1px solid #eee; }
+.header { 
+    width: 100%; height: 80px; padding: 0 5%; 
+    display: flex; justify-content: space-between; align-items: center; 
+    position: sticky; top: 0; z-index: 8000; 
+    background-color: #ffffff; border-bottom: 1px solid #f0f0f0; 
+}
+.header .logo-area { 
+    font-family: 'Montserrat'; font-weight: 800; color: #000000 !important; 
+    font-size: 1.8rem; text-decoration: none; letter-spacing: -1px;
+}
 
 /* ハンバーガーメニュー */
-.menu-btn { width: 35px; height: 24px; position: fixed; right: 5%; top: 28px; cursor: pointer; z-index: 10000; }
-.menu-btn span { position: absolute; width: 100%; height: 3px; background: var(--accent-color); transition: 0.3s; left: 0; }
-.menu-btn.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.menu-btn { width: 30px; height: 20px; position: fixed; right: 5%; top: 30px; cursor: pointer; z-index: 10000; }
+.menu-btn span { position: absolute; width: 100%; height: 2px; background: #000; transition: 0.4s; left: 0; }
+.menu-btn span:nth-child(1) { top: 0; }
+.menu-btn span:nth-child(2) { top: 9px; }
+.menu-btn span:nth-child(3) { top: 18px; }
+
+.menu-btn.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
-.nav-overlay { position: fixed; top: 80px; right: -280px; width: 250px; height: auto; transition: 0.4s; z-index: 9000; padding: 20px; background: #111; border: 1px solid var(--accent-color); }
-.theme-index .nav-overlay { background: #ffffff; border: 1px solid #eee; }
-.nav-overlay.open { right: 5%; }
-.nav-overlay ul { list-style: none; }
-.nav-overlay ul li { margin: 15px 0; text-align: right; }
-.nav-overlay ul li a { text-decoration: none; font-size: 1.2rem; font-family: 'Montserrat'; font-weight: 800; color: var(--accent-color); }
-.menu-closer { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 8500; display: none; }
-.menu-closer.open { display: block; }
+.menu-btn.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+.nav-overlay { 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+    background: #ffffff; transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1); 
+    z-index: 9000; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    visibility: hidden; opacity: 0;
+}
+.nav-overlay.open { visibility: visible; opacity: 1; }
+.nav-overlay ul { list-style: none; text-align: center; }
+.nav-overlay ul li { margin: 20px 0; }
+.nav-overlay ul li a { text-decoration: none; font-size: 3rem; font-family: 'Montserrat'; font-weight: 800; color: #000; }
 
 /* 共通フッター */
-.common-footer { background-color: #ffffff !important; color: #333333 !important; padding: 60px 5%; text-align: center; border-top: 1px solid #eee; font-family: 'Montserrat', sans-serif; position: relative; z-index: 10; }
-.f-logo { display: block; font-weight: 800; font-size: 1.1rem; color: #000 !important; text-decoration: none; margin-bottom: 10px; }
-.f-copy { font-size: 0.7rem; color: #999 !important; }
+.common-footer { 
+    padding: 80px 5%; text-align: center; border-top: 1px solid #f0f0f0; 
+    background: #ffffff; margin-top: 100px;
+}
+.f-logo { font-family: 'Montserrat'; font-weight: 800; font-size: 2.5rem; color: #000 !important; text-decoration: none; margin-bottom: 20px; display: block; }
+.f-copy { font-size: 10px; color: #ccc; letter-spacing: 3px; text-transform: uppercase; }
 
-/* --- アーティストページ：YGスタイル要素 --- */
-.hero-banner { width: 100%; padding-top: 40px; text-align: center; }
-.artist-main-title { font-family: 'Montserrat'; font-weight: 800; font-size: 4rem; text-transform: uppercase; margin: 20px 0; letter-spacing: 5px; color: var(--accent-color); }
+/* --- アーティストページレイアウト --- */
+.hero-header { text-align: center; padding: 100px 0 50px; }
+.back-link { font-size: 10px; color: #ccc; text-decoration: none; font-weight: 800; letter-spacing: 4px; display: block; margin-bottom: 20px; }
+.back-link:hover { color: #000; }
+.artist-main-title { font-family: 'Montserrat'; font-weight: 800; font-size: 5rem; text-transform: uppercase; line-height: 1; }
 
-/* タブ切り替えボタン */
-.tab-container { display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
-.tab-btn { background: none; border: none; padding: 15px 0; color: #666; font-family: 'Montserrat'; font-weight: 800; font-size: 1.2rem; cursor: pointer; text-transform: uppercase; border-bottom: 3px solid transparent; transition: 0.3s; }
-.tab-btn.active { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+/* タブボタン (TVT形式) */
+.tab-container { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; border-bottom: 1px solid #f0f0f0; }
+.tab-btn { 
+    background: none; border: none; padding: 15px 0; color: #ccc; 
+    font-family: 'Montserrat'; font-weight: 800; font-size: 12px; 
+    letter-spacing: 2px; cursor: pointer; text-transform: uppercase; 
+    border-bottom: 2px solid transparent; transition: 0.3s; 
+}
+.tab-btn.active { color: #000; border-bottom-color: #000; }
 
-/* コンテンツエリア */
-.content-section { display: none; padding: 20px 0 100px; }
+.content-section { display: none; }
 .content-section.active { display: block; }
 
-/* グリッド（PC 4列） */
-.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.card { display: flex; flex-direction: column; align-items: center; cursor: pointer; text-align: center; }
-.card img { width: 100%; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 15px; }
-.card-name { font-family: 'Montserrat'; font-weight: 800; font-size: 1.2rem; color: var(--accent-color); }
-
 /* ABOUT */
-.about-box { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 60px; }
-.about-box img { width: 320px; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid var(--accent-color); }
-.about-box p { font-size: 0.95rem; line-height: 2.2; opacity: 0.9; }
+.about-box { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 80px; }
+.about-box img { width: 400px; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #f0f0f0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.about-box h3 { font-family: 'Montserrat'; font-weight: 800; font-size: 1.8rem; margin-bottom: 20px; border-left: 8px solid #000; padding-left: 20px; }
+.about-box p { font-size: 0.95rem; line-height: 2.2; color: #333; }
 
-/* 事務所トップ用 */
-.theme-index .page-main-title { text-align: center; padding: 80px 0; font-size: 3.5rem; letter-spacing: 12px; font-weight: 800; font-family: 'Montserrat' !important; }
-.theme-index .artist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto 100px; padding: 0 20px; }
-.theme-index .artist-card { text-decoration: none !important; color: #000 !important; }
-.theme-index .img-placeholder { width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; background: #f0f0f0; margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05); }
-.theme-index .img-placeholder img { width: 100%; height: 100%; object-fit: cover !important; }
+/* グリッド（PC 4列 / スマホ 2列） */
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.card { cursor: pointer; text-align: left; }
+.card img { width: 100%; aspect-ratio: 1/1 !important; object-fit: cover; background: #f9f9f9; border: 1px solid #f0f0f0; margin-bottom: 15px; transition: 0.5s; }
+.card:hover img { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.card-name { font-family: 'Montserrat'; font-weight: 800; font-size: 1.2rem; line-height: 1; }
 
 /* モーダル */
-.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
-.modal-content { background: #111; width: 100%; max-width: 500px; padding: 40px 30px; position: relative; text-align: center; border: 1px solid var(--accent-color); }
-.modal-close { position: absolute; top: 10px; right: 15px; font-size: 2.5rem; cursor: pointer; color: var(--accent-color); font-family: 'Montserrat'; }
-.modal-img { width: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid var(--accent-color); }
-.modal-label { font-family: 'Montserrat'; color: var(--accent-color); font-size: 1.1rem; margin-bottom: 2px; font-weight: 800; }
+.modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
+.modal-close { position: absolute; top: -50px; right: 0; font-size: 2rem; cursor: pointer; font-family: 'Montserrat'; font-weight: 400; }
+.modal-img { width: 300px !important; aspect-ratio: 1/1 !important; object-fit: cover; margin: 0 auto 30px; border: 1px solid #f0f0f0; }
+.modal-info-list { text-align: left; max-width: 320px; margin: 0 auto; }
+.modal-info-item { margin-bottom: 20px; }
+.modal-label { font-family: 'Montserrat'; font-weight: 800; font-size: 10px; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 5px; }
+.modal-value { font-size: 1rem; color: #000; font-weight: 700; }
 
-/* スマホ対応 */
+/* 事務所トップ用特別調整 */
+.theme-index .page-main-title { text-align: center; padding: 100px 0; font-size: 5rem; letter-spacing: 15px; font-weight: 800; font-family: 'Montserrat' !important; }
+.theme-index .artist-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto 100px; }
+.theme-index .artist-v3-font, .theme-index .artist-god-font { font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 1.8rem; color: #000 !important; margin-top: 15px; display: block; }
+
 @media (max-width: 768px) {
-    .artist-main-title { font-size: 2.5rem; }
-    .about-box { flex-direction: column; align-items: center; text-align: left; }
-    .about-box img { width: 280px; }
+    .artist-main-title { font-size: 3rem; }
+    .about-box { flex-direction: column; gap: 30px; }
+    .about-box img { width: 100%; }
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .theme-index .artist-grid { grid-template-columns: 1fr; }
+    .theme-index .page-main-title { font-size: 3rem; letter-spacing: 5px; }
 }

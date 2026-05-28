@@ -15,7 +15,7 @@
     </header>
 
     <nav class="nav-overlay" id="nav-menu">
-        <span class="menu-sub-ttl" style="font-size:10px; color:#ccc; letter-spacing:5px; font-weight:900; margin-bottom:10px; display:block;">ARTIST LIST</span>
+        <span style="font-size:10px; color:#ccc; letter-spacing:5px; font-weight:900; margin-bottom:10px; display:block;">ARTIST LIST</span>
         <ul>
             <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
             <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <main style="max-width:1200px; margin:0 auto; padding:40px 20px;">
+    <main>
         <div class="hero-header">
             <a href="index.html" style="font-size:10px; color:#ccc; text-decoration:none; font-weight:900; letter-spacing:2px;">← ALL ARTISTS</a>
             <h1 id="group-name" class="artist-main-title">Artist</h1>
@@ -47,7 +47,8 @@
             <div class="about-box">
                 <img id="group-banner" src="">
                 <div>
-                    <h3 id="about-title" style="font-weight:900;">ABOUT</h3>
+                    <!-- 【修正】ABOUTに固定 -->
+                    <h3 style="font-weight:900;">ABOUT</h3>
                     <p id="group-about" style="color:#666;"></p>
                 </div>
             </div>
@@ -79,8 +80,10 @@
             document.title = `${data.name} | Liar Entertainment`;
             document.getElementById('group-name').innerText = data.name;
             document.getElementById('group-banner').src = data.banner;
-            document.getElementById('group-about').innerHTML = data.about;
-            document.getElementById('about-title').innerText = `ABOUT ${data.name}`;
+            
+            // 【修正】句点「。」ごとに改行を入れる処理
+            const aboutText = data.about.split('。').join('。<br>');
+            document.getElementById('group-about').innerHTML = aboutText;
 
             if (data.hasMemberSection === false) {
                 document.getElementById('member-section-container').style.display = 'none';

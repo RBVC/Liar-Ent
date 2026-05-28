@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.33.1 --- */
+/* --- Liar Entertainment Master Style Ver.35.0 --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
@@ -11,7 +11,8 @@ body {
     margin: 0; line-height: 1.6; overflow-x: hidden;
     display: flex; flex-direction: column; min-height: 100vh;
 }
-main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+/* 【修正】フッターとの距離を確保 */
+main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px 100px; }
 
 header {
     width: 100%; height: 80px; padding: 0 5%;
@@ -38,11 +39,11 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 }
 .nav-overlay.open { visibility: visible; opacity: 1; }
 .nav-overlay ul { list-style: none; text-align: center; }
-.nav-overlay ul li { margin: 15px 0; }
+.nav-overlay ul li { margin: 20px 0; }
 .nav-overlay ul li a { text-decoration: none; font-size: 2rem; font-weight: 900; color: #000; }
 
 .main-visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; margin-top: 20px; }
-.artist-box { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; display: block; }
+.artist-box { position: relative; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; display: block; }
 .artist-box img { width: 100%; height: 100%; object-fit: cover !important; }
 .artist-hover { position: absolute; inset: 0; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; z-index: 10; }
 .artist-box:hover .artist-hover { opacity: 1; }
@@ -70,15 +71,18 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 .img-wrap img { width: 100%; height: 100%; object-fit: cover !important; }
 .card-name { font-weight: 900; font-size: 1.1rem; }
 
+/* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
 .modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; font-weight: 400; }
 .modal-img { width: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid #f0f0f0; }
-.modal-info-list { text-align: left; max-width: 320px; margin: 0 auto; }
+
+/* 【修正】モーダル情報の左揃え */
+.modal-info-list { text-align: left; max-width: 280px; margin: 0 auto; }
 .modal-info-item { margin-bottom: 15px; }
 .modal-label { font-size: 10px; font-weight: 900; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 2px; }
-.modal-value { font-size: 1rem; color: #000; font-weight: 700; line-height: 1.5; }
+.modal-value { font-size: 1rem; color: #000; font-weight: 700; line-height: 1.4; }
 
 footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
 .f-logo-link { text-decoration: none; display: inline-block; margin-bottom: 5px; }

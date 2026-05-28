@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.34.0 --- */
+/* --- Liar Entertainment Unified Data Ver.35.0 --- */
 
 const allGroups = {
     "v3": {
@@ -11,9 +11,9 @@ const allGroups = {
             { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
         ],
         hasMemberSection: true,
         clickableMembers: true
@@ -29,12 +29,13 @@ const allGroups = {
             { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
             { name: "HAYUL (하율)", birthday: "2003.02.07", role: "Visual", position: "Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
-            { name: "ROY (로이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
+            { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
         discography: [
             { title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p>Coming Soon</p>` },
             { title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p>Coming Soon</p>` },
-            { title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p>Coming Soon</p>` }
+            { title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p>Coming Soon</p>` },
+            { title: "JIA PROJECT", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `<ul style="text-align:left; color:#333; padding:20px; list-style:none;"><li>• I'm Ready (Jia Solo)</li><li>• TEA (4uatre)</li><li>• FACT$ (4uatre)</li><li>• FREE&SHINE (feat. Licca)</li></ul>` }
         ],
         hasMemberSection: true,
         clickableMembers: true
@@ -46,7 +47,7 @@ const allGroups = {
         members: [
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
             { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
-            { name: "ROY (로이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
+            { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
         ],
         discography: [
             { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p>Coming Soon</p>` }
@@ -66,7 +67,6 @@ const allGroups = {
     }
 };
 
-// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -82,20 +82,11 @@ function switchTab(tabName) {
     document.getElementById('btn-' + tabName).classList.add('active');
 }
 
-function openAlbumModal(groupId, i) {
-    const data = allGroups[groupId];
-    const a = data.discography[i];
-    document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900;">${a.type}</p><div>${a.embed}</div>`;
-    document.getElementById('master-modal').classList.add('active');
-}
-
-function openMemberModal(groupId, i) {
-    const data = allGroups[groupId];
-    const m = data.members[i];
-    // ROLEとPOSITIONを統合
-    const combinedPosition = m.role ? `${m.role} / ${m.pos}` : m.pos;
-    const posHtml = combinedPosition.split(' / ').join('<br>'); // スラッシュで改行
+function openMemberModal(groupId, index) {
+    const m = allGroups[groupId].members[index];
+    // 【修正】キーをpositionに統一し、roleがあれば統合
+    const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
+    const posHtml = combinedPosition.split(' / ').join('<br>');
 
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
@@ -105,6 +96,13 @@ function openMemberModal(groupId, i) {
             <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${posHtml}</span></div>
         </div>
     `;
+    document.getElementById('master-modal').classList.add('active');
+}
+
+function openAlbumModal(groupId, index) {
+    const a = allGroups[groupId].discography[index];
+    document.getElementById('modal-title').innerText = a.title;
+    document.getElementById('modal-body').innerHTML = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:800; text-align:center;">${a.type}</p><div>${a.embed}</div>`;
     document.getElementById('master-modal').classList.add('active');
 }
 

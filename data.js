@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.32.0 --- */
+/* --- Liar Entertainment Unified Data Ver.33.0 --- */
 
 const allGroups = {
     "v3": {
@@ -11,10 +11,12 @@ const allGroups = {
             { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
-        ]
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+        ],
+        hasMemberSection: true,
+        clickableMembers: true
     },
     "god7ike": {
         name: "GØD7IKE",
@@ -33,7 +35,9 @@ const allGroups = {
             { title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p>Coming Soon</p>` },
             { title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p>Coming Soon</p>` },
             { title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p>Coming Soon</p>` }
-        ]
+        ],
+        hasMemberSection: true,
+        clickableMembers: true
     },
     "lcr": {
         name: "LCR",
@@ -46,28 +50,27 @@ const allGroups = {
         ],
         discography: [
             { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p>Coming Soon</p>` }
-        ]
+        ],
+        hasMemberSection: true,
+        clickableMembers: false // LCRはポップアップなし
     },
     "hayul": {
         name: "HAYUL",
-        banner: "images/hayul/hayul-main.jpg", // スペースを除去しました
+        banner: "images/hayul/hayul-main.jpg",
         about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。Liar Entertainment初のソロプロジェクト。透明感のある歌声と、幻想的なビジュアルで独自の音楽世界を構築する。",
-        members: [
-            { name: "HAYUL (하율)", birthday: "2003.02.07", pos: "Main Vocal / Visual", img: "images/hayul/hayul-main.jpg" } // 画像をmainに統一
-        ],
+        members: [], // データ空
         discography: [
             { title: "I'm Ready", type: "Special Single", img: "images/god7ike/4uatre-tea.jpg", embed: `<p>Coming Soon</p>` }
-        ]
+        ],
+        hasMemberSection: false // ハユルはメンバー欄なし
     }
 };
 
-// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
     if (btn) btn.classList.toggle('active');
     if (nav) nav.classList.toggle('open');
-    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : 'auto';
 }
 
 function switchTab(tabName) {

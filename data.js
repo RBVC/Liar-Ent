@@ -43,7 +43,7 @@ const allGroups = {
     "lcr": {
         name: "LCR",
         banner: "images/lcr/lcr-main.jpg",
-        about: "LCR（エルシーアール）は、リッカ、レイ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
+        about: "LCR（エルシーアール）は、レイ、リッカ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
         members: [
             { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" }, // 【修正】Lの順に
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" }, // 【修正】Cの順に

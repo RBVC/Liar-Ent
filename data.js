@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Management Ver.18.0 --- */
+/* --- Liar Entertainment Data Management Ver.20.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -8,7 +8,7 @@ const V3_NEWS = [
 ];
 const V3_MEMBERS = [
     { name: "JIA (지아)", img: "images/v3/v3-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper" },
-    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer" },
+    { name: "LICCA (릿카)", img: "images/v3/v3-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Main Vocal / Main Rapper / Lead Dancer" },
     { name: "NAYEON (나연)", img: "images/v3/v3-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" }
 ];
 const V3_ALBUMS = [
@@ -35,10 +35,10 @@ const GOD_MEMBERS = [
     { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
     { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" },
-    { name: "LAY (レイ)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
-    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
-    { name: "LICCA (リッカ)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
-    { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
+    { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
+    { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
+    { name: "ROY (로이)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
 
 const GOD_ALBUMS = [
@@ -77,16 +77,16 @@ function openAlbumModal(data, i) {
     document.getElementById('master-modal').classList.add('active');
 }
 
-// 【修正】ROLEをPOSITIONに統合して表示
 function openMemberModal(data, i) {
     const m = data[i];
-    const fullPosition = m.role ? `${m.role} / ${m.position}` : m.position;
+    const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
+    
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
-        <img src="${m.img}" class="v3-img-std" style="width:280px; height:280px; margin:0 auto 20px;">
+        <img src="${m.img}" class="modal-img">
         <div class="modal-info-list">
             <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday}</span></div>
-            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${fullPosition}</span></div>
+            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${combinedPosition}</span></div>
         </div>
     `;
     document.getElementById('master-modal').classList.add('active');

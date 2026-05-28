@@ -1,5 +1,6 @@
 /* --- Liar Entertainment Data Management Ver.25.0 --- */
 
+// --- <3 (V3) DATA ---
 const V3_NEWS = [
     { date: "2022.10.31", tag: "RELEASE", title: "2nd Mini Album 「COOL」", link: "#COOL" },
     { date: "2022.04.10", tag: "RELEASE", title: "1st Mini Album 「VENOM」", link: "#VENOM" },
@@ -16,6 +17,7 @@ const V3_ALBUMS = [
     { id: "ALL-OUT", title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
 ];
 
+// --- GØD7IKE DATA ---
 const GOD_NEWS = [
     { date: "2026.XX.XX", tag: "RELEASE", title: "4th Mini Album 「CHOSEN KARMA」", link: "#CHOSEN_KARMA" },
     { date: "2025.10.07", tag: "RELEASE", title: "1st Full Album 「Wings」", link: "#Wings" },
@@ -33,7 +35,7 @@ const GOD_MEMBERS = [
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
     { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" },
     { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
-    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
     { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
     { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
@@ -47,13 +49,11 @@ const GOD_ALBUMS = [
     { id: "OOMM", title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<p style='padding:20px;'>PLAYER COMING SOON</p>` }
 ];
 
+// --- 共通機能 ---
 function toggleMenu() {
-    const btn = document.getElementById('menu-btn');
-    const nav = document.getElementById('nav-overlay');
-    const closer = document.getElementById('menu-closer');
-    if (btn) btn.classList.toggle('open');
-    if (nav) nav.classList.toggle('open');
-    if (closer) closer.classList.toggle('open');
+    document.getElementById('menu-btn').classList.toggle('open');
+    document.getElementById('nav-overlay').classList.toggle('open');
+    document.getElementById('menu-closer').classList.toggle('open');
 }
 function openAlbumModal(data, i) {
     const a = data[i];

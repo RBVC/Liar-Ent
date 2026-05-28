@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.33.0 --- */
+/* --- Liar Entertainment Unified Data Ver.33.1 --- */
 
 const allGroups = {
     "v3": {
@@ -11,9 +11,9 @@ const allGroups = {
             { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
         ],
         hasMemberSection: true,
         clickableMembers: true
@@ -26,8 +26,8 @@ const allGroups = {
             { name: "JIA (지아)", birthday: "2001.10.09", pos: "Leader / Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
             { name: "MIMI (미미)", birthday: "2009.11.03", pos: "Maknae / Lead Dancer / Sub Vocal", img: "images/god7ike/god7ike-mimi.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", pos: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-            { name: "LAY (레이)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
-            { name: "HAYUL (하율)", birthday: "2003.02.07", pos: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
+            { name: "LAY (レイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+            { name: "HAYUL (ハユル)", birthday: "2003.02.07", pos: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Center / Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
             { name: "ROY (ロイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
@@ -44,28 +44,29 @@ const allGroups = {
         banner: "images/lcr/lcr-main.jpg",
         about: "LCR（エルシーアール）は、リッカ、レイ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
         members: [
-            { name: "LICCA (릿카)", birthday: "2000.07.14", pos: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
-            { name: "LAY (레이)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
-            { name: "ROY (ロイ)", birthday: "2007.01.06", pos: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
+            { name: "LICCA (릿카)", pos: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
+            { name: "LAY (レイ)", pos: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
+            { name: "ROY (ロイ)", pos: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
         ],
         discography: [
             { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p>Coming Soon</p>` }
         ],
         hasMemberSection: true,
-        clickableMembers: false // LCRはポップアップなし
+        clickableMembers: false 
     },
     "hayul": {
         name: "HAYUL",
         banner: "images/hayul/hayul-main.jpg",
         about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。Liar Entertainment初のソロプロジェクト。透明感のある歌声と、幻想的なビジュアルで独自の音楽世界を構築する。",
-        members: [], // データ空
+        members: [], 
         discography: [
             { title: "I'm Ready", type: "Special Single", img: "images/god7ike/4uatre-tea.jpg", embed: `<p>Coming Soon</p>` }
         ],
-        hasMemberSection: false // ハユルはメンバー欄なし
+        hasMemberSection: false 
     }
 };
 
+// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -80,9 +81,29 @@ function switchTab(tabName) {
     document.getElementById('btn-' + tabName).classList.add('active');
 }
 
-function openModal(title, content) {
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-body').innerHTML = content;
+// 修正：引数をIDとタイプに変更
+function openMemberModal(groupId, index) {
+    const m = allGroups[groupId].members[index];
+    const formattedPos = m.pos.split(' / ').join('<br>');
+    
+    document.getElementById('modal-title').innerText = m.name;
+    document.getElementById('modal-body').innerHTML = `
+        <img src="${m.img}" class="modal-img">
+        <div class="modal-info-list">
+            <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday || '---'}</span></div>
+            <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${formattedPos}</span></div>
+        </div>
+    `;
+    document.getElementById('master-modal').classList.add('active');
+}
+
+function openAlbumModal(groupId, index) {
+    const a = allGroups[groupId].discography[index];
+    document.getElementById('modal-title').innerText = a.title;
+    document.getElementById('modal-body').innerHTML = `
+        <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:800; letter-spacing:2px; text-align:center;">${a.type}</p>
+        <div style="background:#f9f9f9; border-radius:10px; overflow:hidden;">${a.embed}</div>
+    `;
     document.getElementById('master-modal').classList.add('active');
 }
 

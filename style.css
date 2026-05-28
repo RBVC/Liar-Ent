@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.29.0 --- */
+/* --- Liar Entertainment Master Style Ver.30.0 --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
@@ -13,14 +13,13 @@ body {
     margin: 0; 
     line-height: 1.6;
     overflow-x: hidden;
-    /* ここからフッター固定魔法 */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 main { 
-    flex: 1; /* コンテンツが少なくても、mainが伸びてフッターを下に押し出す */
+    flex: 1; 
     width: 100%;
 }
 
@@ -33,29 +32,30 @@ header {
 }
 header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
-/* ハンバーガーボタン：三本線から×へのアニメーション */
-.menu-trigger { position: relative; width: 30px; height: 20px; cursor: pointer; z-index: 10000; }
+/* 【修正】ハンバーガーボタン：サイズを小さく繊細に */
+.menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
-.menu-trigger span:nth-child(2) { top: 9px; }
-.menu-trigger span:nth-child(3) { bottom: 18px; }
+.menu-trigger span:nth-child(2) { top: 7px; }
+.menu-trigger span:nth-child(3) { top: 14px; }
 
-.menu-trigger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-trigger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-trigger.active span:nth-child(2) { opacity: 0; }
-.menu-trigger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+.menu-trigger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* --- 【新仕様】ドロップダウンメニュー（ヘッダーの下に出る） --- */
+/* ドロップダウンメニュー */
 .nav-overlay {
-    position: fixed; top: 80px; right: -100%; width: 100%; height: calc(100vh - 80px);
+    position: fixed; top: 80px; right: -100%; width: 220px; height: auto;
     background: rgba(255, 255, 255, 0.98); transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    z-index: 8500; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    padding-top: 50px;
+    z-index: 8500; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start;
+    padding: 30px; border: 1px solid #f0f0f0; border-top: none;
 }
 .nav-overlay.open { right: 0; }
-.nav-overlay ul { list-style: none; text-align: center; width: 100%; }
-.nav-overlay ul li { margin: 20px 0; }
-.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; }
-.nav-overlay .menu-sub-ttl { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-top: 40px; margin-bottom: 20px; display: block; }
+.nav-overlay ul { list-style: none; text-align: right; width: 100%; }
+.nav-overlay ul li { margin: 15px 0; }
+/* 【修正】メニュー内フォントサイズを縮小 */
+.nav-overlay ul li a { text-decoration: none; font-size: 1.1rem; font-weight: 900; color: #000; }
+.nav-overlay .menu-sub-ttl { font-size: 9px; color: #ccc; letter-spacing: 3px; font-weight: 900; margin-bottom: 10px; display: block; }
 
 /* 事務所トップ：正方形 4枠グリッド */
 .main-visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; background-color: #fff; }
@@ -86,16 +86,14 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 .modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
 .modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; }
 
-/* フッター：スリム版 & リンク化 */
+/* フッター */
 footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
 footer .f-logo-link { text-decoration: none; display: inline-block; margin-bottom: 5px; }
 footer .f-logo { font-size: 1.2rem; color: #000; font-weight: 900; }
 footer p { font-size: 9px; color: #ccc; letter-spacing: 0.1em; }
 
-/* スマホ対応 */
 @media (max-width: 768px) {
     .main-visual-grid { grid-template-columns: repeat(2, 1fr); }
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .artist-main-title { font-size: 2.2rem; }
-    .nav-overlay a { font-size: 1.5rem; }
 }

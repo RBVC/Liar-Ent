@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.35.0 --- */
+/* --- Liar Entertainment Unified Data Ver.36.0 --- */
 
 const allGroups = {
     "v3": {
@@ -8,15 +8,14 @@ const allGroups = {
         members: [
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer", img: "images/v3/v3-licca.jpg" },
-            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
+            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
         ],
-        hasMemberSection: true,
-        clickableMembers: true
+        hasMemberSection: true, clickableMembers: true
     },
     "god7ike": {
         name: "GØD7IKE",
@@ -32,13 +31,14 @@ const allGroups = {
             { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
         discography: [
-            { title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<p>Coming Soon</p>` },
-            { title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<p>Coming Soon</p>` },
-            { title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<p>Coming Soon</p>` },
-            { title: "JIA PROJECT", type: "4uatre & Solo", img: "images/god7ike/4uatre-tea.jpg", embed: `<ul style="text-align:left; color:#333; padding:20px; list-style:none;"><li>• I'm Ready (Jia Solo)</li><li>• TEA (4uatre)</li><li>• FACT$ (4uatre)</li><li>• FREE&SHINE (feat. Licca)</li></ul>` }
+            { title: "CHOSEN KARMA", type: "4th Mini Album", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "Wings", type: "1st Full Album", img: "images/god7ike/god7ike-wings.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "REBORN", type: "3rd Mini Album", img: "images/god7ike/god7ike-reborn.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "4uatre Project", type: "Special Project", img: "images/god7ike/4uatre-tea.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "ISSUE MAKER", type: "2nd Mini Album", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "OOMM", type: "1st Mini Album", img: "images/god7ike/god7ike-oomm.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
         ],
-        hasMemberSection: true,
-        clickableMembers: true
+        hasMemberSection: true, clickableMembers: true
     },
     "lcr": {
         name: "LCR",
@@ -50,10 +50,10 @@ const allGroups = {
             { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
         ],
         discography: [
-            { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<p>Coming Soon</p>` }
+            { title: "PURRFECT", type: "1st EP", img: "images/god7ike/lcr-purrfect.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
+            { title: "Knock yourself out", type: "1st Digital Single", img: "images/lcr/lcr-knock-yourself-out.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
         ],
-        hasMemberSection: true,
-        clickableMembers: false 
+        hasMemberSection: true, clickableMembers: false 
     },
     "hayul": {
         name: "HAYUL",
@@ -61,12 +61,13 @@ const allGroups = {
         about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。Liar Entertainment初のソロプロジェクト。透明感のある歌声と、幻想的なビジュアルで独自の音楽世界を構築する。",
         members: [], 
         discography: [
-            { title: "I'm Ready", type: "Special Single", img: "images/god7ike/4uatre-tea.jpg", embed: `<p>Coming Soon</p>` }
+            { title: "I'm Ready", type: "Special Single", img: "images/god7ike/4uatre-tea.jpg", embed: `<p style='padding:20px; text-align:center;'>COMING SOON</p>` }
         ],
         hasMemberSection: false 
     }
 };
 
+// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -84,25 +85,24 @@ function switchTab(tabName) {
 
 function openMemberModal(groupId, index) {
     const m = allGroups[groupId].members[index];
-    // 【修正】キーをpositionに統一し、roleがあれば統合
     const combinedPosition = m.role ? `${m.role} / ${m.position}` : m.position;
     const posHtml = combinedPosition.split(' / ').join('<br>');
-
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
         <img src="${m.img}" class="modal-img">
         <div class="modal-info-list">
             <div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday || '---'}</span></div>
             <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${posHtml}</span></div>
-        </div>
-    `;
+        </div>`;
     document.getElementById('master-modal').classList.add('active');
 }
 
 function openAlbumModal(groupId, index) {
     const a = allGroups[groupId].discography[index];
     document.getElementById('modal-title').innerText = a.title;
-    document.getElementById('modal-body').innerHTML = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:800; text-align:center;">${a.type}</p><div>${a.embed}</div>`;
+    document.getElementById('modal-body').innerHTML = `
+        <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p>
+        <div style="background:#f9f9f9; border-radius:10px; overflow:hidden;">${a.embed}</div>`;
     document.getElementById('master-modal').classList.add('active');
 }
 

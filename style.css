@@ -1,8 +1,8 @@
-/* --- Liar Entertainment Master Style Ver.30.0 --- */
+/* --- Liar Entertainment Unified Master Style Ver.31.0 --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
-/* --- 全体共通：フッターを一番下にする設定 --- */
+/* --- 全体共通 --- */
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -18,10 +18,7 @@ body {
     min-height: 100vh;
 }
 
-main { 
-    flex: 1; 
-    width: 100%;
-}
+main { flex: 1; width: 100%; }
 
 /* 共通ヘッダー */
 header {
@@ -30,9 +27,9 @@ header {
     position: sticky; top: 0; z-index: 9000;
     background: #ffffff; border-bottom: 1px solid #f0f0f0;
 }
-header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
+header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
-/* 【修正】ハンバーガーボタン：サイズを小さく繊細に */
+/* ハンバーガーボタン（三 ↔ ×） */
 .menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
@@ -43,48 +40,60 @@ header .logo { font-size: 1.1rem; text-decoration: none; color: #000; font-weigh
 .menu-trigger.active span:nth-child(2) { opacity: 0; }
 .menu-trigger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ドロップダウンメニュー */
+/* --- 【復元】全画面メニュー（ヘッダー下） --- */
 .nav-overlay {
-    position: fixed; top: 80px; right: -100%; width: 220px; height: auto;
+    position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px);
     background: rgba(255, 255, 255, 0.98); transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    z-index: 8500; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start;
-    padding: 30px; border: 1px solid #f0f0f0; border-top: none;
+    z-index: 8500; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    visibility: hidden; opacity: 0;
 }
-.nav-overlay.open { right: 0; }
-.nav-overlay ul { list-style: none; text-align: right; width: 100%; }
+.nav-overlay.open { visibility: visible; opacity: 1; }
+.nav-overlay ul { list-style: none; text-align: center; }
 .nav-overlay ul li { margin: 15px 0; }
-/* 【修正】メニュー内フォントサイズを縮小 */
-.nav-overlay ul li a { text-decoration: none; font-size: 1.1rem; font-weight: 900; color: #000; }
-.nav-overlay .menu-sub-ttl { font-size: 9px; color: #ccc; letter-spacing: 3px; font-weight: 900; margin-bottom: 10px; display: block; }
+.nav-overlay ul li a { text-decoration: none; font-size: 2rem; font-weight: 900; color: #000; }
+.nav-overlay .menu-sub-ttl { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-bottom: 5px; display: block; }
 
-/* 事務所トップ：正方形 4枠グリッド */
-.main-visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; background-color: #fff; }
-.artist-box { position: relative; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; }
+/* 事務所トップ：4枠グリッド */
+.main-visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; background-color: #fff; margin-top: 0; }
+.artist-box { position: relative; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; display: block; text-decoration: none; }
 .artist-box img { width: 100%; height: 100%; object-fit: cover !important; transition: 0.8s; }
 .artist-box:hover img { transform: scale(1.08); }
 .artist-hover { position: absolute; inset: 0; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; z-index: 10; }
 .artist-box:hover .artist-hover { opacity: 1; }
 .hover-name { color: #fff; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.1em; }
 
-/* アーティストページ共通 */
-.artist-main-title { font-weight: 900; font-size: 3.5rem; text-align: center; margin: 40px 0; }
+/* アーティストページ：YGスタイル */
+.hero-header { text-align: center; padding: 100px 0 50px; }
+.artist-main-title { font-weight: 900; font-size: 4rem; text-align: center; margin: 40px 0; text-transform: uppercase; }
 .tab-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
-.tab-btn { font-size: 13px; font-weight: 900; color: #ccc; border: none; background: none; padding-bottom: 10px; cursor: pointer; border-bottom: 2px solid transparent; }
+.tab-btn { font-size: 13px; font-weight: 900; color: #ccc; border: none; background: none; padding-bottom: 10px; cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
 .tab-btn.active { color: #000; border-bottom-color: #000; }
+
 .content-section { display: none; }
 .content-section.active { display: block; }
 
+/* ABOUT / GRID */
+.about-box { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 80px; }
+.about-box img { width: 320px; aspect-ratio: 1/1 !important; object-fit: cover !important; border: 1px solid #f0f0f0; }
+.about-box h3 { font-weight: 900; font-size: 1.8rem; margin-bottom: 20px; border-left: 8px solid #000; padding-left: 20px; }
+.about-box p { font-size: 0.95rem; line-height: 2.2; color: #333; }
+
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
 .card { cursor: pointer; text-align: left; }
-.img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
-.img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+.card img { width: 100%; aspect-ratio: 1/1 !important; object-fit: cover !important; background: #f9f9f9; border: 1px solid #f0f0f0; margin-bottom: 10px; transition: 0.4s; }
+.card:hover img { transform: scale(1.03); }
 .card-name { font-weight: 900; font-size: 1.1rem; }
 
 /* モーダル */
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(255,255,255,0.98); z-index: 11000; display: none; justify-content: center; align-items: center; padding: 20px; }
 .modal.active { display: flex; }
 .modal-content { width: 100%; max-width: 500px; text-align: center; position: relative; }
-.modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; }
+.modal-close { position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; font-weight: 400; }
+.modal-img { width: 280px !important; aspect-ratio: 1/1 !important; object-fit: cover !important; margin: 0 auto 20px; border: 1px solid #f0f0f0; }
+.modal-info-list { text-align: left; max-width: 320px; margin: 0 auto; }
+.modal-info-item { margin-bottom: 15px; }
+.modal-label { font-size: 10px; font-weight: 900; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 2px; }
+.modal-value { font-size: 1rem; color: #000; font-weight: 700; }
 
 /* フッター */
 footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
@@ -96,4 +105,6 @@ footer p { font-size: 9px; color: #ccc; letter-spacing: 0.1em; }
     .main-visual-grid { grid-template-columns: repeat(2, 1fr); }
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .artist-main-title { font-size: 2.2rem; }
+    .about-box { flex-direction: column; gap: 30px; }
+    .about-box img { width: 100%; }
 }

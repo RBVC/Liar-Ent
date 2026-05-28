@@ -19,6 +19,8 @@
         <ul>
             <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
             <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
+            <li><a href="artist.html?id=lcr" onclick="toggleMenu()">LCR</a></li>
+            <li><a href="artist.html?id=hayul" onclick="toggleMenu()">HAYUL</a></li>
         </ul>
     </nav>
 
@@ -30,7 +32,7 @@
         </div>
     </div>
 
-    <main style="max-width:1200px; margin:0 auto; padding:40px 20px;">
+    <main style="max-width:1200px; margin:0 auto; padding:100px 20px;">
         <div style="text-align:center; margin-bottom:40px;">
             <a href="index.html" style="font-size:10px; color:#ccc; text-decoration:none; font-weight:900; letter-spacing:2px;">← ALL ARTISTS</a>
             <h1 id="group-name" class="artist-main-title">Artist</h1>
@@ -45,8 +47,8 @@
             <div class="about-box">
                 <img id="group-banner" src="">
                 <div>
-                    <h3 id="about-title" style="font-weight:900;">ABOUT</h3>
-                    <p id="group-about" style="color:#666;"></p>
+                    <h3 id="about-title">ABOUT</h3>
+                    <p id="group-about"></p>
                 </div>
             </div>
             <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">MEMBER</h2>
@@ -81,7 +83,7 @@
 
             const mGrid = document.getElementById('member-grid');
             data.members.forEach((m, i) => {
-                const content = `<img src="${m.img}" style="width:280px; height:280px; aspect-ratio:1/1; object-fit:cover; margin:0 auto 20px; border:1px solid #f0f0f0;"><div style="text-align:left; max-width:320px; margin:0 auto;"><div style="margin-bottom:15px;"><span style="font-size:10px; color:#ccc; font-weight:900; letter-spacing:1px; display:block;">BIRTHDAY</span><span style="font-weight:700;">${m.birthday}</span></div><div style="margin-bottom:15px;"><span style="font-size:10px; color:#ccc; font-weight:900; letter-spacing:1px; display:block;">POSITION</span><span style="font-weight:700;">${m.pos}</span></div></div>`;
+                const content = `<img src="${m.img}" class="modal-img"><div class="modal-info-list"><div class="modal-info-item"><span class="modal-label">BIRTHDAY</span><span class="modal-value">${m.birthday}</span></div><div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${m.pos}</span></div></div>`;
                 mGrid.innerHTML += `
                     <div class="card" onclick="openModal('${m.name}', '${content.replace(/'/g, "\\'")}')">
                         <div class="img-wrap"><img src="${m.img}"></div>

@@ -40,7 +40,7 @@
         <section id="news">
             <h2 class="v3-sub-heading">NEWS</h2>
             <div id="news-list" style="border-top: 1px solid #333;"></div>
-            <button id="view-more-btn" class="view-more-btn" onclick="toggleNews()">VIEW MORE</button>
+            <!-- V3はボタンなし：常時全表示 -->
         </section>
         <section id="profile">
             <h2 class="v3-sub-heading">PROFILE</h2>
@@ -53,10 +53,12 @@
                     </p>
                 </div>
             </div>
+            <!-- CSSにより1列で表示されます -->
             <div id="member-grid" class="member-grid"></div>
         </section>
         <section id="discography">
             <h2 class="v3-sub-heading">DISCOGRAPHY</h2>
+            <!-- CSSにより1列で表示されます -->
             <div id="disco-grid" class="disco-grid"></div>
         </section>
     </main>
@@ -67,10 +69,8 @@
     <script src="data.js"></script>
     <script>
         const newsBox = document.getElementById('news-list');
-        V3_NEWS.forEach((n, i) => { 
-            const hideClass = i >= 3 ? 'hidden-news' : '';
-            const hideStyle = i >= 3 ? 'style="display:none;"' : '';
-            newsBox.innerHTML += `<a href="${n.link}" class="news-item ${hideClass}" ${hideStyle}><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`; 
+        V3_NEWS.forEach(n => { 
+            newsBox.innerHTML += `<a href="${n.link}" class="news-item"><div class="news-meta"><span class="news-date">${n.date}</span><span class="v3-tag">${n.tag}</span></div><span class="news-title">${n.title}</span></a>`; 
         });
         const memberBox = document.getElementById('member-grid');
         V3_MEMBERS.forEach((m, i) => { memberBox.innerHTML += `<div class="member-card" onclick="openMemberModal(V3_MEMBERS, ${i})"><img src="${m.img}"><p class="member-name-top">${m.name.split(' ')[0]}</p></div>`; });

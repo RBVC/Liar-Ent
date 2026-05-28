@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Data Management Ver.24.0 --- */
+/* --- Liar Entertainment Data Management Ver.25.0 --- */
 
 // --- <3 (V3) DATA ---
 const V3_NEWS = [
@@ -34,9 +34,9 @@ const GOD_MEMBERS = [
     { name: "JIA (지아)", img: "images/god7ike/god7ike-jia.jpg", birthday: "2001.10.09", role: "Leader", position: "Main Vocal" },
     { name: "MIMI (미미)", img: "images/god7ike/god7ike-mimi.jpg", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal" },
     { name: "NAYEON (나연)", img: "images/god7ike/god7ike-nayeon.jpg", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal" },
-    { name: "LAY (レイ)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
-    { name: "HAYUL (하율)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
-    { name: "LICCA (릿カ)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
+    { name: "LAY (레이)", img: "images/god7ike/god7ike-lay.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" },
+    { name: "HAYUL (ハユル)", img: "images/god7ike/god7ike-hayul.jpg", birthday: "2003.02.07", role: "Visual", position: "Main Vocal" },
+    { name: "LICCA (릿카)", img: "images/god7ike/god7ike-licca.jpg", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer" },
     { name: "ROY (ロイ)", img: "images/god7ike/god7ike-roy.jpg", birthday: "2007.01.06", role: "", position: "Main Rapper" }
 ];
 const GOD_ALBUMS = [
@@ -84,6 +84,7 @@ function closeModal(e, force = false) {
 function toggleNews() {
     const hiddenItems = document.querySelectorAll('.news-item.hidden-news');
     const btn = document.getElementById('view-more-btn');
+    if (!btn) return;
     const isExpanding = btn.innerText === 'VIEW MORE';
     hiddenItems.forEach(item => { item.style.display = isExpanding ? 'flex' : 'none'; });
     btn.innerText = isExpanding ? 'CLOSE' : 'VIEW MORE';

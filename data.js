@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.41.0 --- */
+/* --- Liar Entertainment Unified Data Ver.44.0 --- */
 
 const allGroups = {
     "god7ike": {
@@ -9,18 +9,18 @@ const allGroups = {
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
             { name: "MIMI (미미)", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-            { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
-            { name: "HAYUL (하율)", birthday: "2003.02.07", role: "", position: "Main Vocal / Visual", img: "images/god7ike/god7ike-hayul.jpg" },
+            { name: "LAY (レイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+            { name: "HAYUL (ハユル)", birthday: "2003.02.07", role: "", position: "Main Vocal / Visual", img: "images/god7ike/god7ike-hayul.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
             { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
         ],
         discography: [
-            { title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "WINGS", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "TEA", type: "4uatre Special Project / 2024.10.XX", img: "images/god7ike/4uatre-tea.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
+            { title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" },
+            { title: "WINGS", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" },
+            { title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" },
+            { title: "TEA", type: "4uatre Special Project / 2024.10.XX", img: "images/god7ike/4uatre-tea.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" },
+            { title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" },
+            { title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" }
         ],
         hasMemberSection: true, clickableMembers: true
     },
@@ -34,8 +34,8 @@ const allGroups = {
             { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
         ],
         discography: [
-            { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "KNOCK YOURSELF OUT", type: "1st Digital Single / 2024.XX.XX", img: "images/lcr/lcr-knock-yourself-out.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
+            { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" },
+            { title: "KNOCK YOURSELF OUT", type: "1st Digital Single / 2024.XX.XX", img: "images/lcr/lcr-knock-yourself-out.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" }
         ],
         hasMemberSection: true, clickableMembers: false 
     },
@@ -45,7 +45,7 @@ const allGroups = {
         about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。Liar Entertainment初のソロプロジェクト。透明感のある歌声と、幻想的なビジュアルで独自の音楽世界を構築する。",
         members: [], 
         discography: [
-            { title: "神谕法则", type: "1st Digital Single / 2024.XX.XX", img: "images/hayul/hayul-the-law-of-god.jpg", embed: `<p style='padding:40px; text-align:center; font-weight:bold;'>PLAYER COMING SOON</p>` }
+            { title: "神谕法则", type: "1st Digital Single / 2024.XX.XX", img: "images/hayul/hayul-the-law-of-god.jpg", embedUrl: "" }
         ],
         hasMemberSection: false 
     },
@@ -55,18 +55,19 @@ const allGroups = {
         about: "<3（V3、ヴィスリ）は、韓国の3人組バーチャルアイドルグループ。Liar Entertainment所属。グループ名は「ViVid Venom」の略称であり“鮮やかな音楽の毒で世界を魅了する”という意味を持つ。Vが横向き（&lt;）になっているのは英語のスラングである「横向きハートマーク」を表している。",
         members: [
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
-            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer", img: "images/v3/v3-licca.jpg" },
-            // 【復元】ナヨンのリードラッパー項目を復活
+            { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Vocal / Main Rapper / Lead Dancer", img: "images/v3/v3-licca.jpg" },
             { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
-            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
-            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` }
+            { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" },
+            { title: "VENOM", type: "1st Mini Album / 2022.04.10", img: "images/v3/v3-venom.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" },
+            { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.01", img: "images/v3/v3-allout.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" }
         ],
         hasMemberSection: true, clickableMembers: true
     }
 };
+
+// --- 機能集約 ---
 
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
@@ -100,9 +101,17 @@ function openMemberModal(groupId, index) {
 function openAlbumModal(groupId, index) {
     const a = allGroups[groupId].discography[index];
     document.getElementById('modal-title').innerText = a.title;
+    
+    // 【最重要】ポップアップ表示後にiframeを生成
+    let embedHtml = `<p style="padding:40px; text-align:center; font-weight:bold;">COMING SOON</p>`;
+    if (a.embedUrl) {
+        embedHtml = `<iframe src="${a.embedUrl}" frameborder="0" scrolling="no"></iframe>`;
+    }
+    
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p>
-        <div class="player-container">${a.embed}</div>`;
+        <div class="player-container">${embedHtml}</div>`;
+    
     document.getElementById('master-modal').classList.add('active');
 }
 

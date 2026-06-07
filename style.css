@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.43.0 --- */
+/* --- Liar Entertainment Master Style Ver.44.0 --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
@@ -11,14 +11,9 @@ body {
     margin: 0; line-height: 1.5; overflow-x: hidden;
     display: flex; flex-direction: column; min-height: 100vh;
 }
-
-/* 通常のメインコンテンツ枠（artist.htmlなどで使用） */
 main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px 120px; }
-
-/* 【修正】事務所トップの時は余白をゼロにして全幅にする */
 .theme-index main { max-width: none; padding: 0; }
 
-/* --- 共通ヘッダー --- */
 header {
     width: 100%; height: 70px; padding: 0 5%;
     display: flex; justify-content: space-between; align-items: center;
@@ -27,7 +22,6 @@ header {
 }
 header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
-/* ハンバーガーボタン */
 .menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
@@ -48,30 +42,24 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .nav-overlay ul li { margin: 15px 0; }
 .nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; }
 
-/* --- 事務所トップ：長方形パネル (Ver.43 全幅版) --- */
-.index-grid { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; gap: 0; } /* gapを0に */
+.index-grid { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; gap: 0; }
 .index-artist-box { position: relative; width: 100%; aspect-ratio: 2 / 1 !important; overflow: hidden; display: block; text-decoration: none; }
 .index-artist-box img { 
     width: 100%; height: 100%; 
     object-fit: cover !important; 
     object-position: center 28% !important; 
-    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); 
+    transition: 0.8s; 
 }
-.index-artist-box:hover img { transform: scale(1.05); }
-.index-artist-hover { 
-    position: absolute; inset: 0; background-color: rgba(0,0,0,0.7); 
-    display: flex; align-items: center; justify-content: center; 
-    opacity: 0; transition: 0.4s; z-index: 10; 
-}
+.index-artist-hover { position: absolute; inset: 0; background-color: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; z-index: 10; }
 .index-artist-box:hover .index-artist-hover { opacity: 1; }
 .index-hover-name { color: #fff; font-weight: 900; font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
-/* --- アーティストページ --- */
 .hero-header { text-align: center; padding: 40px 20px 20px; }
 .artist-main-title { font-weight: 900; font-size: 3.5rem; margin: 10px 0 20px; text-transform: uppercase; }
 .tab-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; border-bottom: 1px solid #f0f0f0; }
 .tab-btn { font-size: 13px; font-weight: 900; color: #ccc; border: none; background: none; padding-bottom: 10px; cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
 .tab-btn.active { color: #000; border-bottom-color: #000; }
+
 .content-section { display: none; padding: 0 0 80px; width: 100%; }
 .content-section.active { display: block; }
 
@@ -80,9 +68,10 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .about-box h3 { font-weight: 900; font-size: 1.6rem; margin-bottom: 15px; border-left: 6px solid #000; padding-left: 15px; }
 .about-box p { font-size: 0.95rem; line-height: 2; color: #333; }
 
+/* グリッド正方形死守 */
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
 .card { cursor: pointer; text-align: left; }
-.img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
+.img-wrap { width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 10px; }
 .img-wrap img { width: 100%; height: 100%; object-fit: cover !important; transition: 0.4s; }
 .card-name { font-weight: 900; font-size: 1.1rem; }
 
@@ -97,10 +86,10 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .modal-label { font-size: 9px; font-weight: 900; letter-spacing: 2px; color: #ccc; display: block; margin-bottom: 2px; }
 .modal-value { font-size: 1rem; color: #000; font-weight: 700; line-height: 1.4; }
 
-/* pCloudプレイヤー */
-.player-container { background: #f9f9f9; border-radius: 10px; overflow: hidden; height: 500px; width: 100%; }
+/* 【重要】pCloudプレイヤーエリア */
+.player-container { background: #f9f9f9; border-radius: 10px; overflow: hidden; height: 500px; width: 100%; margin-top: 10px; }
+.player-container iframe { width: 100%; height: 100%; }
 
-/* フッター */
 footer { padding: 30px 0; border-top: 1px solid #f0f0f0; text-align: center; background: #fff; }
 .f-logo-link { text-decoration: none; display: inline-block; margin-bottom: 5px; }
 .f-logo { font-size: 1.1rem; color: #000; font-weight: 900; }
@@ -108,12 +97,9 @@ footer { padding: 30px 0; border-top: 1px solid #f0f0f0; text-align: center; bac
 
 @media (max-width: 768px) {
     header { height: 60px; }
-    header .logo { font-size: 1.0rem; }
-    .nav-overlay { top: 60px; height: calc(100vh - 60px); }
     .index-grid { grid-template-columns: 1fr; }
     .index-artist-box { aspect-ratio: 3 / 2 !important; }
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .about-box { flex-direction: column; gap: 20px; }
     .about-box img { width: 100%; }
-    .artist-main-title { font-size: 2.2rem; }
 }

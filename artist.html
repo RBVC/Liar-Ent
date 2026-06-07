@@ -51,6 +51,7 @@
                     <p id="group-about" style="color:#666;"></p>
                 </div>
             </div>
+            
             <div id="member-section-container">
                 <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">MEMBER</h2>
                 <div id="member-grid" class="info-grid"></div>
@@ -71,7 +72,7 @@
     <script src="data.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const groupId = params.get('id') || 'god7ike'; // デフォルトをレジェンド順に変更
+        const groupId = params.get('id') || 'god7ike';
         const data = allGroups[groupId];
 
         if (data) {

@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Unified Data Ver.40.0 --- */
+/* --- Liar Entertainment Unified Data Ver.41.0 --- */
 
 const allGroups = {
     "god7ike": {
@@ -56,7 +56,8 @@ const allGroups = {
         members: [
             { name: "JIA (지아)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal / Sub Dancer / Sub Rapper", img: "images/v3/v3-jia.jpg" },
             { name: "LICCA (릿카)", birthday: "2000.07.14", role: "Center", position: "Main Rapper / Lead Vocal / Lead Dancer", img: "images/v3/v3-licca.jpg" },
-            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
+            // 【復元】ナヨンのリードラッパー項目を復活
+            { name: "NAYEON (나연)", birthday: "2006.06.20", role: "Maknae", position: "Main Dancer / Lead Rapper / Sub Vocal", img: "images/v3/v3-nayeon.jpg" }
         ],
         discography: [
             { title: "COOL", type: "2nd Mini Album / 2022.10.31", img: "images/v3/v3-cool.jpg", embed: `<iframe src="https://u.pcloud.link/publink/embed?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" width="100%" height="500" frameborder="0" scrolling="no"></iframe>` },
@@ -67,7 +68,6 @@ const allGroups = {
     }
 };
 
-// 共通機能
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -102,7 +102,7 @@ function openAlbumModal(groupId, index) {
     document.getElementById('modal-title').innerText = a.title;
     document.getElementById('modal-body').innerHTML = `
         <p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p>
-        <div style="background:#f9f9f9; border-radius:10px; overflow:hidden; min-height:200px;">${a.embed}</div>`;
+        <div class="player-container">${a.embed}</div>`;
     document.getElementById('master-modal').classList.add('active');
 }
 

@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.46.0 --- */
+/* --- Liar Entertainment Master Style Ver.47.0 --- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 /* Base */
@@ -22,7 +22,7 @@ header {
 }
 header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
-/* Hamburger Menu Trigger */
+/* Hamburger Menu */
 .menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
@@ -32,19 +32,17 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .menu-trigger.active span:nth-child(2) { opacity: 0; }
 .menu-trigger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-/* Navigation Overlay (Centering Fixed) */
 .nav-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background: rgba(255, 255, 255, 0.98); transition: 0.5s;
     z-index: 8500; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    visibility: hidden; opacity: 0;
-    text-align: center;
+    visibility: hidden; opacity: 0; text-align: center;
 }
 .nav-overlay.open { visibility: visible; opacity: 1; }
-.nav-label { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-bottom: 20px; display: block; width: 100%; }
-.nav-overlay ul { list-style: none; padding: 0; margin: 0; width: 100%; } /* paddingリセット */
+.nav-label { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-bottom: 20px; display: block; }
+.nav-overlay ul { list-style: none; padding: 0; margin: 0; }
 .nav-overlay ul li { margin: 15px 0; }
-.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; text-transform: uppercase; display: block; }
+.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; text-transform: uppercase; }
 
 /* Index Grid */
 .index-grid { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; gap: 0; }
@@ -58,7 +56,7 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .index-artist-box:hover .index-artist-hover { opacity: 1; }
 .index-hover-name { color: #fff; font-weight: 900; font-size: 2rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
-/* Artist Page Elements */
+/* Artist Elements */
 .hero-header { text-align: center; padding: 40px 20px 20px; }
 .back-link { font-size: 10px; color: #ccc; text-decoration: none; font-weight: 900; letter-spacing: 2px; }
 .artist-main-title { font-weight: 900; font-size: clamp(2rem, 8vw, 3.5rem); margin: 10px 0 20px; text-transform: uppercase; }
@@ -77,6 +75,21 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .about-box p { font-size: 0.95rem; line-height: 2; color: #666; }
 
 .section-title { font-weight: 900; font-size: 1.5rem; margin-bottom: 30px; border-left: 8px solid #000; padding-left: 20px; text-transform: uppercase; }
+
+/* News List Style */
+.news-list { width: 100%; border-top: 1px solid #f0f0f0; margin-bottom: 40px; }
+.news-item { display: flex; align-items: center; padding: 20px 10px; border-bottom: 1px solid #f0f0f0; text-decoration: none; color: inherit; transition: 0.3s; }
+.news-item:hover { background: #fcfcfc; }
+.news-date { font-weight: 900; font-size: 0.8rem; color: #ccc; width: 120px; flex-shrink: 0; }
+.news-title { font-weight: 700; font-size: 1rem; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.news-item.is-hidden { display: none; } /* VIEW MORE用 */
+
+.view-more-area { text-align: center; margin-top: 20px; }
+.btn-view-more { 
+    background: #000; color: #fff; border: none; 
+    padding: 12px 40px; font-weight: 900; font-size: 11px; 
+    letter-spacing: 2px; cursor: pointer; text-transform: uppercase;
+}
 
 /* Grid */
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
@@ -106,7 +119,7 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; width: 100%; }
 .f-logo-link { text-decoration: none; }
 .f-logo { font-size: 1.1rem; color: #000; font-weight: 900; margin-bottom: 5px; }
-.f-copy { font-size: 9px; color: #ccc; letter-spacing: 0.1em; text-transform: uppercase; } /* ALL CAPS反映 */
+.f-copy { font-size: 9px; color: #ccc; letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -117,4 +130,5 @@ footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; wid
     .about-box { flex-direction: column; gap: 20px; }
     .about-box img { width: 100%; }
     .nav-overlay ul li a { font-size: 1.4rem; }
+    .news-date { width: 90px; font-size: 0.7rem; }
 }

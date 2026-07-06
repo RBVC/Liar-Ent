@@ -24,9 +24,11 @@
 
         <div class="tab-container">
             <button onclick="switchTab('profile')" id="btn-profile" class="tab-btn active">Profile</button>
+            <button onclick="switchTab('news')" id="btn-news" class="tab-btn">News</button>
             <button onclick="switchTab('disco')" id="btn-disco" class="tab-btn">Discography</button>
         </div>
 
+        <!-- Profile Tab -->
         <div id="profile" class="content-section active">
             <div class="about-box">
                 <img id="group-banner" src="">
@@ -38,13 +40,23 @@
             </div>
         </div>
 
+        <!-- News Tab -->
+        <div id="news" class="content-section">
+            <h2 class="section-title">NEWS</h2>
+            <div id="news-list-container" class="news-list"></div>
+            <div id="view-more-area" class="view-more-area">
+                <button class="btn-view-more" onclick="toggleNews()">VIEW MORE</button>
+            </div>
+        </div>
+
+        <!-- Discography Tab -->
         <div id="disco" class="content-section">
             <h2 class="section-title">DISCOGRAPHY</h2>
             <div id="disco-grid" class="info-grid"></div>
         </div>
     </main>
 
-    <footer></footer> <!-- common.jsで中身を注入 -->
+    <footer></footer>
 
     <script src="common.js"></script>
     <script src="data/god7ike.js"></script>
@@ -64,17 +76,34 @@
 
             if (!data.hasMemberSection) document.getElementById('member-section-container').style.display = 'none';
 
+            // メンバー生成
             document.getElementById('member-grid').innerHTML = (data.members || []).map((m, i) => `
                 <div class="card ${data.clickableMembers ? '' : 'no-click'}" ${data.clickableMembers ? `onclick="openMemberModal('${groupId}', ${i})"` : ''}>
                     <div class="img-wrap"><img src="${m.img}"></div>
                     <p class="card-name">${m.name.split(' ')[0]}</p>
                 </div>`).join('');
 
+            // ディスコグラフィ生成
             document.getElementById('disco-grid').innerHTML = data.discography.map((d, i) => `
                 <div class="card" onclick="openAlbumModal('${groupId}', ${i})">
                     <div class="img-wrap"><img src="${d.img}"></div>
                     <p class="card-name">${d.title}</p>
                 </div>`).join('');
+
+            // ニュース生成
+            const nContainer = document.getElementById('news-list-container');
+            const newsData = data.news || [];
+            if (newsData.length === 0) {
+                nContainer.innerHTML = '<p style="text-align:center; padding:40px; color:#ccc; font-weight:900;">NO NEWS AVAILABLE</p>';
+                document.getElementById('view-more-area').style.display = 'none';
+            } else {
+                nContainer.innerHTML = newsData.map((n, i) => `
+                    <div class="news-item ${i >= 3 ? 'is-hidden' : ''}">
+                        <span class="news-date">${n.date}</span>
+                        <span class="news-title">${n.title}</span>
+                    </div>`).join('');
+                if (newsData.length <= 3) document.getElementById('view-more-area').style.display = 'none';
+            }
         }
     </script>
 </body>

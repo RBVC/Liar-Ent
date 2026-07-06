@@ -17,49 +17,59 @@
     <nav class="nav-overlay" id="nav-menu">
         <span style="font-size:10px; color:#ccc; letter-spacing:5px; font-weight:900; margin-bottom:10px; display:block;">ARTIST LIST</span>
         <ul>
-            <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
-            <li><a href="artist.html?id=lcr" onclick="toggleMenu()">LCR</a></li>
-            <li><a href="artist.html?id=hayul" onclick="toggleMenu()">HAYUL</a></li>
-            <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
+            <li><a href="artist.html?id=god7ike">GØD7IKE</a></li>
+            <li><a href="artist.html?id=lcr">LCR</a></li>
+            <li><a href="artist.html?id=hayul">HAYUL</a></li>
+            <li><a href="artist.html?id=v3">&lt;3</a></li>
         </ul>
     </nav>
 
+    <!-- モーダル（メンバー・アルバム共用） -->
     <div class="modal" id="master-modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="modal-close" onclick="closeModal(null, true)">×</span>
-            <h3 id="modal-title" style="font-weight:900; font-size:1.8rem; margin-bottom:15px; text-transform:uppercase;"></h3>
+            <span class="modal-close" onclick="closeModal()">×</span>
             <div id="modal-body"></div>
         </div>
     </div>
 
     <main>
         <div class="hero-header">
-            <a href="index.html" style="font-size:10px; color:#ccc; text-decoration:none; font-weight:900; letter-spacing:2px;">← ALL ARTISTS</a>
+            <a href="index.html" class="back-link">← ALL ARTISTS</a>
             <h1 id="group-name" class="artist-main-title">Artist</h1>
         </div>
 
         <div class="tab-container">
             <button onclick="switchTab('profile')" id="btn-profile" class="tab-btn active">Profile</button>
             <button onclick="switchTab('disco')" id="btn-disco" class="tab-btn">Discography</button>
+            <button onclick="switchTab('news')" id="btn-news" class="tab-btn">News</button>
         </div>
 
+        <!-- Profile Tab -->
         <div id="profile" class="content-section active">
             <div class="about-box">
                 <img id="group-banner" src="">
                 <div>
-                    <h3 style="font-weight:900;">ABOUT</h3>
-                    <p id="group-about" style="color:#666;"></p>
+                    <h3>ABOUT</h3>
+                    <p id="group-about"></p>
                 </div>
             </div>
             <div id="member-section-container">
-                <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">MEMBER</h2>
+                <h2 class="sec-title">MEMBER</h2>
                 <div id="member-grid" class="info-grid"></div>
             </div>
         </div>
 
+        <!-- Discography Tab -->
         <div id="disco" class="content-section">
-            <h2 style="font-weight:900; font-size:1.5rem; margin-bottom:30px; border-left:8px solid #000; padding-left:20px;">DISCOGRAPHY</h2>
+            <h2 class="sec-title">DISCOGRAPHY</h2>
             <div id="disco-grid" class="info-grid"></div>
+        </div>
+
+        <!-- News Tab -->
+        <div id="news" class="content-section">
+            <h2 class="sec-title">NEWS</h2>
+            <div id="news-list" class="news-container"></div>
+            <button id="news-more-btn" class="more-btn" onclick="showAllNews()">VIEW MORE</button>
         </div>
     </main>
 
@@ -78,32 +88,80 @@
             document.title = `${data.name} | Liar Entertainment`;
             document.getElementById('group-name').innerText = data.name;
             document.getElementById('group-banner').src = data.banner;
-            const aboutText = data.about.split('。').join('。<br>');
-            document.getElementById('group-about').innerHTML = aboutText;
+            document.getElementById('group-about').innerHTML = data.about.split('。').join('。<br>');
 
             if (data.hasMemberSection === false) {
                 document.getElementById('member-section-container').style.display = 'none';
             }
 
+            // メンバー描画
             const mGrid = document.getElementById('member-grid');
             data.members.forEach((m, i) => {
-                const clickAttr = data.clickableMembers ? `onclick="openMemberModal('${groupId}', ${i})"` : '';
-                const noClickClass = data.clickableMembers ? '' : 'no-click';
                 mGrid.innerHTML += `
-                    <div class="card ${noClickClass}" ${clickAttr}>
+                    <div class="card" onclick="openMemberModal(${i})">
                         <div class="img-wrap"><img src="${m.img}"></div>
-                        <p class="card-name">${m.name.split(' ')[0]}</p>
+                        <p class="card-name">${m.name}</p>
                     </div>`;
             });
 
+            // ディスコ描画
             const dGrid = document.getElementById('disco-grid');
             data.discography.forEach((d, i) => {
                 dGrid.innerHTML += `
-                    <div class="card" onclick="openAlbumModal('${groupId}', ${i})">
+                    <div class="card" onclick="openAlbumModal(${i})">
                         <div class="img-wrap"><img src="${d.img}"></div>
                         <p class="card-name">${d.title}</p>
                     </div>`;
             });
+
+            // ニュース描画（このアーティストに関連するもの＋共通）
+            const nList = document.getElementById('news-list');
+            const filteredNews = newsData.filter(n => n.group === groupId || n.group === 'office');
+            filteredNews.forEach((n, i) => {
+                nList.innerHTML += `
+                    <div class="news-item ${i >= 3 ? 'hidden-news' : ''}">
+                        <span class="news-date">${n.date}</span>
+                        <span class="news-title">${n.title}</span>
+                    </div>`;
+            });
+            if (filteredNews.length <= 3) document.getElementById('news-more-btn').style.display = 'none';
+        }
+
+        /* ニュース表示拡張 */
+        function showAllNews() {
+            document.querySelectorAll('.hidden-news').forEach(el => el.classList.remove('hidden-news'));
+            document.getElementById('news-more-btn').style.display = 'none';
+        }
+
+        /* モーダル処理 */
+        function openMemberModal(idx) {
+            const m = data.members[idx];
+            const body = document.getElementById('modal-body');
+            body.innerHTML = `
+                <img src="${m.img}" class="modal-img">
+                <div class="modal-info-list">
+                    <div class="modal-info-item"><span class="modal-label">NAME</span><span class="modal-value">${m.name}</span></div>
+                    <div class="modal-info-item"><span class="modal-label">AGE</span><span class="modal-value">${m.age}</span></div>
+                    <div class="modal-info-item"><span class="modal-label">POSITION</span><span class="modal-value">${m.position}</span></div>
+                </div>`;
+            document.getElementById('master-modal').classList.add('active');
+        }
+
+        function openAlbumModal(idx) {
+            const d = data.discography[idx];
+            const body = document.getElementById('modal-body');
+            // ここで iframe を動的に書き込む（ポップアップした瞬間に読み込み開始）
+            body.innerHTML = `
+                <h3 class="modal-title-text">${d.title}</h3>
+                <div class="player-container">
+                    <iframe src="https://my.pcloud.com/public/show?code=${d.code}&view=list" frameborder="0" allowfullscreen></iframe>
+                </div>`;
+            document.getElementById('master-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('master-modal').classList.remove('active');
+            document.getElementById('modal-body').innerHTML = ''; // iframeを停止させるために空にする
         }
     </script>
 </body>

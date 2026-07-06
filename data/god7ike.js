@@ -13,14 +13,17 @@ window.allGroups["god7ike"] = {
         { name: "ROY (ロイ)", birthday: "2007.01.06", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
     ],
     news: [
-        { date: "2025.10.07", title: "1stフルアルバム「Wings」をリリース。" },
-        { date: "2025.02.24", title: "3ndミニアルバム「REBORN」をリリース。" },
-        { date: "2024.10.09", title: "4uatreが1st EP「TEA」をリリース。" },
-        { date: "2024.04.01", title: "ANYCOLOR株式会社と業務提携。休止メンバーを含む全員復帰を発表。" },
-        { date: "2023.11.14", title: "2ndミニアルバム「ISSUE MAKER」をリリース。" },
-        { date: "2023.12.01", title: "ジア・ナヨン・ミミの音楽活動一時休止を発表。" },
-        { date: "2023.05.21", title: "1stミニアルバム「OOMM」をリリースしデビュー。" },
-        { date: "2023.04.01", title: "Liarエンターテインメントよりグループ名とメンバーを公開。" }
+        { date: "2025.10.07", title: "[RELEASE] 1st Full Album『Wings』リリースのお知らせ" },
+        { date: "2025.02.24", title: "[RELEASE] 3nd Mini Album『REBORN』リリースのお知らせ" },
+        { date: "2024.10.09", title: "[RELEASE] 4uatre 1st EP『TEA』リリースのお知らせ" },
+        { date: "2024.04.01", title: "[INFO] ANYCOLOR株式会社との業務提携および全メンバーグループ活動再開に関するお知らせ" },
+        { date: "2024.02.07", title: "[INFO] GØD7IKE メンバー（ハユル）ソロデビューのお知らせ" },
+        { date: "2024.01.23", title: "[INFO] GØD7IKE メンバー（レイ、リッカ、ロイ）ユニットデビューのお知らせ" },
+        { date: "2023.12.01", title: "[INFO] GØD7IKE メンバー（ジア、ミミ、ナヨン）の今後の活動に関する重要なお知らせ" },
+        { date: "2023.11.14", title: "[RELEASE] 2nd Mini Album『ISSUE MAKER』リリースのお知らせ" },
+        { date: "2023.05.21", title: "[RELEASE] 1st Mini Album『OOMM』リリースのお知らせ" },
+        { date: "2023.04.01", title: "[INFO] 新グループ「GØD7IKE」全メンバー公開および始動のお知らせ" },
+        { date: "2023.02.28", title: "[INFO] Liar Entertainment 新グループ「GØD7IKE」結成に関するお知らせ" }
     ],
     discography: [
         { title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" },

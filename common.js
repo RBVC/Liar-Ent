@@ -3,11 +3,12 @@
 window.allGroups = window.allGroups || {};
 
 function initApp() {
-    injectModal();
-    injectFooter();
-    generateNav();
+    injectModal();      // モーダル生成
+    injectFooter();     // フッター生成
+    generateNav();      // ナビ生成
 }
 
+// ナビゲーション生成
 function generateNav() {
     const navUl = document.querySelector('#nav-menu ul');
     if (!navUl) return;
@@ -16,6 +17,7 @@ function generateNav() {
     ).join('');
 }
 
+// フッター注入
 function injectFooter() {
     const footers = document.querySelectorAll('footer');
     const footerHtml = `
@@ -25,6 +27,7 @@ function injectFooter() {
     footers.forEach(f => f.innerHTML = footerHtml);
 }
 
+// モーダル注入
 function injectModal() {
     if (document.getElementById('master-modal')) return;
     const modalHtml = `
@@ -38,6 +41,7 @@ function injectModal() {
     document.body.insertAdjacentHTML('beforeend', modalHtml);
 }
 
+// メニュー開閉
 function toggleMenu() {
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('nav-menu');
@@ -46,6 +50,7 @@ function toggleMenu() {
     document.body.style.overflow = nav?.classList.contains('open') ? 'hidden' : 'auto';
 }
 
+// モーダル制御
 function updateModal(title, html) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-body').innerHTML = html;
@@ -84,25 +89,6 @@ function switchTab(tabName) {
     document.querySelectorAll('.content-section, .tab-btn').forEach(el => el.classList.remove('active'));
     document.getElementById(tabName).classList.add('active');
     document.getElementById('btn-' + tabName).classList.add('active');
-}
-
-// News VIEW MORE 制御
-function toggleNews() {
-    const hiddenItems = document.querySelectorAll('.news-item.is-hidden');
-    const btn = document.querySelector('.btn-view-more');
-    if (hiddenItems.length > 0) {
-        hiddenItems.forEach(item => item.classList.remove('is-hidden'));
-        btn.innerText = "CLOSE";
-    } else {
-        // 再度閉じる処理（初期表示に戻す）
-        const allItems = document.querySelectorAll('.news-item');
-        allItems.forEach((item, index) => {
-            if (index >= 3) item.classList.add('is-hidden');
-        });
-        btn.innerText = "VIEW MORE";
-        // ニュースのトップへスクロール
-        document.getElementById('news').scrollIntoView();
-    }
 }
 
 window.addEventListener('DOMContentLoaded', initApp);

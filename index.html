@@ -9,40 +9,16 @@
 <body class="theme-index">
     <header>
         <a href="index.html" class="logo">Liar Entertainment</a>
-        <div class="menu-trigger" id="menu-btn" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="menu-trigger" id="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </header>
 
     <nav class="nav-overlay" id="nav-menu">
-        <span style="font-size:10px; color:#ccc; letter-spacing:5px; font-weight:900; margin-bottom:10px; display:block;">ARTIST LIST</span>
-        <ul>
-            <li><a href="artist.html?id=god7ike" onclick="toggleMenu()">GØD7IKE</a></li>
-            <li><a href="artist.html?id=lcr" onclick="toggleMenu()">LCR</a></li>
-            <li><a href="artist.html?id=hayul" onclick="toggleMenu()">HAYUL</a></li>
-            <li><a href="artist.html?id=v3" onclick="toggleMenu()">&lt;3</a></li>
-        </ul>
+        <span class="nav-label">ARTIST LIST</span>
+        <ul><!-- JSで自動生成 --></ul>
     </nav>
 
     <main>
-        <section id="artists" class="index-grid">
-            <a href="artist.html?id=god7ike" class="index-artist-box">
-                <img src="images/god7ike/god7ike-main.jpg" alt="GØD7IKE">
-                <div class="index-artist-hover"><span class="index-hover-name">GØD7IKE</span></div>
-            </a>
-            <a href="artist.html?id=lcr" class="index-artist-box">
-                <img src="images/lcr/lcr-main.jpg" alt="LCR">
-                <div class="index-artist-hover"><span class="index-hover-name">LCR</span></div>
-            </a>
-            <a href="artist.html?id=hayul" class="index-artist-box">
-                <img src="images/hayul/hayul-main.jpg" alt="HAYUL">
-                <div class="index-artist-hover"><span class="index-hover-name">HAYUL</span></div>
-            </a>
-            <a href="artist.html?id=v3" class="index-artist-box">
-                <img src="images/v3/v3-main.jpg" alt="V3">
-                <div class="index-artist-hover"><span class="index-hover-name">&lt;3</span></div>
-            </a>
-        </section>
+        <section id="index-artists" class="index-grid"><!-- JSで自動生成 --></section>
     </main>
 
     <footer>
@@ -51,5 +27,15 @@
     </footer>
 
     <script src="data.js"></script>
+    <script>
+        // トップページのグリッド生成
+        const grid = document.getElementById('index-artists');
+        grid.innerHTML = Object.keys(allGroups).map(id => `
+            <a href="artist.html?id=${id}" class="index-artist-box">
+                <img src="${allGroups[id].banner}" alt="${allGroups[id].name}">
+                <div class="index-artist-hover"><span class="index-hover-name">${allGroups[id].name}</span></div>
+            </a>
+        `).join('');
+    </script>
 </body>
 </html>

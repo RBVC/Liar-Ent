@@ -4,93 +4,31 @@ window.allGroups["god7ike"] = {
     banner: "images/god7ike/god7ike-main.jpg",
     about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。",
     members: [
-        { 
-            name: "JIA (ジア)", 
-            birthday: "2001.10.09", 
-            role: "Leader", 
-            position: "Leader / Main Vocal", 
-            img: "images/god7ike/god7ike-jia.jpg" 
-        },
-        { 
-            name: "MIMI (ミミ)", 
-            birthday: "2009.11.03", 
-            role: "Maknae", 
-            position: "Lead Dancer / Sub Vocal / Sub Rapper", 
-            img: "images/god7ike/god7ike-mimi.jpg" 
-        },
-        { 
-            name: "NAYEON (ナヨン)", 
-            birthday: "2006.06.20", 
-            role: "", 
-            position: "Main Dancer / Sub Vocal", 
-            img: "images/god7ike/god7ike-nayeon.jpg" 
-        },
-        { 
-            name: "LAY (レイ)", 
-            birthday: "2007.01.06", 
-            role: "", 
-            position: "Main Rapper", 
-            img: "images/god7ike/god7ike-lay.jpg" 
-        },
-        { 
-            name: "HAYUL (ハユル)", 
-            birthday: "2003.02.07", 
-            role: "", 
-            position: "Visual / Main Vocal", 
-            img: "images/god7ike/god7ike-hayul.jpg" 
-        },
-        { 
-            name: "LICCA (リッカ)", 
-            birthday: "2000.07.14", 
-            role: "Center", 
-            position: "Center / Lead Vocal / Lead Rapper / Lead Dancer", 
-            img: "images/god7ike/god7ike-licca.jpg" 
-        },
-        { 
-            name: "ROY (ロイ)", 
-            birthday: "2007.01.06", 
-            role: "", 
-            position: "Main Rapper", 
-            img: "images/god7ike/god7ike-roy.jpg" 
-        }
+        { name: "JIA (ジア)", birthday: "2001.10.09", position: "Leader / Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
+        { name: "MIMI (ミミ)", birthday: "2009.11.03", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
+        { name: "NAYEON (ナヨン)", birthday: "2006.06.20", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
+        { name: "LAY (レイ)", birthday: "2007.01.06", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+        { name: "HAYUL (ハユル)", birthday: "2003.02.07", position: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
+        { name: "LICCA (リッカ)", birthday: "2000.07.14", position: "Center / Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
+        { name: "ROY (ロイ)", birthday: "2007.01.06", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
+    ],
+    news: [
+        { date: "2025.10.07", title: "1stフルアルバム「Wings」をリリース。" },
+        { date: "2025.02.24", title: "3ndミニアルバム「REBORN」をリリース。" },
+        { date: "2024.10.09", title: "4uatreが1st EP「TEA」をリリース。" },
+        { date: "2024.04.01", title: "ANYCOLOR株式会社と業務提携。休止メンバーを含む全員復帰を発表。" },
+        { date: "2023.11.14", title: "2ndミニアルバム「ISSUE MAKER」をリリース。" },
+        { date: "2023.12.01", title: "ジア・ナヨン・ミミの音楽活動一時休止を発表。" },
+        { date: "2023.05.21", title: "1stミニアルバム「OOMM」をリリースしデビュー。" },
+        { date: "2023.04.01", title: "Liarエンターテインメントよりグループ名とメンバーを公開。" }
     ],
     discography: [
-        { 
-            title: "CHOSEN KARMA", 
-            type: "4th Mini Album / 2026.XX.XX", 
-            img: "images/god7ike/god7ike-chosen-karma.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" 
-        },
-        { 
-            title: "Wings", 
-            type: "1st Full Album / 2025.10.07", 
-            img: "images/god7ike/god7ike-wings.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" 
-        },
-        { 
-            title: "REBORN", 
-            type: "3rd Mini Album / 2025.02.24", 
-            img: "images/god7ike/god7ike-reborn.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" 
-        },
-        { 
-            title: "TEA", 
-            type: "4uatre (キャトル) 1st EP / 2024.10.09", 
-            img: "images/god7ike/4uatre-tea.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" 
-        },
-        { 
-            title: "ISSUE MAKER", 
-            type: "2nd Mini Album / 2023.11.14", 
-            img: "images/god7ike/god7ike-issue-maker.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" 
-        },
-        { 
-            title: "OOMM", 
-            type: "1st Mini Album / 2023.05.21", 
-            img: "images/god7ike/god7ike-oomm.jpg", 
-            embedUrl: "https://u.pcloud.link/publink/show?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" 
-        }
+        { title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" },
+        { title: "Wings", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" },
+        { title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" },
+        { title: "TEA", type: "4uatre (キャトル) 1st EP / 2024.10.09", img: "images/god7ike/4uatre-tea.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" },
+        { title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" },
+        { title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" }
     ],
     hasMemberSection: true, clickableMembers: true
 };

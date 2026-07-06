@@ -7,21 +7,18 @@ window.allGroups["v3"] = {
         { 
             name: "JIA (ジア)", 
             birthday: "2001.10.09", 
-            role: "Leader", 
             position: "Leader / Main Vocal / Sub Dancer / Sub Rapper", 
             img: "images/v3/v3-jia.jpg" 
         },
         { 
             name: "LICCA (リッカ)", 
             birthday: "2000.07.14", 
-            role: "Center", 
             position: "Center / Main Rapper / Lead Vocal / Lead Dancer", 
             img: "images/v3/v3-licca.jpg" 
         },
         { 
             name: "NAYEON (ナヨン)", 
             birthday: "2006.06.20", 
-            role: "Maknae", 
             position: "Maknae / Main Dancer / Lead Rapper / Sub Vocal", 
             img: "images/v3/v3-nayeon.jpg" 
         }

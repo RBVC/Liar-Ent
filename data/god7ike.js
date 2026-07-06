@@ -2,7 +2,7 @@
 window.allGroups["god7ike"] = {
     name: "GØD7IKE",
     banner: "images/god7ike/god7ike-main.jpg",
-    about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。Liar Entertainment所属。韓国人5人、日本人2人で構成される。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められ、公式ファンクラブ名は『BE7IEVER（ビリーバー）』。ロゴ等の正式表記はスラングやメンバー数を反映した『GØD7IKE』を用いる。",
+    about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。韓国人5人、日本人2人で構成され、ロゴ等の正式表記はスラングやメンバー数を反映した『GØD7IKE』を用いる。",
     members: [
         { name: "JIA (ジア)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
         { name: "MIMI (ミミ)", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
@@ -13,6 +13,12 @@ window.allGroups["god7ike"] = {
         { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
     ],
     discography: [
+        { 
+            title: "CHOSEN KARMA", 
+            type: "4th Mini Album / 2026.XX.XX", 
+            img: "images/god7ike/god7ike-chosen-karma.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" 
+        },
         { 
             title: "Wings", 
             type: "1st Full Album / 2025.10.07", 

@@ -1,4 +1,4 @@
-/* --- Liar Entertainment Master Style Ver.48.0 --- */
+/* --- Liar Entertainment Master Style Ver.49.0 --- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 html { scroll-behavior: smooth; }
@@ -67,11 +67,23 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 
 .section-title { font-weight: 900; font-size: 1.5rem; margin-bottom: 30px; border-left: 8px solid #000; padding-left: 20px; text-transform: uppercase; }
 
-/* News List */
+/* --- News Column Layout --- */
 .news-list { width: 100%; border-top: 1px solid #f0f0f0; }
-.news-item { display: flex; align-items: center; padding: 18px 10px; border-bottom: 1px solid #f0f0f0; text-decoration: none; color: inherit; }
-.news-date { font-weight: 900; font-size: 0.75rem; color: #bbb; width: 100px; flex-shrink: 0; letter-spacing: 0.05em; }
-.news-title { font-weight: 700; font-size: 0.95rem; color: #333; line-height: 1.4; }
+.news-item { 
+    display: flex; align-items: center; padding: 20px 10px; border-bottom: 1px solid #f0f0f0; 
+}
+.news-date { 
+    font-weight: 900; font-size: 0.8rem; color: #bbb; width: 100px; flex-shrink: 0; 
+}
+.news-category { 
+    width: 85px; flex-shrink: 0; margin-right: 25px;
+    font-size: 9px; font-weight: 900; letter-spacing: 1px;
+    padding: 4px 0; border: 1px solid #000; text-align: center;
+    border-radius: 2px;
+}
+.news-title { 
+    font-weight: 700; font-size: 0.95rem; color: #333; flex: 1;
+}
 
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; }
 .card { cursor: pointer; }
@@ -107,6 +119,7 @@ footer { padding: 40px 0; border-top: 1px solid #f0f0f0; text-align: center; wid
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .about-box { flex-direction: column; gap: 20px; }
     .about-box img { width: 100%; }
-    .nav-overlay ul li a { font-size: 1.4rem; }
-    .news-date { width: 90px; font-size: 0.7rem; }
+    .news-item { align-items: flex-start; flex-direction: column; }
+    .news-date { margin-bottom: 6px; }
+    .news-category { margin-bottom: 8px; }
 }

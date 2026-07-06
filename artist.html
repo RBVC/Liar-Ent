@@ -84,17 +84,28 @@
                     <p class="card-name">${d.title}</p>
                 </div>`).join('');
 
-            // NEWS (全件表示)
+            // NEWS (Split Category Logic)
             const nContainer = document.getElementById('news-list-container');
             const newsData = data.news || [];
             if (newsData.length === 0) {
                 nContainer.innerHTML = '<p style="text-align:center; padding:40px; color:#ccc; font-weight:900;">NO NEWS AVAILABLE</p>';
             } else {
-                nContainer.innerHTML = newsData.map(n => `
+                nContainer.innerHTML = newsData.map(n => {
+                    // Extract [CATEGORY] from n.title
+                    const match = n.title.match(/^\[(.*?)\]\s*(.*)$/);
+                    let catHtml = "";
+                    let titleText = n.title;
+                    if (match) {
+                        catHtml = `<span class="news-category">${match[1]}</span>`;
+                        titleText = match[2];
+                    }
+                    return `
                     <div class="news-item">
                         <span class="news-date">${n.date}</span>
-                        <span class="news-title">${n.title}</span>
-                    </div>`).join('');
+                        ${catHtml}
+                        <span class="news-title">${titleText}</span>
+                    </div>`;
+                }).join('');
             }
         }
     </script>

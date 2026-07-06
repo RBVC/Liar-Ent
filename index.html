@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liar Entertainment | Official</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,11 +13,11 @@
 
     <nav class="nav-overlay" id="nav-menu">
         <span class="nav-label">ARTIST LIST</span>
-        <ul><!-- JSで自動生成 --></ul>
+        <ul></ul>
     </nav>
 
     <main>
-        <section id="index-artists" class="index-grid"><!-- JSで自動生成 --></section>
+        <section id="index-artists" class="index-grid"></section>
     </main>
 
     <footer>
@@ -26,9 +25,14 @@
         <p class="f-copy">&copy; Liar Entertainment Corp. All Rights Reserved.</p>
     </footer>
 
-    <script src="data.js"></script>
+    <!-- スクリプト読み込み順が重要 -->
+    <script src="common.js"></script>
+    <script src="data/god7ike.js"></script>
+    <script src="data/lcr.js"></script>
+    <script src="data/hayul.js"></script>
+    <script src="data/v3.js"></script>
     <script>
-        // トップページのグリッド生成
+        // アーティストパネル生成
         const grid = document.getElementById('index-artists');
         grid.innerHTML = Object.keys(allGroups).map(id => `
             <a href="artist.html?id=${id}" class="index-artist-box">

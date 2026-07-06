@@ -1,15 +1,22 @@
+/* --- LCR Data --- */
 window.allGroups["lcr"] = {
     name: "LCR",
     banner: "images/lcr/lcr-main.jpg",
-    about: "LCR（エルシーアール）は、レイ、リッカ、ロイからなる実力派ラップユニット。Liar Entertainment所属。GØD7IKEのヒップホップ精神を継承し、より鋭く、より洗練されたサウンドを追求する。",
-    members: [
-        { name: "LAY (레이)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-lay.jpg" },
-        { name: "LICCA (릿카)", birthday: "2000.07.14", role: "", position: "Main Rapper", img: "images/lcr/lcr-licca.jpg" },
-        { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/lcr/lcr-roy.jpg" }
-    ],
+    about: "LCR（エルシーアール）は、レイ、リッカ、ロイからなる実力派ラップユニット。鋭く洗練されたサウンドと、グループ活動とは一線を画す本格的なラップパフォーマンスで圧倒的な存在感を放つ。",
+    members: [], // セクションごと非表示にするため空でOK
     discography: [
-        { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" },
-        { title: "KNOCK YOURSELF OUT", type: "1st Digital Single / 2024.XX.XX", img: "images/lcr/lcr-knock-yourself-out.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" }
+        { 
+            title: "PURRFECT", 
+            type: "1st EP / 2024.04.22", 
+            img: "images/god7ike/lcr-purrfect.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" 
+        },
+        { 
+            title: "Knock yourself out", 
+            type: "1st Digital Single / 2024.01.23", 
+            img: "images/lcr/lcr-knock-yourself-out.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" 
+        }
     ],
-    hasMemberSection: true, clickableMembers: false 
+    hasMemberSection: false // メンバー欄を非表示
 };

@@ -2,15 +2,15 @@
 window.allGroups["god7ike"] = {
     name: "GØD7IKE",
     banner: "images/god7ike/god7ike-main.jpg",
-    about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。韓国人5人、日本人2人で構成され、ロゴ等の正式表記はスラングやメンバー数を反映した『GØD7IKE』を用いる。",
+    about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。",
     members: [
-        { name: "JIA (ジア)", birthday: "2001.10.09", role: "Leader", position: "Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
-        { name: "MIMI (ミミ)", birthday: "2009.11.03", role: "Maknae", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
-        { name: "NAYEON (ナヨン)", birthday: "2006.06.20", role: "", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
-        { name: "LAY (レイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
-        { name: "HAYUL (ハユル)", birthday: "2003.02.07", role: "", position: "Main Vocal / Visual", img: "images/god7ike/god7ike-hayul.jpg" },
-        { name: "LICCA (リッカ)", birthday: "2000.07.14", role: "Center", position: "Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
-        { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
+        { name: "JIA (ジア)", birthday: "2001.10.09", role: "Leader", position: "リーダー / メインボーカル", img: "images/god7ike/god7ike-jia.jpg" },
+        { name: "MIMI (ミミ)", birthday: "2009.11.03", role: "Maknae", position: "リードダンサー / サブボーカル / サブラッパー", img: "images/god7ike/god7ike-mimi.jpg" },
+        { name: "NAYEON (ナヨン)", birthday: "2006.06.20", role: "", position: "メインダンサー / サブボーカル", img: "images/god7ike/god7ike-nayeon.jpg" },
+        { name: "LAY (レイ)", birthday: "2007.01.06", role: "", position: "メインラッパー", img: "images/god7ike/god7ike-lay.jpg" },
+        { name: "HAYUL (ハユル)", birthday: "2003.02.07", role: "", position: "ビジュアル / メインボーカル", img: "images/god7ike/god7ike-hayul.jpg" },
+        { name: "LICCA (リッカ)", birthday: "2000.07.14", role: "Center", position: "リードボーカル / リードラッパー / リードダンサー", img: "images/god7ike/god7ike-licca.jpg" },
+        { name: "ROY (ロイ)", birthday: "2007.01.06", role: "", position: "メインラッパー", img: "images/god7ike/god7ike-roy.jpg" }
     ],
     discography: [
         { 

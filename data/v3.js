@@ -28,14 +28,28 @@ window.allGroups["v3"] = {
         { date: "2022.11.05", title: "[RELEASE] 2nd Mini Album『Cool』リリースのお知らせ" },
         { date: "2022.05.13", title: "[RELEASE] 1st Mini Album『VENOM』リリースのお知らせ" },
         { date: "2022.04.10", title: "[INFO] プレデビューカバーEP『ALL OUT』公開のお知らせ" },
-        { date: "2022.04.01", title: "[INFO] Liar Entertainment 新グループ「<3」結成に関するお知らせ" },
-        { date: "2022.04.01", title: "[INFO] グループ名・メンバー公開" }
+        { date: "2022.04.01", title: "[INFO] Liar Entertainment 新グループ「<3」結成に関するお知らせ" }
     ],
     discography: [
-        { title: "COOL", type: "2nd Mini Album / 2022.11.05", img: "images/v3/v3-cool.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" },
-        { title: "VENOM", type: "1st Mini Album / 2022.05.13", img: "images/v3/v3-venom.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" },
-        { title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.10", img: "images/v3/v3-allout.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" }
+        { 
+            title: "COOL", 
+            type: "2nd Mini Album / 2022.10.31", 
+            img: "images/v3/v3-cool.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=0ZeknS5ZhOGKkPxGKq5MjJAI6JVPLpTXBeRV&view=list" 
+        },
+        { 
+            title: "VENOM", 
+            type: "1st Mini Album / 2022.04.10", 
+            img: "images/v3/v3-venom.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=0Z8knS5ZA3xYWPiILQ0M3rQzVDNrM5a4Onw7&view=list" 
+        },
+        { 
+            title: "ALL OUT", 
+            type: "Pre-Debut Cover EP / 2022.04.01", 
+            img: "images/v3/v3-allout.jpg", 
+            embedUrl: "https://u.pcloud.link/publink/show?code=0ZzzoU5ZgjQk2aTBTHF0ig70v7BxL0Y0ddGX&view=list" 
+        }
     ],
-    hasMemberSection: true, 
+    hasMemberSection: true,
     clickableMembers: true
 };

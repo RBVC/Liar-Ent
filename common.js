@@ -1,29 +1,35 @@
 /* --- Liar Entertainment Common Logic --- */
 
-// 全グループのデータを格納する箱
 window.allGroups = window.allGroups || {};
 
-// 1. 共通UIの初期化
 function initApp() {
-    injectModal();      // モーダルをページに注入
-    generateNav();      // ナビゲーションを自動生成
+    injectModal();      // モーダル生成
+    injectFooter();     // フッター生成
+    generateNav();      // ナビ生成
 }
 
-// 2. ナビゲーション（メニュー）の生成
+// 1. ナビゲーション生成（中央揃えを意識）
 function generateNav() {
     const navUl = document.querySelector('#nav-menu ul');
     if (!navUl) return;
-    
-    // データがある分だけリストを作成
     navUl.innerHTML = Object.keys(allGroups).map(id => 
         `<li><a href="artist.html?id=${id}">${allGroups[id].name}</a></li>`
     ).join('');
 }
 
-// 3. モーダルHTMLをボディの最後に注入（孤立化）
+// 2. フッターの注入（共通化）
+function injectFooter() {
+    const footers = document.querySelectorAll('footer');
+    const footerHtml = `
+        <a href="index.html" class="f-logo-link"><div class="f-logo">Liar Entertainment</div></a>
+        <p class="f-copy">&copy; Liar Entertainment ALL RIGHTS RESERVED.</p>
+    `;
+    footers.forEach(f => f.innerHTML = footerHtml);
+}
+
+// 3. モーダルの注入
 function injectModal() {
     if (document.getElementById('master-modal')) return;
-    
     const modalHtml = `
         <div id="master-modal" class="modal" onclick="closeModal(event)">
             <div class="modal-content" onclick="event.stopPropagation()">
@@ -58,10 +64,10 @@ function closeModal(e, force = false) {
     }
 }
 
-// 6. メンバー/アルバム モーダルの中身作成
+// 6. メンバーモーダル（roleなし、positionのみ）
 function openMemberModal(groupId, index) {
     const m = allGroups[groupId].members[index];
-    const posHtml = (m.role ? `${m.role} / ${m.position}` : m.position).split(' / ').join('<br>');
+    const posHtml = m.position.split(' / ').join('<br>');
     updateModal(m.name, `
         <img src="${m.img}" class="modal-img">
         <div class="modal-info-list">
@@ -80,7 +86,6 @@ function openAlbumModal(groupId, index) {
     `);
 }
 
-// 7. タブ切り替え
 function switchTab(tabName) {
     document.querySelectorAll('.content-section, .tab-btn').forEach(el => el.classList.remove('active'));
     document.getElementById(tabName).classList.add('active');

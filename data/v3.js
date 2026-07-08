@@ -20,8 +20,8 @@ window.allGroups["v3"] = {
             title: "COOL", 
             type: "2nd Mini Album / 2022.11.05", 
             img: "images/v3/v3-cool.jpg",
-            // フォルダ階層を正確に反映 (スペースは%20)
-            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/Cool/",
+            // 修正されたフォルダ名「Liar-Ent」を反映
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar-Ent/V3/Cool/",
             tracks: [
                 { title: "BE!", url: "01_BE.m4a" },
                 { title: "Cool", url: "02_Cool.m4a" },
@@ -35,7 +35,7 @@ window.allGroups["v3"] = {
             title: "VENOM", 
             type: "1st Mini Album / 2022.05.13", 
             img: "images/v3/v3-venom.jpg",
-            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/VENOM/",
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar-Ent/V3/VENOM/",
             tracks: [
                 { title: "Re-Original", url: "01_Re-Original.m4a" },
                 { title: "VENOM", url: "02_VENOM.m4a" },
@@ -49,7 +49,8 @@ window.allGroups["v3"] = {
             title: "ALL OUT", 
             type: "Pre-Debut Cover EP / 2022.04.10", 
             img: "images/v3/v3-allout.jpg", 
-            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/ALL%20OUT/",
+            // 修正されたフォルダ名「ALL-OUT」を反映
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar-Ent/V3/ALL-OUT/",
             tracks: [
                 { title: "THE BADDEST", url: "01_THE_BADDEST.m4a" },
                 { title: "I'LL SHOW YOU (Jia Solo)", url: "02_I_LL_SHOW_YOU.m4a" },

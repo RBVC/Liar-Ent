@@ -20,40 +20,28 @@ window.allGroups["v3"] = {
             title: "COOL", type: "2nd Mini Album / 2022.11.05", img: "images/v3/v3-cool.jpg",
             baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/v1783516704/",
             tracks: [
-                { title: "BE!", url: "01_BE.m4a" },
-                { title: "Cool", url: "02_Cool.m4a" },
-                { title: "Hocus Pocus", url: "03_Hocus_Pocus.m4a" },
-                { title: "Children", url: "04_Children.m4a" },
-                { title: "JUNGLE", url: "05_JUNGLE.m4a" },
-                { title: "My Error", url: "06_My_Error.m4a" }
+                { title: "BE!", url: "01_BE.m4a" }, { title: "Cool", url: "02_Cool.m4a" },
+                { title: "Hocus Pocus", url: "03_Hocus_Pocus.m4a" }, { title: "Children", url: "04_Children.m4a" },
+                { title: "JUNGLE", url: "05_JUNGLE.m4a" }, { title: "My Error", url: "06_My_Error.m4a" }
             ]
         },
         { 
             title: "VENOM", type: "1st Mini Album / 2022.05.13", img: "images/v3/v3-venom.jpg",
             baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/v1783516704/",
             tracks: [
-                { title: "Re-Original", url: "01_Re-Original.m4a" },
-                { title: "VENOM", url: "02_VENOM.m4a" },
-                { title: "JIGGY", url: "03_JIGGY.m4a" },
-                { title: "Come and Get It", url: "04_Come_and_Get_It.m4a" },
-                { title: "Dramatic", url: "05_Dramatic.m4a" },
-                { title: "DON'T MESS WITH ME", url: "06_DON_T_MESS_WITH_ME.m4a" }
+                { title: "Re-Original", url: "01_Re-Original.m4a" }, { title: "VENOM", url: "02_VENOM.m4a" },
+                { title: "JIGGY", url: "03_JIGGY.m4a" }, { title: "Come and Get It", url: "04_Come_and_Get_It.m4a" },
+                { title: "Dramatic", url: "05_Dramatic.m4a" }, { title: "DON'T MESS WITH ME", url: "06_DON_T_MESS_WITH_ME.m4a" }
             ]
         },
         { 
-            title: "ALL OUT", 
-            type: "Pre-Debut Cover EP / 2022.04.10", 
-            img: "images/v3/v3-allout.jpg", 
-            // 提供いただいたURLからバージョン番号含めルート指定
+            title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.10", img: "images/v3/v3-allout.jpg", 
             baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/v1783516705/",
             tracks: [
-                { title: "THE BADDEST", url: "01_THE_BADDEST.m4a" },
-                { title: "I'LL SHOW YOU (Jia Solo)", url: "02_I_LL_SHOW_YOU.m4a" },
-                { title: "VILLAIN (Licca Solo)", url: "03_VILLAIN.m4a" },
-                { title: "DRUM GO DUM (Nayeon Solo)", url: "04_DRUM_GO_DUM.m4a" }
+                { title: "THE BADDEST", url: "01_THE_BADDEST.m4a" }, { title: "I'LL SHOW YOU (Jia Solo)", url: "02_I_LL_SHOW_YOU.m4a" },
+                { title: "VILLAIN (Licca Solo)", url: "03_VILLAIN.m4a" }, { title: "DRUM GO DUM (Nayeon Solo)", url: "04_DRUM_GO_DUM.m4a" }
             ]
         }
     ],
-    hasMemberSection: true,
-    clickableMembers: true
+    hasMemberSection: true, clickableMembers: true
 };

@@ -26,12 +26,33 @@ window.allGroups["god7ike"] = {
         { date: "2023.02.28", title: "[INFO] Liar Entertainment 新グループ「GØD7IKE」結成に関するお知らせ" }
     ],
     discography: [
-        { title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZYjjI5ZAKW7kAkXxx8YXzFlMRlekHX7eLvy&view=list" },
-        { title: "Wings", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZNSjI5ZkzWbW1JlpSzgDxAo5GHiLz40g7G7&view=list" },
-        { title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZqSjI5ZoTl6gEL535XISGi2FELjPmTkiBEy&view=list" },
-        { title: "TEA", type: "4uatre (キャトル) 1st EP / 2024.10.09", img: "images/god7ike/4uatre-tea.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZQSjI5ZWGmPQhBKyQmOkHrDwTSGPpX65G27&view=list" },
-        { title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0Z92cm5Z0UXtvMsFeuQgp0wvMPr3thX1XF7V&view=list" },
-        { title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZeRjI5ZytC2VTjSe2jeAyzpaCcHDpcXLAPX&view=list" }
+        { 
+            title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg",
+            tracks: [] // 今後追加可能
+        },
+        { 
+            title: "Wings", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg",
+            tracks: [
+                { title: "Wings", url: "" }, { title: "Let Me Know", url: "" }, { title: "Greedy", url: "" },
+                { title: "중독 (Addicted)", url: "" }, { title: "Bewitched", url: "" }, { title: "Moonlight", url: "" }
+            ]
+        },
+        { 
+            title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg",
+            tracks: [ { title: "Villain", url: "" }, { title: "Swan Song", url: "" } ]
+        },
+        { 
+            title: "TEA", type: "4uatre (キャトル) 1st EP / 2024.10.09", img: "images/god7ike/4uatre-tea.jpg",
+            tracks: [ { title: "I’m Ready", url: "" }, { title: "TEA", url: "" }, { title: "FACT$", url: "" }, { title: "FREE & SHINE", url: "" } ]
+        },
+        { 
+            title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg",
+            tracks: [ { title: "ICONS", url: "" }, { title: "Hot Candy", url: "" }, { title: "GRATATA", url: "" }, { title: "Hide In The Dark", url: "" } ]
+        },
+        { 
+            title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg",
+            tracks: [ { title: "Yessir", url: "" }, { title: "Out Of My Mind", url: "" }, { title: "Stalker", url: "" }, { title: "Queen", url: "" } ]
+        }
     ],
     hasMemberSection: true, clickableMembers: true
 };

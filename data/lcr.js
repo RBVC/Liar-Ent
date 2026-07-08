@@ -9,8 +9,8 @@ window.allGroups["lcr"] = {
         { date: "2024.01.23", title: "[RELEASE] デジタルシングル『Knock yourself out』リリースのお知らせ" }
     ],
     discography: [
-        { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=0ZPhjI5ZQLO7RgCtGju564thVAWc1HoCyudV&view=list" },
-        { title: "Knock yourself out", type: "1st Digital Single / 2024.01.23", img: "images/lcr/lcr-knock-yourself-out.jpg", embedUrl: "https://u.pcloud.link/publink/show?code=XZejjI5ZNvKQ0OzsKmuzAuT1gSxqOmz8ir7k&view=list" }
+        { title: "PURRFECT", type: "1st EP / 2024.04.22", img: "images/god7ike/lcr-purrfect.jpg", tracks: [] },
+        { title: "Knock yourself out", type: "1st Digital Single / 2024.01.23", img: "images/lcr/lcr-knock-yourself-out.jpg", tracks: [] }
     ],
     hasMemberSection: false
 };

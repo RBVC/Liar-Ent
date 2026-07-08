@@ -73,19 +73,23 @@ function openAlbumModal(groupId, index) {
     document.getElementById('modal-title').innerText = a.title;
     const tracks = a.tracks || [];
     currentTrackIndex = 0;
-    let tracksHtml = `<p style="padding:40px; font-weight:bold;">COMING SOON</p>`;
+    
+    let tracksHtml = `<p style="padding:40px; font-weight:bold; text-align:center;">COMING SOON</p>`;
+    
     if (tracks.length > 0) {
         const listItems = tracks.map((t, i) => `<div class="track-item" id="track-${i}" onclick="loadTrack(${i})"><span class="track-num">${String(i + 1).padStart(2, '0')}</span><span class="track-name">${t.title}</span></div>`).join('');
-        tracksHtml = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900;">${a.type}</p><div class="custom-player"><div class="player-controls"><button class="play-pause-btn" id="play-btn" onclick="togglePlay()">▶</button></div><div class="seek-bar-container" onclick="seekAudio(event)"><div class="seek-bar-fill" id="seek-fill"></div></div><div class="player-time"><span id="current-time">0:00</span><span id="duration-time">0:00</span></div></div><div class="playlist-container">${listItems}</div>`;
+        tracksHtml = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p><div class="custom-player"><div class="player-controls"><button class="play-pause-btn" id="play-btn" onclick="togglePlay()">▶</button></div><div class="seek-bar-container" onclick="seekAudio(event)"><div class="seek-bar-fill" id="seek-fill"></div></div><div class="player-time"><span id="current-time">0:00</span><span id="duration-time">0:00</span></div></div><div class="playlist-container">${listItems}</div>`;
     }
+    
     document.getElementById('modal-body').innerHTML = tracksHtml;
     document.getElementById('master-modal').classList.add('active');
-    if (tracks.length > 0) { loadTrack(0, false); }
+    
+    if (tracks.length > 0 && tracks[0].url) { loadTrack(0, false); }
 }
 
 function loadTrack(index, autoPlay = true) {
     const track = currentAlbumData.tracks[index];
-    if (!track) return;
+    if (!track || !track.url) return;
     const baseUrl = currentAlbumData.baseUrl || "";
     const fullUrl = track.url.startsWith('http') ? track.url : baseUrl + track.url;
     if (currentAudio) { currentAudio.pause(); }

@@ -17,40 +17,37 @@ window.allGroups["v3"] = {
     ],
     discography: [
         { 
-            title: "COOL", 
-            type: "2nd Mini Album / 2022.11.05", 
-            img: "images/v3/v3-cool.jpg", 
+            title: "COOL", type: "2nd Mini Album / 2022.11.05", img: "images/v3/v3-cool.jpg",
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/Cool/",
             tracks: [
-                { title: "BE!", url: "" },
-                { title: "Cool", url: "" },
-                { title: "Hocus Pocus", url: "" },
-                { title: "Children", url: "" },
-                { title: "Dramatic", url: "" },
-                { title: "My Error", url: "" }
+                { title: "BE!", url: "01_BE.m4a" },
+                { title: "Cool", url: "02_Cool.m4a" },
+                { title: "Hocus Pocus", url: "03_Hocus_Pocus.m4a" },
+                { title: "Children", url: "04_Children.m4a" },
+                { title: "JUNGLE", url: "05_JUNGLE.m4a" },
+                { title: "My Error", url: "06_My_Error.m4a" }
             ]
         },
         { 
-            title: "VENOM", 
-            type: "1st Mini Album / 2022.05.13", 
-            img: "images/v3/v3-venom.jpg", 
+            title: "VENOM", type: "1st Mini Album / 2022.05.13", img: "images/v3/v3-venom.jpg",
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/VENOM/",
             tracks: [
-                { title: "Re-Original", url: "" },
-                { title: "VENOM", url: "" },
-                { title: "JIGGY", url: "" },
-                { title: "Come and Get It", url: "" },
-                { title: "JUNGLE", url: "" },
-                { title: "DON'T MESS WITH ME", url: "" }
+                { title: "Re-Original", url: "01_Re-Original.m4a" },
+                { title: "VENOM", url: "02_VENOM.m4a" },
+                { title: "JIGGY", url: "03_JIGGY.m4a" },
+                { title: "Come and Get It", url: "04_Come_and_Get_It.m4a" },
+                { title: "Dramatic", url: "05_Dramatic.m4a" },
+                { title: "DON'T MESS WITH ME", url: "06_DON_T_MESS_WITH_ME.m4a" }
             ]
         },
         { 
-            title: "ALL OUT", 
-            type: "Pre-Debut Cover EP / 2022.04.10", 
-            img: "images/v3/v3-allout.jpg", 
+            title: "ALL OUT", type: "Pre-Debut Cover EP / 2022.04.10", img: "images/v3/v3-allout.jpg", 
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/RBVC/Liar%20Entertainment/V3/ALL%20OUT/",
             tracks: [
-                { title: "THE BADDEST", url: "https://res.cloudinary.com/udhnprle/video/upload/v1783353306/01_THE_BADDEST_0629__ltpakp.m4a" },
-                { title: "I'LL SHOW YOU (Jia Solo)", url: "https://res.cloudinary.com/udhnprle/video/upload/v1783353306/02_I_LL_SHOW_YOU_0715_cxxvrk.m4a" },
-                { title: "VILLAIN (Licca Solo)", url: "https://res.cloudinary.com/udhnprle/video/upload/v1783353306/03_VILLAIN_0714_tqkapd.m4a" },
-                { title: "DRUM GO DUM (Nayeon Solo)", url: "https://res.cloudinary.com/udhnprle/video/upload/v1783353306/04_DRUM_GO_DUM_0714_vwgtkl.m4a" }
+                { title: "THE BADDEST", url: "01_THE_BADDEST.m4a" },
+                { title: "I'LL SHOW YOU (Jia Solo)", url: "02_I_LL_SHOW_YOU.m4a" },
+                { title: "VILLAIN (Licca Solo)", url: "03_VILLAIN.m4a" },
+                { title: "DRUM GO DUM (Nayeon Solo)", url: "04_DRUM_GO_DUM.m4a" }
             ]
         }
     ],

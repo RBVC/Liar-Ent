@@ -2,7 +2,7 @@
 window.allGroups["hayul"] = {
     name: "HAYUL",
     banner: "images/hayul/hayul-main.jpg",
-    about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。2024年2月、デジタルシングル『Just Like a Dream』で待望 of ソロデビューを果たした。ソロ三部作を通して描かれる「光の天使から、闇の堕天使へ」という物語は、グループ全体の神話とも深く連動しており、透明感あふれる歌声から変貌の予兆を感じさせる表現まで、独自の音楽世界を構築している。",
+    about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。2024年2月、デジタルシングル『Just Like a Dream』で待望のソロデビューを果たした。透明感のある歌声と幻想的なビジュアルで、独自の音楽世界を構築する。",
     members: [],
     news: [
         { date: "2025.06.24", title: "[RELEASE] 3rd Digital Single『HAWWAH』リリースのお知らせ" },

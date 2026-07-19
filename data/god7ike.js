@@ -104,4 +104,27 @@ window.allGroups["god7ike"] = {
         },
         { 
             title: "ISSUE MAKER", 
-            type: "2nd Mini Album / 2023.11.14",
+            type: "2nd Mini Album / 2023.11.14", 
+            img: "images/god7ike/god7ike-issue-maker.jpg",
+            tracks: [
+                { title: "ICONS", url: "" },
+                { title: "Hot Candy", url: "" },
+                { title: "GRATATA", url: "" },
+                { title: "Hide In The Dark", url: "" }
+            ]
+        },
+        { 
+            title: "OOMM", 
+            type: "1st Mini Album / 2023.05.21", 
+            img: "images/god7ike/god7ike-oomm.jpg",
+            tracks: [
+                { title: "Yessir", url: "" },
+                { title: "Out Of My Mind", url: "" },
+                { title: "Stalker", url: "" },
+                { title: "Queen", url: "" }
+            ]
+        }
+    ],
+    hasMemberSection: true,
+    clickableMembers: true
+};

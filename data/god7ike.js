@@ -93,37 +93,15 @@ window.allGroups["god7ike"] = {
             title: "TEA", 
             type: "4uatre (キャトル) 1st EP / 2024.10.09", 
             img: "images/god7ike/4uatre-tea.jpg",
+            baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/",
             tracks: [
-                { title: "Free", url: "" },
-                { title: "TEA", url: "" },
-                { title: "FACT$", url: "" },
-                { title: "I’m Ready (Jia Solo)", url: "" },
-                { title: "Shine (feat.Licca)", url: "" }
+                { title: "Free", url: "01_Free.m4a" },
+                { title: "TEA", url: "02_TEA.m4a" },
+                { title: "FACT$", url: "03_FACT.m4a" },
+                { title: "I’m Ready (Jia Solo)", url: "04_Im_Ready.m4a" },
+                { title: "Shine (feat.Licca)", url: "05_Shine.m4a" }
             ]
         },
         { 
             title: "ISSUE MAKER", 
-            type: "2nd Mini Album / 2023.11.14", 
-            img: "images/god7ike/god7ike-issue-maker.jpg",
-            tracks: [
-                { title: "ICONS", url: "" },
-                { title: "Hot Candy", url: "" },
-                { title: "GRATATA", url: "" },
-                { title: "Hide In The Dark", url: "" }
-            ]
-        },
-        { 
-            title: "OOMM", 
-            type: "1st Mini Album / 2023.05.21", 
-            img: "images/god7ike/god7ike-oomm.jpg",
-            tracks: [
-                { title: "Yessir", url: "" },
-                { title: "Out Of My Mind", url: "" },
-                { title: "Stalker", url: "" },
-                { title: "Queen", url: "" }
-            ]
-        }
-    ],
-    hasMemberSection: true,
-    clickableMembers: true
-};
+            type: "2nd Mini Album / 2023.11.14",

@@ -1,8 +1,8 @@
-/* --- HAYUL Data --- */
+/* --- Hayul Data --- */
 window.allGroups["hayul"] = {
-    name: "HAYUL",
+    name: "Hayul",
     banner: "images/hayul/hayul-main.jpg",
-    about: "HAYUL（ハユル）は、GØD7IKEのメインボーカル。2024年2月、デジタルシングル『Just Like a Dream』で待望のソロデビューを果たした。透明感のある歌声と幻想的なビジュアルで、独自の音楽世界を構築する。",
+    about: "Hayul（ハユル）は、GØD7IKEのメインボーカル。2024年2月、デジタルシングル『Just Like a Dream』で待望のソロデビューを果たした。透明感のある歌声と幻想的なビジュアルで、独自の音楽世界を構築する。",
     members: [],
     news: [
         { date: "2025.06.24", title: "[RELEASE] 3rd Digital Single『HAWWAH』リリースのお知らせ" },

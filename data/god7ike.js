@@ -4,48 +4,13 @@ window.allGroups["god7ike"] = {
     banner: "images/god7ike/god7ike-main.jpg",
     about: "GØD7IKE（ゴッドライク）は、韓国の7人組バーチャルアイドルグループ。グループ名には“神のような人間離れしたパフォーマンスで世界を魅了する”という意味が込められている。",
     members: [
-        { 
-            name: "JIA (ジア)", 
-            birthday: "2001.10.09", 
-            position: "Leader / Main Vocal", 
-            img: "images/god7ike/god7ike-jia.jpg" 
-        },
-        { 
-            name: "MIMI (ミミ)", 
-            birthday: "2009.11.03", 
-            position: "Lead Dancer / Sub Vocal / Sub Rapper", 
-            img: "images/god7ike/god7ike-mimi.jpg" 
-        },
-        { 
-            name: "NAYEON (ナヨン)", 
-            birthday: "2006.06.20", 
-            position: "Main Dancer / Sub Vocal", 
-            img: "images/god7ike/god7ike-nayeon.jpg" 
-        },
-        { 
-            name: "LAY (レイ)", 
-            birthday: "2007.01.06", 
-            position: "Main Rapper", 
-            img: "images/god7ike/god7ike-lay.jpg" 
-        },
-        { 
-            name: "HAYUL (ハユル)", 
-            birthday: "2003.02.07", 
-            position: "Visual / Main Vocal", 
-            img: "images/god7ike/god7ike-hayul.jpg" 
-        },
-        { 
-            name: "LICCA (リッカ)", 
-            birthday: "2000.07.14", 
-            position: "Center / Lead Vocal / Lead Rapper / Lead Dancer", 
-            img: "images/god7ike/god7ike-licca.jpg" 
-        },
-        { 
-            name: "ROY (ロイ)", 
-            birthday: "2007.01.06", 
-            position: "Main Rapper", 
-            img: "images/god7ike/god7ike-roy.jpg" 
-        }
+        { name: "Jia (ジア)", birthday: "2001.10.09", position: "Leader / Main Vocal", img: "images/god7ike/god7ike-jia.jpg" },
+        { name: "MiMi (ミミ)", birthday: "2009.11.03", position: "Lead Dancer / Sub Vocal / Sub Rapper", img: "images/god7ike/god7ike-mimi.jpg" },
+        { name: "Nayeon (ナヨン)", birthday: "2006.06.20", position: "Main Dancer / Sub Vocal", img: "images/god7ike/god7ike-nayeon.jpg" },
+        { name: "Lay (レイ)", birthday: "2007.01.06", position: "Main Rapper", img: "images/god7ike/god7ike-lay.jpg" },
+        { name: "Hayul (ハユル)", birthday: "2003.02.07", position: "Visual / Main Vocal", img: "images/god7ike/god7ike-hayul.jpg" },
+        { name: "Licca (リッカ)", birthday: "2000.07.14", position: "Center / Lead Vocal / Lead Rapper / Lead Dancer", img: "images/god7ike/god7ike-licca.jpg" },
+        { name: "Roy (ロイ)", birthday: "2007.01.06", position: "Main Rapper", img: "images/god7ike/god7ike-roy.jpg" }
     ],
     news: [
         { date: "2025.10.07", title: "[RELEASE] 1st Full Album『Wings』リリースのお知らせ" },
@@ -62,69 +27,37 @@ window.allGroups["god7ike"] = {
     ],
     discography: [
         { 
-            title: "CHOSEN KARMA", 
-            type: "4th Mini Album / 2026.XX.XX", 
-            img: "images/god7ike/god7ike-chosen-karma.jpg",
+            title: "CHOSEN KARMA", type: "4th Mini Album / 2026.XX.XX", img: "images/god7ike/god7ike-chosen-karma.jpg",
             tracks: []
         },
         { 
-            title: "Wings", 
-            type: "1st Full Album / 2025.10.07", 
-            img: "images/god7ike/god7ike-wings.jpg",
+            title: "Wings", type: "1st Full Album / 2025.10.07", img: "images/god7ike/god7ike-wings.jpg",
             tracks: [
-                { title: "Wings", url: "" },
-                { title: "Let Me Know", url: "" },
-                { title: "Greedy", url: "" },
-                { title: "중독 (Addicted)", url: "" },
-                { title: "Bewitched", url: "" },
-                { title: "Moonlight", url: "" }
+                { title: "Wings", url: "" }, { title: "Let Me Know", url: "" }, { title: "Greedy", url: "" },
+                { title: "중독 (Addicted)", url: "" }, { title: "Bewitched", url: "" }, { title: "Moonlight", url: "" }
             ]
         },
         { 
-            title: "REBORN", 
-            type: "3rd Mini Album / 2025.02.24", 
-            img: "images/god7ike/god7ike-reborn.jpg",
-            tracks: [
-                { title: "Villain", url: "" },
-                { title: "Swan Song", url: "" }
-            ]
+            title: "REBORN", type: "3rd Mini Album / 2025.02.24", img: "images/god7ike/god7ike-reborn.jpg",
+            tracks: [ { title: "Villain", url: "" }, { title: "Swan Song", url: "" } ]
         },
         { 
-            title: "TEA", 
-            type: "4uatre (キャトル) 1st EP / 2024.10.09", 
-            img: "images/god7ike/4uatre-tea.jpg",
+            title: "TEA", type: "4uatre (キャトル) 1st EP / 2024.10.09", img: "images/god7ike/4uatre-tea.jpg",
             baseUrl: "https://res.cloudinary.com/udhnprle/video/upload/",
             tracks: [
-                { title: "Free", url: "01_Free.m4a" },
-                { title: "TEA", url: "02_TEA.m4a" },
-                { title: "FACT$", url: "03_FACT.m4a" },
-                { title: "I’m Ready (Jia Solo)", url: "04_Im_Ready.m4a" },
+                { title: "Free", url: "01_Free.m4a" }, { title: "TEA", url: "02_TEA.m4a" },
+                { title: "FACT$", url: "03_FACT.m4a" }, { title: "I’m Ready (Jia Solo)", url: "04_Im_Ready.m4a" },
                 { title: "Shine (feat.Licca)", url: "05_Shine.m4a" }
             ]
         },
         { 
-            title: "ISSUE MAKER", 
-            type: "2nd Mini Album / 2023.11.14", 
-            img: "images/god7ike/god7ike-issue-maker.jpg",
-            tracks: [
-                { title: "ICONS", url: "" },
-                { title: "Hot Candy", url: "" },
-                { title: "GRATATA", url: "" },
-                { title: "Hide In The Dark", url: "" }
-            ]
+            title: "ISSUE MAKER", type: "2nd Mini Album / 2023.11.14", img: "images/god7ike/god7ike-issue-maker.jpg",
+            tracks: [ { title: "ICONS", url: "" }, { title: "Hot Candy", url: "" }, { title: "GRATATA", url: "" }, { title: "Hide In The Dark", url: "" } ]
         },
         { 
-            title: "OOMM", 
-            type: "1st Mini Album / 2023.05.21", 
-            img: "images/god7ike/god7ike-oomm.jpg",
-            tracks: [
-                { title: "Yessir", url: "" },
-                { title: "Out Of My Mind", url: "" },
-                { title: "Stalker", url: "" },
-                { title: "Queen", url: "" }
-            ]
+            title: "OOMM", type: "1st Mini Album / 2023.05.21", img: "images/god7ike/god7ike-oomm.jpg",
+            tracks: [ { title: "Yessir", url: "" }, { title: "Out Of My Mind", url: "" }, { title: "Stalker", url: "" }, { title: "Queen", url: "" } ]
         }
     ],
-    hasMemberSection: true,
-    clickableMembers: true
+    hasMemberSection: true, clickableMembers: true
 };

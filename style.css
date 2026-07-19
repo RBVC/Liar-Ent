@@ -1,19 +1,31 @@
-/* --- Liar Entertainment Master Style Ver.60.0 --- */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+/* --- Liar Entertainment Master Style Ver.62.0 --- */
 
-/* Base */
+/* GitHubのディレクトリ構造に合わせてフォントを読み込み */
+@font-face {
+    font-family: 'Noto Sans JP Custom';
+    src: url('font/noto-sans/NotoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans JP Custom';
+    src: url('font/noto-sans/NotoSans-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
 html { scroll-behavior: smooth; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body { 
     background-color: #ffffff; color: #000000; 
-    font-family: 'Noto Sans JP', sans-serif; 
+    font-family: 'Noto Sans JP Custom', sans-serif; 
     line-height: 1.6; overflow-x: hidden;
     display: flex; flex-direction: column; min-height: 100vh;
 }
 main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 20px 120px; }
 .theme-index main { max-width: none; padding: 0; }
 
-/* Header */
 header {
     width: 100%; height: 70px; padding: 0 5%;
     display: flex; justify-content: space-between; align-items: center;
@@ -23,7 +35,6 @@ header {
 }
 header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weight: 900; letter-spacing: -0.02em; }
 
-/* Hamburger Menu */
 .menu-trigger { position: relative; width: 24px; height: 16px; cursor: pointer; z-index: 10000; }
 .menu-trigger span { position: absolute; left: 0; width: 100%; height: 2px; background: #000; transition: 0.4s; }
 .menu-trigger span:nth-child(1) { top: 0; }
@@ -36,17 +47,17 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .nav-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background: rgba(255, 255, 255, 0.98); transition: 0.5s;
-    z-index: 8500; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    z-index: 8500; display: flex; flex-direction: column; 
+    align-items: center; justify-content: flex-start;
+    padding-top: 15vh;
     visibility: hidden; opacity: 0; text-align: center;
 }
 .nav-overlay.open { visibility: visible; opacity: 1; }
-.nav-label { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-bottom: 20px; display: block; }
+.nav-label { font-size: 10px; color: #ccc; letter-spacing: 5px; font-weight: 900; margin-bottom: 30px; display: block; }
 .nav-overlay ul { list-style: none; padding: 0; margin: 0; }
-.nav-overlay ul li { margin: 15px 0; }
-/* 大文字固定を解除 (Mixed Case対応) */
-.nav-overlay ul li a { text-decoration: none; font-size: 1.8rem; font-weight: 900; color: #000; text-transform: none; }
+.nav-overlay ul li { margin: 20px 0; }
+.nav-overlay ul li a { text-decoration: none; font-size: 2rem; font-weight: 900; color: #000; text-transform: none; }
 
-/* Index Grid */
 .index-grid { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; gap: 0; }
 .index-artist-box { position: relative; width: 100%; aspect-ratio: 2 / 1; overflow: hidden; display: block; }
 .index-artist-box img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; transition: 0.8s ease-in-out; }
@@ -55,10 +66,8 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .index-artist-box:hover img { transform: scale(1.05); }
 .index-hover-name { color: #fff; font-weight: 900; font-size: 2rem; letter-spacing: 0.1em; text-transform: none; }
 
-/* Artist Page Elements */
 .hero-header { text-align: center; padding: 60px 20px 30px; }
 .back-link { font-size: 10px; color: #ccc; text-decoration: none; font-weight: 900; letter-spacing: 2px; }
-/* 大文字固定を解除 */
 .artist-main-title { font-weight: 900; font-size: clamp(2.2rem, 8vw, 4rem); margin: 10px 0 20px; text-transform: none; letter-spacing: -0.02em; }
 
 .tab-container { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; border-bottom: 1px solid #f0f0f0; }
@@ -74,99 +83,64 @@ header .logo { font-size: 1.2rem; text-decoration: none; color: #000; font-weigh
 .about-box h3 { font-weight: 900; font-size: 1.8rem; margin-bottom: 20px; border-left: 8px solid #000; padding-left: 20px; }
 .about-box p { font-size: 1rem; line-height: 2.2; color: #444; }
 
-/* 大文字固定を解除 */
 .section-title { font-weight: 900; font-size: 1.6rem; margin-bottom: 40px; border-left: 10px solid #000; padding-left: 25px; text-transform: none; }
 
-/* News List */
 .news-list { width: 100%; border-top: 1px solid #000; }
-.news-item { 
-    display: grid; 
-    grid-template-columns: 120px 100px 1fr; 
-    align-items: center; 
-    padding: 25px 15px; 
-    border-bottom: 1px solid #f0f0f0; 
-    transition: 0.2s;
-}
+.news-item { display: grid; grid-template-columns: 120px 100px 1fr; align-items: center; padding: 25px 15px; border-bottom: 1px solid #f0f0f0; transition: 0.2s; }
 .news-item:hover { background: #fafafa; }
 .news-date { font-weight: 900; font-size: 0.8rem; color: #999; letter-spacing: 0.05em; }
 .news-tag { font-size: 10px; font-weight: 900; padding: 3px 10px; border: 1px solid #000; border-radius: 2px; text-align: center; display: inline-block; }
 .news-title { font-weight: 700; font-size: 1rem; color: #222; padding-left: 15px; }
 
-/* Custom Player - Modern Design */
-.custom-player { 
-    background: #111; color: #fff; padding: 40px 30px; 
-    margin-bottom: 1px; text-align: center;
-}
-.play-pause-btn { 
-    background: #fff; border: none; color: #000; 
-    width: 60px; height: 60px; border-radius: 50%; 
-    cursor: pointer; font-size: 1.2rem; transition: 0.3s;
-    display: inline-flex; align-items: center; justify-content: center;
-}
+.custom-player { background: #111; color: #fff; padding: 40px 30px; margin-bottom: 1px; text-align: center; }
+.play-pause-btn { background: #fff; border: none; color: #000; width: 60px; height: 60px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; transition: 0.3s; display: inline-flex; align-items: center; justify-content: center; }
 .play-pause-btn:hover { transform: scale(1.1); background: #eee; }
 .seek-bar-container { width: 100%; height: 5px; background: #333; margin: 25px 0 10px; cursor: pointer; position: relative; }
 .seek-bar-fill { height: 100%; background: #fff; width: 0%; transition: width 0.1s linear; }
 .player-time { font-size: 11px; font-weight: 900; color: #777; display: flex; justify-content: space-between; }
 
-/* Playlist UI */
 .playlist-container { background: #f9f9f9; max-height: 300px; overflow-y: auto; text-align: left; border-bottom: 1px solid #eee; }
-.track-item { 
-    display: flex; align-items: center; padding: 18px 25px; 
-    cursor: pointer; border-bottom: 1px solid #eee; transition: 0.2s; 
-}
+.track-item { display: flex; align-items: center; padding: 18px 25px; cursor: pointer; border-bottom: 1px solid #eee; transition: 0.2s; }
 .track-item:hover { background: #f0f0f0; }
 .track-item.active { background: #fff; border-left: 5px solid #000; padding-left: 20px; }
 .track-num { font-size: 10px; font-weight: 900; width: 30px; color: #bbb; }
 .track-name { font-size: 14px; font-weight: 700; color: #000; }
-.track-item.active .track-name { color: #000; }
 
-/* Grid System */
 .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; width: 100%; }
 .card { cursor: pointer; }
 .card.no-click { cursor: default; }
 .img-wrap { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border: 1px solid #f0f0f0; margin-bottom: 15px; background: #f9f9f9; }
 .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .card:not(.no-click):hover img { transform: scale(1.08); }
-/* 大文字固定を解除 */
 .card-name { font-weight: 900; font-size: 1.15rem; text-transform: none; }
 
-/* Modal */
 .modal { 
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
     background: rgba(255,255,255,0.98); z-index: 11000; 
-    display: none; justify-content: center; align-items: center; 
+    display: none; justify-content: center; 
+    align-items: flex-start;
+    padding-top: 10vh;
 }
 .modal.active { display: flex; }
 .modal-content { width: 95%; max-width: 500px; position: relative; animation: modalUp 0.4s ease; }
 @keyframes modalUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .modal-close { position: absolute; top: -60px; right: 0; font-size: 3rem; cursor: pointer; font-weight: 300; }
-/* 大文字固定を解除 */
 .modal-main-title { font-weight: 900; font-size: 1.8rem; margin-bottom: 20px; text-transform: none; text-align: center; }
 .modal-img { width: 280px; aspect-ratio: 1/1; object-fit: cover; margin: 0 auto 25px; border: 1px solid #f0f0f0; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-/* Footer */
 footer { padding: 60px 0; border-top: 1px solid #f0f0f0; text-align: center; margin-top: auto; }
 .f-logo { font-size: 1.2rem; color: #000; font-weight: 900; margin-bottom: 10px; }
 .f-copy { font-size: 10px; color: #999; letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .about-box img { width: 300px; }
-    .info-grid { grid-template-columns: repeat(3, 1fr); }
-}
 
 @media (max-width: 768px) {
     header { height: 60px; }
     .index-grid { grid-template-columns: 1fr; }
     .index-artist-box { aspect-ratio: 3 / 2; }
-    .hero-header { padding: 40px 15px 20px; }
+    .nav-overlay { padding-top: 20vh; }
     .about-box { flex-direction: column; gap: 30px; margin-bottom: 60px; }
     .about-box img { width: 100%; }
     .info-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .news-item { grid-template-columns: 85px 80px 1fr; padding: 20px 10px; }
-    .news-date { font-size: 0.7rem; }
-    .news-tag { font-size: 8px; padding: 2px 6px; }
-    .news-title { font-size: 0.9rem; padding-left: 10px; }
     .modal-content { max-height: 85vh; overflow-y: auto; padding-top: 20px; }
     .modal-close { top: 0; right: 10px; font-size: 2.5rem; }
 }

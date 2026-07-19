@@ -70,21 +70,24 @@
 
             if (!data.hasMemberSection) document.getElementById('member-section-container').style.display = 'none';
 
-            // MEMBER (Mixed Case)
-            document.getElementById('member-grid').innerHTML = (data.members || []).map((m, i) => `
+            // MEMBER (一覧では英語名のみ、クリックでフルネームのモーダルへ)
+            document.getElementById('member-grid').innerHTML = (data.members || []).map((m, i) => {
+                const englishName = m.name.split(' (')[0]; // 「 (」より前を抽出
+                return `
                 <div class="card ${data.clickableMembers ? '' : 'no-click'}" ${data.clickableMembers ? `onclick="openMemberModal('${groupId}', ${i})"` : ''}>
                     <div class="img-wrap"><img src="${m.img}"></div>
-                    <p class="card-name">${m.name}</p>
-                </div>`).join('');
+                    <p class="card-name">${englishName}</p>
+                </div>`;
+            }).join('');
 
-            // DISCOGRAPHY (Mixed Case)
-            document.getElementById('disco-grid').innerHTML = (data.discography || []).map((d, i) => `
+            // DISCOGRAPHY
+            document.getElementById('disco-grid').innerHTML = data.discography.map((d, i) => `
                 <div class="card" onclick="openAlbumModal('${groupId}', ${i})">
                     <div class="img-wrap"><img src="${d.img}"></div>
                     <p class="card-name">${d.title}</p>
                 </div>`).join('');
 
-            // NEWS (Mixed Case & Tags)
+            // NEWS
             const nContainer = document.getElementById('news-list-container');
             const newsData = data.news || [];
             if (newsData.length === 0) {

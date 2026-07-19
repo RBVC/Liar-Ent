@@ -21,6 +21,7 @@ function generateNav() {
 
 function injectFooter() {
     const footers = document.querySelectorAll('footer');
+    // 指定のケースに修正
     const footerHtml = `<div class="f-logo">Liar Entertainment</div><p class="f-copy">&copy; Liar Entertainment ALL RIGHTS RESERVED.</p>`;
     footers.forEach(f => f.innerHTML = footerHtml);
 }
@@ -73,9 +74,7 @@ function openAlbumModal(groupId, index) {
     document.getElementById('modal-title').innerText = a.title;
     const tracks = a.tracks || [];
     currentTrackIndex = 0;
-    
     let tracksHtml = `<p style="padding:60px; font-weight:bold; text-align:center; color:#ccc;">COMING SOON</p>`;
-    
     if (tracks.length > 0) {
         const listItems = tracks.map((t, i) => `<div class="track-item" id="track-${i}" onclick="loadTrack(${i})"><span class="track-num">${String(i + 1).padStart(2, '0')}</span><span class="track-name">${t.title}</span></div>`).join('');
         tracksHtml = `
@@ -91,10 +90,8 @@ function openAlbumModal(groupId, index) {
             </div>
             <div class="playlist-container">${listItems}</div>`;
     }
-    
     document.getElementById('modal-body').innerHTML = tracksHtml;
     document.getElementById('master-modal').classList.add('active');
-    
     if (tracks.length > 0 && tracks[0].url) { loadTrack(0, false); }
 }
 
@@ -103,19 +100,15 @@ function loadTrack(index, autoPlay = true) {
     if (!track || !track.url) return;
     const baseUrl = currentAlbumData.baseUrl || "";
     const fullUrl = track.url.startsWith('http') ? track.url : baseUrl + track.url;
-    
     if (currentAudio) { currentAudio.pause(); }
-    
     currentTrackIndex = index;
     currentAudio = new Audio(fullUrl);
     currentAudio.ontimeupdate = updateProgress;
     currentAudio.onloadedmetadata = () => { document.getElementById('duration-time').innerText = formatTime(currentAudio.duration); };
     currentAudio.onended = () => { if (currentTrackIndex < currentAlbumData.tracks.length - 1) loadTrack(currentTrackIndex + 1); };
-    
     document.querySelectorAll('.track-item').forEach(el => el.classList.remove('active'));
     const target = document.getElementById(`track-${index}`);
     if (target) target.classList.add('active');
-    
     if (autoPlay) togglePlay();
 }
 

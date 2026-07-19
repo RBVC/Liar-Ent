@@ -60,9 +60,9 @@ function openMemberModal(groupId, index) {
     document.getElementById('modal-title').innerText = m.name;
     document.getElementById('modal-body').innerHTML = `
         <img src="${m.img}" class="modal-img">
-        <div class="modal-info-list" style="text-align:left; max-width:280px; margin:0 auto;">
-            <div style="margin-bottom:12px;"><span style="font-size:9px;color:#ccc;display:block;font-weight:900;">BIRTHDAY</span><span style="font-weight:700;">${m.birthday || '---'}</span></div>
-            <div style="margin-bottom:12px;"><span style="font-size:9px;color:#ccc;display:block;font-weight:900;">POSITION</span><span style="font-weight:700;">${posHtml}</span></div>
+        <div class="modal-info-list" style="text-align:left; max-width:280px; margin:0 auto; padding-bottom:30px;">
+            <div style="margin-bottom:15px;"><span style="font-size:9px;color:#ccc;display:block;font-weight:900;letter-spacing:2px;">BIRTHDAY</span><span style="font-weight:700;font-size:1.1rem;">${m.birthday || '---'}</span></div>
+            <div style="margin-bottom:15px;"><span style="font-size:9px;color:#ccc;display:block;font-weight:900;letter-spacing:2px;">POSITION</span><span style="font-weight:700;font-size:1.1rem;line-height:1.4;">${posHtml}</span></div>
         </div>`;
     document.getElementById('master-modal').classList.add('active');
 }
@@ -74,11 +74,22 @@ function openAlbumModal(groupId, index) {
     const tracks = a.tracks || [];
     currentTrackIndex = 0;
     
-    let tracksHtml = `<p style="padding:40px; font-weight:bold; text-align:center;">COMING SOON</p>`;
+    let tracksHtml = `<p style="padding:60px; font-weight:bold; text-align:center; color:#ccc;">COMING SOON</p>`;
     
     if (tracks.length > 0) {
         const listItems = tracks.map((t, i) => `<div class="track-item" id="track-${i}" onclick="loadTrack(${i})"><span class="track-num">${String(i + 1).padStart(2, '0')}</span><span class="track-name">${t.title}</span></div>`).join('');
-        tracksHtml = `<p style="font-size:12px; color:#ccc; margin-bottom:20px; font-weight:900; text-align:center;">${a.type}</p><div class="custom-player"><div class="player-controls"><button class="play-pause-btn" id="play-btn" onclick="togglePlay()">▶</button></div><div class="seek-bar-container" onclick="seekAudio(event)"><div class="seek-bar-fill" id="seek-fill"></div></div><div class="player-time"><span id="current-time">0:00</span><span id="duration-time">0:00</span></div></div><div class="playlist-container">${listItems}</div>`;
+        tracksHtml = `
+            <p style="font-size:12px; color:#999; margin-bottom:25px; font-weight:900; text-align:center; letter-spacing:1px;">${a.type}</p>
+            <div class="custom-player">
+                <div class="player-controls">
+                    <button class="play-pause-btn" id="play-btn" onclick="togglePlay()">▶</button>
+                </div>
+                <div class="seek-bar-container" onclick="seekAudio(event)">
+                    <div class="seek-bar-fill" id="seek-fill"></div>
+                </div>
+                <div class="player-time"><span id="current-time">0:00</span><span id="duration-time">0:00</span></div>
+            </div>
+            <div class="playlist-container">${listItems}</div>`;
     }
     
     document.getElementById('modal-body').innerHTML = tracksHtml;
@@ -92,15 +103,19 @@ function loadTrack(index, autoPlay = true) {
     if (!track || !track.url) return;
     const baseUrl = currentAlbumData.baseUrl || "";
     const fullUrl = track.url.startsWith('http') ? track.url : baseUrl + track.url;
+    
     if (currentAudio) { currentAudio.pause(); }
+    
     currentTrackIndex = index;
     currentAudio = new Audio(fullUrl);
     currentAudio.ontimeupdate = updateProgress;
     currentAudio.onloadedmetadata = () => { document.getElementById('duration-time').innerText = formatTime(currentAudio.duration); };
     currentAudio.onended = () => { if (currentTrackIndex < currentAlbumData.tracks.length - 1) loadTrack(currentTrackIndex + 1); };
+    
     document.querySelectorAll('.track-item').forEach(el => el.classList.remove('active'));
     const target = document.getElementById(`track-${index}`);
     if (target) target.classList.add('active');
+    
     if (autoPlay) togglePlay();
 }
 
